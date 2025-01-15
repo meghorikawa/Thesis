@@ -4,30 +4,30 @@ Also how I will train a model for classification
 
 
 \section{About corpus}
-information about the corpus organization, prepossessing 
+information about the corpus organization, prepossessing
+
+\subsection{J-CAT test}
 
 \section{Complexity Measures}
 detail the complexity measures I will use, how I developed the scripts to automatically "extract them" and the statistical significance between the proficiency levels
 list, Sent Length, Clauses per sentence, Noun phrase length,  Subordination, coordination, 
 
 \section{Criterial Features}
+
 \section{Automatic Error Annotation}
+
 Explain how I will do this so that I will further be able to extract criterial features to examine
  - Automated Error Detection?
     can I apply an LLM to check each sentence, and then use distance measure to classify errors 
     -what about discourse errors? I have a feeling these will not be caught by an LLM...
+        disregard discourse errors.
  - Which type of errors will I annotate for? 
- - Automated detection of particle errors - using work?
- 
- 
+        - Automated detection of particle errors - using work?
 
-
-
-findings from preliminary evaluation? (or should I have a separate evaluation section which details this and the linguistic complexity findings. 
 
 \section{Design of the Classification Models}
 Which Architecture?
 
 One system just for Criterial features, One for Complexity features, and One for both. 
 
-Random Forest or 
+Random Forest or Explainable boosting machine
