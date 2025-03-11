@@ -7,23 +7,11 @@ Also how I will train a model for classification
 information about the corpus organization, prepossessing
 
 \subsection{J-CAT test}
+background and information on the J-CAT test
 
 \section{Complexity Measures}
 detail the complexity measures I will use, how I developed the scripts to automatically "extract them" and the statistical significance between the proficiency levels
-list, Sent Length, Clauses per sentence, Noun phrase length,  Subordination, coordination, 
-
-\section{Criterial Features}
-
-\section{Automatic Error Annotation}
-
-Explain how I will do this so that I will further be able to extract criterial features to examine
- - Automated Error Detection?
-    can I apply an LLM to check each sentence, and then use distance measure to classify errors 
-    -what about discourse errors? I have a feeling these will not be caught by an LLM...
-        disregard discourse errors.
- - Which type of errors will I annotate for? 
-        - Automated detection of particle errors - using work?
-
+list, Sent Length, Clauses per sentence, Noun phrase length,  Subordination, coordination, noun phrase length?, MTLD
 
 \section{Design of the Classification Models}
 Which Architecture?
@@ -31,3 +19,25 @@ Which Architecture?
 One system just for Criterial features, One for Complexity features, and One for both. 
 
 Random Forest or Explainable boosting machine
+
+
+% Give up on this part
+
+%\section{Criterial Features}
+
+%\section{Automatic Error Annotation}
+
+%Explain how I will do this so that I will further be able to extract criterial features to examine
+% - Automated Error Detection?
+%    can I apply an LLM to check each sentence, and then use distance measure to classify errors
+%    -what about discourse errors? I have a feeling these will not be caught by an LLM...
+%        disregard discourse errors.
+%    need some way to measure errors when the corpus is uncorrected.
+
+%    measure correct or incorrect particles?
+%    can I train a classifier for automatic error annotation for particles?
+%        using SNOW-NLP/snow_simplified_japanese_corpus for training?
+%        格助詞 - が, の, を, に, へ, と , で,　から, より
+%        係助詞 - は, も, こぞ, でも, しか, さえ, だに
+% - Which type of errors will I annotate for?
+%        - Automated detection of particle errors - using work?
