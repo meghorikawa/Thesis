@@ -1,38 +1,45 @@
 \chapter{Introduction}
 
-%Motivation for what I am trying to do....Language proficiency classification and which measures are reliably able to classify proficiency - automated scoring/grading of tests. etc. using linguistic complexity measures vs. criterial features. 
+%Motivation for what I am trying to do....Language proficiency classification and which measures are reliably able to classify proficiency - automated scoring/grading of tests. etc. using linguistic complexity measures.
 
-%Train two classification models not sure on theory yet, using two complexity vs. criterial features.... which performs better? 
+%Train classification models not sure on theory yet, using two complexity vs. criterial features.... which performs
+%better?
 
-%Objectives and research question(s)
+% Why does this matter?
+% - addressing a gap in research for Japanese
+% - Evaluating language development/proficentcy levels in SLA
+% - can evaluate
 
-%Evaluating proficiency is done on a scale of can-do statements such as defined in the CEFR levels, ACTFL, etc.  
+%Define problem:
+% Many measures - vaguely
+%Focus of indo-european languages and English
+% can help inform instructional design of Japanese material
+% automated proficentcy testing
 
-%Could the use of null subjects and objects possibly be a criterial feature??? 
-
-
+% complexity studies have differed in their findings....and definitions of what complexity is have also been varried
+% and vague
+\citet{Butle2012}
 
 Language proficiency can be described as consisting of a triad domains of complexity, fluency, and accuracy
-\cite(Skehan1989). Complexity can be described as how varried and complex the structures used are, Accuracy measures
-the rate of errors, and fluency would be the
-%mention triad of proficentcy - Complexity, Fluency, Accuracy..... Criterial features can fit into the accuracy dimention??
+\cite(Skehan1989). With this I plan to focus on the complexity aspect...... defition of the concept of complexity
+and what it entails have differed between researches......results from measures have also varied significantly
+between researchers... perhaps due to definition-methodology - task? when analyzing SLA using complexity measures
+wouldn't it also be helpful to have control group of native speakers?
 
-
-Language learners' proficiency in their target language is typically assesd using established frameworks such as the \textbf{Common European Framework of Reference for Languages (CEFR)}, and the \textbf{American Council on the Teaching of Foreign Languages (ACTFL)}.
+Language learners' proficiency in their target language is typically assesed using established frameworks such as the \textbf{Common European Framework of Reference for Languages (CEFR)}, and the \textbf{American Council on the Teaching of Foreign Languages (ACTFL)}.
 These frameworks rely on generalized "can-do" statements to define a learner's capabilities at each proficiency level. While these statements are effective for standardizing assessment across languages, they are intentionally kept broad to generalize across a wide range of languages. As a result, unique features of individual languages, which may play a critical role in determining proficiency, may be overlooked.
 
-Specifically in analyzing a learner's ability to write in their target language, much work has been done to investigate complexity features and criterial features and using these as an index for proficiency. However these indices have not been compared to each other to evaluate which may be a more reliable as an index between proficiency levels. While much research has focused on English and then generalized to other indo-european languages, the research on Japanese is rare. By analyzing the performance of these features and how accurately they can lead to classification of proficiency level may lead to more advances in automated scoring and evaluation systems for language learners. 
+%Specifically in analyzing a learner's ability to write in their target language, much work has been done to
+%investigate complexity features and criterial features and using these as an index for proficiency. However these indices have not been compared to each other to evaluate which may be a more reliable as an index between proficiency levels. While much research has focused on English and then generalized to other indo-european languages, the research on Japanese is rare. By analyzing the performance of these features and how accurately they can lead to classification of proficiency level may lead to more advances in automated scoring and evaluation systems for language learners.
 
-In this thesis I aim to define criterial features and complexity measures that are unique for evaluating Japanese, train two different models on these features and evaluate their performance. to achieve these objectives I will address the following questions:
+In this thesis I aim to complexity measures that are unique for evaluating Japanese, train two different models on these features and evaluate their performance. to achieve these objectives I will address the following questions:
 \begin{enumerate}
     \item Which syntactic complexity measures show reliability as indices for language development/proficiency level?
-    \item Which criterial features unique to Japanese can serve as an index for proficiency level?
-    \item Which set of features - linguistic complexity measures or criterial features- provides higher accuracy in classifying language proficiency levels?
+    \item How do linguistic complexity features develop across different proficiency levels in Japanese as a second language learners?
+    \item Can linguistic complexity features reliably predict proficiency levels in Japanese second language learners?
 \end{enumerate}
 
-This thesis is structured as follows: \textbf{chapter 2} provides background on complexity measures, criterial
-features, and proficiency evaluation in automated scoring? \textbf{Chapter 3} outlines the research methodology
-including details on the learner corpus used, feature selection and design and training methods of the
+This thesis is structured as follows: \textbf{chapter 2} provides background on complexity measures, \textbf{Chapter 3} outlines the research methodology including details on the learner corpus used, feature selection and design and training methods of the
 classification models. \textbf{Chapter 4} presents an evaluation of initial findings of the features,
 \textbf{Chapter 5 }will present my findings and results, \textbf{Chapter 5} discusses my
 findings and their implications and directions for future research.
