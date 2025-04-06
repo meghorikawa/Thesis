@@ -2,47 +2,43 @@
 %What do I need to know to understand the approach described in the methodology section
 
 \section{Linguistic Complexity}
-What is complexity? How it is defined? Different types, differentiate it from other domains, accuracy...
-motivate what is being measured
+-What is complexity? How it is defined? in SLA literature?
+-Distiction between complexity, accuracy, and fluency (CAF Framework).
+- Why complexity is a useful procy for proficiency. (motivate what is being measured)
+- Types of Complexity: Syntactic, lexical, morphological, discourse?
 
 
 \subsection{Linguistic Complexity in SLA}
-Previous work on Syntactic complexity measures as indices for proficiency levels of other languages.
-Syntactic, Lexical features
-role of it in proficiency research
-other uses such as readability etc.
-role of learner corpora?
-
-Include:
-Language Developmental Trajectory
-Research of non-english languages
-Previous research of Complexity in Japanese
-Challenges of previous research - including Japanese
+-Syntactic complexity and lexical measures as indices for proficiency levels of other languages. (Language Developmental Trajectory)
+-Use of complexity in SLA studies, readability studies, and ICALL
+-role of learner corpora in operationalizing and tracking complexity.
+-research on non-English languages
+-Existing studies on complexity in L2 Japanese - the the limitations
 
 
-\subsection{Measuring Complexity and computational approaches}
-introduce the different measures and define them. Also introduce techniques used in NLP for calculating the complexity
-measures - different systems that exist
-uses/applications in ICALL systems??
-
-Syntactic:
-Sentence Length, Clause Length, Clauses per sentence, NP length, Subordination, coordination, Dependency distance?
-Lexical:
-MTLD instead of CTTR... or both?
-Other lengths of measures and theories behind them. Describe which measures are measuring what Also shortfalls of the
-measures
+\subsection{Computational Approaches to Measuring Complexity}
+- Introduce major complexity metrics:
+    -Syntactic: sentence length, clause density, suboridation, coordination, noun phrases, depedency distance
+    - Lexical: type-token ratio (TTR), MTLD, lexical sophistication
+-Theoretical basis and interpretation of each measure and limitations
+- Use of NLP tools in measuring complexity and automated tools in ICALL applications (CTAP)
 
 \section{Criterial Features}
+- Define criterial features: What are they and how they relate to CEFR levels.
+- Illustrative descriptors vs. criterial features. (EGP)
+- Frequency-based indicators of syntactic sophistication? \cite{Ellis2004}
+- Examples of criterial features in English (and possible other languages) also describe this in relevance to Japanese
+- automated extraction - POLKE
 
-Frequency of forms as a form of syntactic sophistication ? \cite{Ellis2004}
 
-
-\subsection{Measuring Proficency}
+\subsection{Proficiency Assessment Frameworks}
+- Overview of CEFR levels ( Is it really necessary to include ACFL?)
+- The structure and goals of JLPT (grammar/lexicon targets at each level)
+- Historical development of JLPT and inclusing of CEFER-style descriptors from 2012.
+- limitations of JLPT, or critiques on standardized tests.
 Not sure if this warrants it's own section. Describe proficency assesment measures CEFER, etc. also introduce JLPT
 Can-do statements- forms teste
 
-JLPT levels have clear grammatical and lexical goals defined....and can do statements were added later in 2012 to
-align with other worldwide standard proficiency tests/standards i.e. ACTFL, CEFR
 
 maybe also introduce some skepticism of the testing methods of the test?
 Talk about previous work with EGP proficiency classification?
@@ -50,10 +46,12 @@ Introduce can-do statements at each of the levels and also summarize the equival
 
 
 \section{Automatic Proficency Assesment}
-include information on Automatic proficency assesment systems
-
-also need to mention that automatically calculated measures from
-learner texts may not be
-identified robustly due to errors.
+- motivation - describe why automatino is needed
+- Overview of existing systems using complexity/criterial features for proficency classification.
+- Describe challenges
+    - Learner errors impacting feature extraction (decreases robustness)
+    -Inconsistent tagging/parsing in morphologically rich or low-resource languages
+        -try to find something for Japanese to support some inconsistentices I found when tokenizing sample text
+- Describe the aboves' relevance to Japanese, and to this study
 
 
