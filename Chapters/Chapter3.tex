@@ -10,8 +10,60 @@ still parse when using only hiragana - but of course spelling errors can through
 \section{About corpus}
 information about the IJATS corpus organization, prepossessing,
 
+This study utilizes data from the International Corpus of Japanese as a Second Language (I-JAS), as detailed in \citet{Sakoda2020}.  The I-JAS corpus includes both spoken and written samples of Japanese from a diverse pool of 1,000 adult learners aged between 17 and 63 years, all of whom are learning Japanese as a second language. Native speaker samples are also included in the corpus.
+
+To assess each participant's proficiency level, the Japanese Computer Adaptive Test (J-Cat) by \citet{Imai2009} was administered. Further information about this test, including its scoring methodology, is provided in the subsequent section. In addition to language proficiency data, various metadata, such as participants' native language, prior experiences of visiting or living in Japan, and current location (whether outside or within Japan), were also recorded.
+
+From the larger pool of participants, writing samples were obtained from 687 individuals, including a control group of 48 native speakers. A breakdown of the proficiency groups among these 687 participants who submitted writing samples is presented in Table 1.
+
+\begin{table}
+\centering
+\begin{tabular}{lrl}
+\hline \textbf{Proficiency Level} & \textbf{\# of Participants} \\ \hline
+Basic & 15 \\
+Pre-Intermediate & 81 \\
+Intermediate & 199\\
+Intermediate High & 187 \\
+Pre-Advanced & 122 \\
+Advanced & 34\\
+Native & 48 \\
+\hline
+\end{tabular}
+\caption{\label{font-table} breakdown of participants per proficiency level}
+\end{table}
+
+\subsection{Writing Tasks}
+Each participant submitted four samples of writing for specific tasks:
+\begin{itemize}
+    \item A short essay titled "Our Eating Habits," involving a comparison between fast food and home-cooked meals in the learner's home country.
+    \item A letter addressed to a former teacher, requesting a letter of recommendation for a scholarship application.
+    \item An email seeking an extension for the deadline of a report submission.
+    \item An apology email in which the learner must decline an invitation.
+\end{itemize}
+These tasks were consistent across all participants, regardless of their proficiency levels, and encompassed various task types. The inclusion of a range of task types and formalities was intended to encourage diverse responses from the students and mitigate a potential "task effect" similar to what  was described in \cite{Alexpoulou2017}. The writing samples were processed-as-is without being corrected for learner errors.
+
 \subsection{J-CAT test}
 background and information on the J-CAT test compare to JLPT
+The J-Cat, short for Japanese Computerized Adaptive Test, is a computer-administered assessment that evaluates an individual's proficiency in the Japanese language. Although it is no longer available for personal use, Japanese universities widely employ this test as an efficient tool for assessing the language skills of foreign students seeking placement in Japanese language courses. This adaptive examination tailors its question difficulty to a student's performance in the areas of Vocabulary, Grammar, Listening, and Reading.
+
+Each student receives a numerical score that corresponds to one of seven distinct proficiency levels, as detailed in Table 2. This study will categorize participants according to their J-Cat proficiency level. Participants in the native speaker control group were given a default J-cat score of 999.
+
+\begin{table}
+\centering
+\begin{tabular}{lrl}
+\hline \textbf{Proficiency Level} & \textbf{J-Cat Score} \\ \hline
+Basic & 0-100 \\
+Pre-Intermediate & 100-150 \\
+Intermediate & 150-200 \\
+Intermediate-High & 200-250 \\
+Pre-Advanced & 250-300 \\
+Advanced & 300 - 350 \\
+Near Native & 350+\\
+\hline
+\end{tabular}
+\caption{\label{font-table} Proficiency level classification based on J-cat score.  }
+\end{table}
+
 
 \section{Complexity Measures}
 detail the complexity measures I will use, how I developed the scripts to automatically "extract them" and the statistical significance between the proficiency levels
