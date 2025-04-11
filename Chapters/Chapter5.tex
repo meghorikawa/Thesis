@@ -1,5 +1,21 @@
 \chapter{Results and Discussion}
-Which features contributed to classification at each level?
-\section{Classification Models}
+Which features contributed to classification at each level as per the EBM?
 \section{Discussion}
+
+
 shortfalls/difficulties
+- mention lerner language and the corpus being uncorrected so this may lead to misinterpretations by the tokenizer
+to classify things correctly.
+- use of only form-based grammar difficulty in correctly extracting meaning based forms
+- also difficulty of not knowing which forms are considered one word expressions versus expressions that will
+actually be broken down into smaller parts by the tokenizer (as noted below with 言い切る etc.)
+
+In consistency in parsing of 〜切るto show completely finishing an action. 言い切る 売り切る are considered one verb. in the
+case of 食べ(verb)　切る(非自立可能Verb) and 食べ(Verb) 切れる (AUX 非自立可能)　makes it difficult to when dealing with rule based
+matching to extract the form..死ぬほど and other constructions with ほどare also similar.
+
+Need to mention the feature extractor follows rules for the standardized language which is widely taught to
+learners. Variations due to dialects and casual written variations not included and therefore this would not be
+able to extract text with these. Also chose grammar constructs which were largely form based (i.e. easier to extract
+vs. use based) and ones that are likely to be used in written language. (leaving out spoken expressions as they
+wouldn't likely appear much in writing. )
