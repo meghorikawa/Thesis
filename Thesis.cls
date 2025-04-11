@@ -249,7 +249,7 @@
     \bigskip
     {\normalsize\bf \@title \par}
     \medskip
-    {\normalsize by \authornames \par}
+    {\normalsize by \authorname \par}
     \bigskip
   \end{center}
 }
