@@ -111,6 +111,9 @@ list, Sent Length, Clauses per sentence, Noun phrase length,  Subordination, coo
 
 lexical sophistication measures use this corpus: \cite{BCCWJ_List} and article citation: \cite{maekawa2014}, Think
 about the Tsukuba web corpus also...
+When implementing LFP punctuation is removed from the text. Need to mention how text is tokenized in japanese: in
+the freq list ばいい is written but would be tokenized as ば　and いい ...how to overcome this? Remove verbs? should I use
+tokenizer to split the verbs in the word list??
 
 \section{Criterial Features}
 Describe the rule based feature matcher I made for extracting certain grammar patterns to disconcern their use
