@@ -18,6 +18,14 @@ In consistency in parsing of 〜切るto show completely finishing an action. �
 case of 食べ(verb)　切る(非自立可能Verb) and 食べ(Verb) 切れる (AUX 非自立可能)　makes it difficult to when dealing with rule based
 matching to extract the form..死ぬほど and other constructions with ほどare also similar.
 
+-Issues with clause parsing - the tokenizer by spacy is inaccurate in classyfying some coordinating and
+subordinating conjunctions - many conjunctions in Japanese can be used in both contexts and spacy doesn't take the
+context into consideration when labeling the conjunctions. - tried to mitigate this by using a rule based formula to
+classify coordinating and subordinating clauses but it is difficult to control for each case. thereofore a more
+robust system would possibly lead to better results......I need to say something more about clausal use in Japanese
+for learners.
+
+
 Need to mention the feature extractor follows rules for the standardized language which is widely taught to
 learners. Variations due to dialects and casual written variations not included and therefore this would not be
 able to extract text with these. Also chose grammar constructs which were largely form based (i.e. easier to extract
