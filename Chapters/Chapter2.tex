@@ -457,17 +457,15 @@ the standardized frameworks such as the Common European Framework of Reference (
 %    - should there be specialized profiles based on a learner's native language?
 %- automated extraction - POLKE
 
-To contextualize criterial features within standardized evaluation it is essential to consider the role of
+To contextualize criterial features within standardized evaluation, it is essential to consider the role of
 proficiency assessment frameworks, which provide structured levels for describing and assessing a learner's language
-ability. For many european languages the Common European Framework of Reference for languages (CEFR) is the most
+ability. For many European languages the Common European Framework of Reference for languages (CEFR) is the most
 widely adopted framework, which offers six proficiency levels. Illustrative
-descriptors are given for each level in the framework to illustrate what learners can achieve in communicative
-competence at
-each
-level \citep{CEFR2020}. As can be seen in Table~\ref{tab:cefr-descriptors}, these guidelines are intentionally
-vague to be easily
-adopted
-into other
+descriptors are given for each level to demonstrate what learners can achieve in communicative
+competence \citep{CEFR2020}. As can be seen in Table~\ref{tab:cefr-descriptors}, these guidelines are intentionally
+vague to facilitate
+adoption
+across
 languages.
 
 \begin{table}
@@ -483,53 +481,71 @@ A2 & Can give short, basic descriptions of events and activities \\
 \end{table}
 
 Efforts such
-as the English Profile Programme \citep{Saville2010}, have emerged to support the development detailed reference level
+as the English Profile Programme \citep{Saville2010}, have emerged to support the development of detailed reference
+level
 descriptions
-of the learners at each CEFR level, one of the subprojects- English Grammar Profile (EGP) \citep{okeeffe2017}
+for learners at each CEFR level. One subproject, the English Grammar Profile (EGP) \citep{okeeffe2017},
 cataloged over 1,200 grammar forms of learner language across each of the CEFR proficiency levels.
-\citet{tono2018,ishii2016} have
+\citet{tono2018} and \citet{ishii2016} have
 also adapted a
 finer-grained
 proficiency scale
 of criterial features
 geared
-towards native Japanese learners of English called the CEFR-J.
+towards native Japanese learners of English, known as the CEFR-J.
 
 %POLKE project add later if I can get a citation.
 
 
 \subsubsection{Japanese Proficiency Assessment Frameworks}
 While CEFR was designed to be applied to any language - the Japanese Language Proficiency Test(JPLT) remains the
-most established framework for assessing Japanese as a second language. Established in 1984 \citet{JLPTinfo}, the
-test had 4
-proficency bands
-designed to evaluate the proficiency of Japanese learners. Learners are not given a proficency level but must choose the
-proficiency band of the test they would like to pass. The test was revised in 2010 to add an additional level and to
-better balance the difficulty across levels. Learners are evaluated for the following domains: reading, listening,
-vocabulary, and grammar. In contrast to the CEFR framework which uses general statements to describe learner's
-ability at a certain proficency level,
-Can-Do statements describing the
+most established framework for assessing Japanese as a second language. The test is the oficially
+recognized by the Japanese government and ratings can influence decisions in studying, working, and immigration to
+Japan.  
+Established in
+1984
+\citet{JLPTinfo}, the
+test initially had 4
+proficiency bands
+designed to evaluate the proficiency of Japanese learners. Learners choose the proficiency band of the test they
+wish to pass rather than being assigned a level. The test was revised in 2010 to add an additional level and to
+better balance the difficulty across levels. Learners are evaluated in reading, listening,
+vocabulary, and grammar. In contrast to the CEFR framework's general statements,
+"Can-Do" statements describing the
 capabilities of
 learners at
 each
-JLPT band were recently added in 2012. While official evaluation criteria are not released by the Japan Foundation,
-unofficial lists of grammar, vocabulary and Kanji are have been compiled from the official practice workbooks
-published by the Japan Foundation.
+JLPT band were added after the revision in 2012. While official evaluation criteria are not publicly released by the
+Japan
+Foundation,
+unofficial lists of grammar, vocabulary and Kanji are have been compiled from the official practice workbooks that
+have been published over the years.
 
-One criticism of the JLPT test is the lack of assessment for a learner's
-speaking and writing skills \citet{JLPTcriticism}.
-
+One criticism of the JLPT is its reliance on multiple-choice questions, which inherently omits direct assessment of
+a learner's productive skills, namely speaking and writing \citet{JLPTcriticism}. this format means learners have
+no opportunity to demonstrate their ability to produce language. Another notable critique is the difficulty for
+learners to accurately determine the proper level for their test, especially for those whose proficiency might fall
+between two established levels \citep{JLPTcriticism}, leading to high-stakes decisions with potential for misaligned
+exceptions. Despirte these acknowledged limitations, the JLPT remains the most widely
+recognized and authoritative standard for Japanese languages proficiency, making its structure and defined levels
+crucial for understanding learner development in the Japanese context.
 
 \subsubsection{Automatic Proficency Assesment}
-- motivation - describe why automated is needed
-- Overview of existing systems and which features they use for proficency classification.
-- Describe challenges
-    - Learner errors impacting feature extraction (decreases robustness)
-    -Inconsistent tagging/parsing in morphologically rich or low-resource languages
-        -try to find something for Japanese to support some inconsistentices I found when tokenizing sample text
-- Describe the aboves' relevance to Japanese, and to this study
+%- motivation - describe why automated is needed
+%- Overview of existing systems and which features they use for proficency classification.
+%- Describe challenges
+%    - Learner errors impacting feature extraction (decreases robustness)
+%    -Inconsistent tagging/parsing in morphologically rich or low-resource languages
+%        -try to find something for Japanese to support some inconsistentices I found when tokenizing sample text
+%- Describe the aboves' relevance to Japanese, and to this study
 
-These features metnioned above used for assigning proficency level texts ...
+%These features metnioned above used for assigning proficency level texts ...
+
+The increasing availability of learner corpora and advancements in natural language processing have drive the
+development of automatic proficiency assessment (APA) systems. These systems aim to classify texts into proficiency
+levels or assign a continuous proficiency score, thereby automating a labor-intensive and subjective process. APA
+typically leverages various linguistic features, including those inspired by criterial features, to distinguish
+between different proficiency levels.
 
 \section{Explainable Boosting Machines}
 % Overview of what they do and how they work to tie them together with my methodology.Include applications of EBMS in
