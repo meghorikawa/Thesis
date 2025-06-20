@@ -541,22 +541,26 @@ crucial for understanding learner development in the Japanese context.
 
 %These features metnioned above used for assigning proficency level texts ...
 
-The increasing availability of learner corpora and advancements in natural language processing have drive the
+The increasing availability of learner corpora and advancements in natural language processing have driven the
 development of automatic proficiency assessment (APA) systems. These systems aim to classify texts into proficiency
 levels or assign a continuous proficiency score, thereby automating a labor-intensive and subjective process. APA typically leverages various linguistic features, including complexity
-features and criterial features to distinguish between different proficiency levels.
-
+features \citep{Lu2010,Ortega2003,Brezina2019,Jiang2019, etc.} and criterial features
+\citep{Hawkins_Buttery_2010,tono2018,tono2013,defino2022}
+to distinguish between
+different
+proficiency
+levels.
 
 %%%--- Talk about studies here and features used, and their findings--%%%
-\citep{defino2022} - predicting L2 proficency using criterial like features and linguistic features in speech
+%\citep{defino2022} - predicting L2 proficency using criterial like features and linguistic features in speech
 
-\citep{tono2013} - criterial like features used including error
+%\citep{tono2013} - criterial like features used including error
 
 %--- Talk about Challenes of APA - add sources!!!
-Several challenges can impact the robustness of APA such as learner errors impacting feature extraction. Many
+However, several challenges can impact the robustness of APA such as learner errors impacting feature extraction. Many
 NLP tools such as parsers and POS-taggers are trained on native language learner errors can
-significantly decrease the accuracy of these tools which can also effect the extraction of features. % add example
-for Japanese?
+significantly decrease the accuracy of these tools which can also effect the extraction of features
+\citep{Meurers2017}. % add example for Japanese?
 For morphologically rich languages such as Japanese, NLP systems have an especially difficult time with consistent
 tokenization, and tagging , which also influences inaccuracies. These challenges are particularly relevant to this
 project as they can directly influence the design and effectiveness of any criterial feature-based APA system for
