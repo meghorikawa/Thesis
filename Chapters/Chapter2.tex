@@ -543,12 +543,34 @@ section{Automatic Proficiency Assessment}
 
 The increasing availability of learner corpora and advancements in natural language processing have drive the
 development of automatic proficiency assessment (APA) systems. These systems aim to classify texts into proficiency
-levels or assign a continuous proficiency score, thereby automating a labor-intensive and subjective process. APA
-typically leverages various linguistic features, including those inspired by criterial features, to distinguish
-between different proficiency levels.
+levels or assign a continuous proficiency score, thereby automating a labor-intensive and subjective process. APA typically leverages various linguistic features, including complexity
+features and criterial features to distinguish between different proficiency levels.
+
+
+%%%--- Talk about studies here and features used, and their findings--%%%
+\citep{defino2022} - predicting L2 proficency using criterial like features and linguistic features in speech
+
+\citep{tono2013} - criterial like features used including error
+
+%--- Talk about Challenes of APA - add sources!!!
+Several challenges can impact the robustness of APA such as learner errors impacting feature extraction. Many
+NLP tools such as parsers and POS-taggers are trained on native language learner errors can
+significantly decrease the accuracy of these tools which can also effect the extraction of features. % add example
+for Japanese?
+For morphologically rich languages such as Japanese, NLP systems have an especially difficult time with consistent
+tokenization, and tagging , which also influences inaccuracies. These challenges are particularly relevant to this
+project as they can directly influence the design and effectiveness of any criterial feature-based APA system for
+Japanese.
+
 
 \section{Explainable Boosting Machines}
 % Overview of what they do and how they work to tie them together with my methodology.Include applications of EBMS in
+The Explainable Boosting Machine (EBM)\citet{nori2019} is a machine learning algorithm distinguished by its
+inherent
+interpretability and explainability. EBMS extend the standard Generalized Additive Model (GAM) through implemention of
+cyclic
+gradient boosting and the automatic detection of pairwise interactions.
 % SLA and/or compare and contrast other machine learning methods.
+
 - EBMS in SLA
-\citep{akef2025}
+\citep{akef2025}-Saroosh's article
