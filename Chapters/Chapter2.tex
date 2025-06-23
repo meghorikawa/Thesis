@@ -563,18 +563,26 @@ learner development, even if they occur relatively infrequently in learner data.
 
 %--- Talk about Challenes of APA - especially in 日本語!!!
 However, several challenges can impact the robustness of APA such as learner errors impacting feature extraction. Many
-NLP tools such as parsers and POS-taggers are trained on native language learner errors can
-significantly decrease the accuracy of these tools which can also effect the extraction of features
+NLP tools such as parsers and POS-taggers are trained on native language and learner errors (especially at the
+lower proficiency levels)
+such as grammatical
+errors, misspellings, and non-standard usage can
+significantly interfere with the performance of these tools
 \citep{Meurers_2015,Meurers2017}.
-For morphologically rich languages such as Japanese, NLP systems have an especially difficult time with consistent
-tokenization, and tagging , which also influences inaccuracies. This is especially evident as, systems still struggle to diferentiate
-between stylistic choices in writing where a word can be written in multiple ways (eg. Kanji, Hiragana, ateji).
-\citep{halpern2000challenges,izutsu2021}. These
-challenges are particularly
-relevant to
-this
-project as they can directly influence the design and effectiveness of any criterial feature-based APA system for
-Japanese.
+Consequently, the quality of extracted
+features-whether complexity-based or criterial-can be compromised.
+
+These issues are particularly pronounced for morphologically rich and/or low-resource languages. For instance, in
+Japanese systems
+often
+struggle with consistent tokenization and morphological analysis due to orthographic variation (e.g. kana vs.
+Kanji), agglutinative word structure, and the optionality of certain grammatical markers. A single lexical item
+could be realized in multiple surface forms, and stylistic or genre-related variation can further affect this
+\citep{halpern2000challenges,izutsu2021}. Moreover, current Japanese NLP pipelines, including morphological
+analyzers and syntactic parsers, sometimes fail to distinguish between homophonous function words or segment
+particles incorrectly, especially in learner texts\citep{yang1998,nagata2009}. These issues raise important
+considerations for any APA framework applied to Japanese particularly in the context of this thesis as the reliance
+of the above NLP piplines is essential for extracting the linguistic features which will be analyzed.
 
 
 \section{Explainable Boosting Machines}
