@@ -543,26 +543,36 @@ crucial for understanding learner development in the Japanese context.
 
 The increasing availability of learner corpora and advancements in natural language processing have driven the
 development of automatic proficiency assessment (APA) systems. These systems aim to classify texts into proficiency
-levels or assign a continuous proficiency score, thereby automating a labor-intensive and subjective process. APA typically leverages various linguistic features, including complexity
-features \citep{Lu2010,Ortega2003,Brezina2019,Jiang2019,} and criterial features
-\citep{Hawkins_Buttery_2010,tono2018,tono2013,defino2022}
-to distinguish between
-different
-proficiency
-levels.
+levels or assign a continuous proficiency score, thereby automating a labor-intensive and subjective process. Unlike
+human rating, which can be costly, time-consuming, and subject to variability, APA offers a scalable and consistent
+means of evaluating language ability.. While these systems may not replace the
+high states testing required for recognition of language ability for study, work, or immigration purposes they can
+still be valuable in providing immediate feedback to a learner, so they can get an idea where they stand.
 
-%%%--- Talk about studies here and features used, and their findings--%%%
-%\citep{defino2022} - predicting L2 proficency using criterial like features and linguistic features in speech
+Most APA systems rely on linguistic features extracted from texts to predict proficiency. Among these, complexity
+features have received considerable attention, with studies demonstrating their predictive power across multiple
+languages and learner populations \citep{Lu2010,Ortega2003,Brezina2019,Jiang2019}. These features include the metrics
+mentioned in detail above such as lexical sophistication measures, syntactic complexity measures and morphological
+diversity measures.
 
-%\citep{tono2013} - criterial like features used including error
+More recently, research has also explored the use of criterial features-specific linguistic constructions to
+complement or enhance proficiency classification
+\citep{Hawkins_Buttery_2010,tono2013,tono2018,defino2022, Kim2021}. These features can offer fine-grained insights into
+learner development, even if they occur relatively infrequently in learner data.
+
 
 %--- Talk about Challenes of APA - add sources!!!
 However, several challenges can impact the robustness of APA such as learner errors impacting feature extraction. Many
 NLP tools such as parsers and POS-taggers are trained on native language learner errors can
 significantly decrease the accuracy of these tools which can also effect the extraction of features
-\citep{Meurers2017}. % add example for Japanese?
+\citep{Meurers_2015,Meurers2017}.
 For morphologically rich languages such as Japanese, NLP systems have an especially difficult time with consistent
-tokenization, and tagging , which also influences inaccuracies. These challenges are particularly relevant to this
+tokenization, and tagging , which also influences inaccuracies. This is especially evident as, systems still struggle to diferentiate
+between stylistic choices in writing where a word can be written in multiple ways (eg. Kanji, Hiragana, ateji).
+\citep{halpern2000challenges,izutsu2021}. These
+challenges are particularly
+relevant to
+this
 project as they can directly influence the design and effectiveness of any criterial feature-based APA system for
 Japanese.
 
