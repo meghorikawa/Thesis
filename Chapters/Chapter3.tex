@@ -1,17 +1,32 @@
 \chapter{Methodology}
 % information on the corpus and writing data
 %define  features that I will use for classification how I decided on this and motivation behind these features.
-\section{Language Modeling}
-Justify Language modeling?
-
 \section{Characteristics of Japanese}
-talk about Japanese text is processed in regards to how it will be treated for my analysis
-   Kanji vs. Hiragana, - since dealing with learner texts, the lower learners have a preference for hiragana so this
-is taken into consideration when matching grammatical forms. - for the most part the tokenizer seems to be able to
-still parse when using only hiragana - but of course spelling errors can through this off. However the system will
-most likely not be robust againast "spelling" errors or errors using mistaken kanji.
+Due to the agglugative nature of Japanese and the lack of spaces, word segmentation can be difficult. With 3
+alphabets used there can orthographic variation is also fairly common. Learners at the lower proficentcy levels
+mostly will write using the phonetic alphabets hiragana and katakana sometimes leading to errors in
+segmentation/tokenization as was observed in \citep{yang1998, nagata2009}. There the system will
+most likely not be robust against "spelling" errors or errors using mistaken kanji.
 
-What is considered a word in Japanese may differ from other languages. In English, a bound morpheme may be treated as an individual word; however, this is not the case in Japanese. For example, the word 話す\textit{hanasu}(to speak) would be considered one word, but the potential form 話せる \textit{hanaseru}(to be able to speak) would be considered two separate words consisting of \textit{hanas} and \textit{eru}.
+What is considered a word in Japanese may differ from other languages european languages. In
+English, a bound morpheme may be treated
+as an individual word; however, this is not the case in Japanese. For example, the word 話す\textit{hanasu}(to speak)
+would be considered one word, but the potential form 話せる \textit{hanaseru}(to be able to speak) would be considered
+two separate words consisting of \textit{hanas} and \textit{eru}. Unfortunately inconsistentcies were observed in an
+initial analysis when using the tokenizer and parser. Following this, compound verb forms such as with 食べ切る(to
+completely eat)
+would be split into two separate morphemes of 食べ(to eat) 切る(to do something completely), however inconsistencies
+were observed as depending ont the base verb the word was parsed as one full word 食べ切る, versus two seperate
+morphemes of 言い(to
+say) and 切る(
+completely). This lead to some difficulty when creating rules to extract certain grammar forms for criterial
+features, as well as can lead to inconsistency in counts for complexity measures.
+
+
+\subsection{Text Preprocessing}
+Mention the preprocessing of the text.
+The text of each writing
+
 
 \section{About the International Corpus of Japanese as a Second Language(I-JAS)}
 information about the IJATS corpus organization, prepossessing,
@@ -111,6 +126,7 @@ task types. The inclusion of a range of task types and formalities was intended 
 the students and possibly mitigate a potential "task effect" similar to what  was described in \cite{Alexpoulou2017}.
 The writing samples were processed-as-is without being corrected for learner errors.
 
+
 \section{Complexity Measures}
 detail the complexity measures I will use, how I developed the scripts to automatically "extract them" and the statistical significance between the proficiency levels
 list, Sent Length, Clauses per sentence, Noun phrase length,  Subordination, coordination, noun phrase length, MTLD,Morphological complexity? , ADD measures?
@@ -141,6 +157,6 @@ grammar, vocabulary, Kanji are available - including Jisho.org, personally compa
 ARUKU
 
 \section{EBMS}
- Here I will give a brief overview of Explainable boosting machines and why I chose them for my analysis.
+ Overview was already done in Background section. Mention more details about training etc.
 
 
