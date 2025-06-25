@@ -2,38 +2,47 @@
 % information on the corpus and writing data
 %define  features that I will use for classification how I decided on this and motivation behind these features.
 \section{Characteristics of Japanese}
-Due to the agglugative nature of Japanese and the lack of spaces, word segmentation can be difficult. With 3
+The agglutinative nature of Japanese coupled with the absence of explicit word delimiters, presents challenges for
+accurate word segmentation. Furthermore, the use of three distinct writing systems
+\footnote{Hiragana, Katakana, and Kanji} leads to considerable orthographic variation. for instance, learners at
+lower proficiency levels frequently rely on the phonetic alphabets (hiragana and katakana), which can exacerbate
+segmentation and tokenization errors. This phenomenon has been observed in previous studies
+\citep{yang1998, nagata2009}, where systems demonstrated a lack of robustness against "spelling" errors or the
+erroneous use of kanji.
+
+Defining a "word" in Japanese also differs considerably from Indo-European languages. While a bound morpheme in
+Enlgish might be treated as a indificual word. this is generally not the case in Japanese. For example,
+segmentation can be difficult.
+With 3
 alphabets used there can orthographic variation is also fairly common. Learners at the lower proficentcy levels
 mostly will write using the phonetic alphabets hiragana and katakana sometimes leading to errors in
-segmentation/tokenization as was observed in \citep{yang1998, nagata2009}. There the system will
-most likely not be robust against "spelling" errors or errors using mistaken kanji.
+segmentation/tokenization as was observed in \citep{yang1998, nagata2009}.
 
-What is considered a word in Japanese may differ from other languages european languages. In
-English, a bound morpheme may be treated
-as an individual word; however, this is not the case in Japanese. For example, the word 話す\textit{hanasu}(to speak)
-would be considered one word, but the potential form 話せる \textit{hanaseru}(to be able to speak) would be considered
-two separate words consisting of \textit{hanas} and \textit{eru}. Unfortunately inconsistentcies were observed in an
-initial analysis when using the tokenizer and parser. Following this, compound verb forms such as with 食べ切る(to
-completely eat)
-would be split into two separate morphemes of 食べ(to eat) 切る(to do something completely), however inconsistencies
-were observed as depending ont the base verb the word was parsed as one full word 食べ切る, versus two seperate
-morphemes of 言い(to
-say) and 切る(
-completely). This lead to some difficulty when creating rules to extract certain grammar forms for criterial
-features, as well as can lead to inconsistency in counts for complexity measures.
-
-
-\subsection{Text Preprocessing}
-Mention the preprocessing of the text.
-The text of each writing
-
+What is considered a word in Japanese may differ from other languages european languages. While a bound morpheme in
+English might be treated
+as an individual word, this is generally not the case in Japanese. For example, the word 話す\textit{hanasu}(to speak)
+is considered a single word. However its potential form, 話せる \textit{hanaseru}(to be able to speak) is often analyzed as
+two distinct morphemes: 話\textit{hana} and せる\textit{seru}. Initial abalyses using the chose tokenizer and parser
+revealed inconsistencies in this regard. Similar inconsistencies were observed with compound verbs, such as
+言い切る(\textit{iikiru}, "to completely say\footnote{\textit{to say without restraint}}"). While this was consistently
+split into 言い(\textit{ii}"to say") and 切る(\textit{kiru} a suffix indicating completion), other instances were
+segmented into
+食べ (\textit{tabe}"to eat") 切る(\textit{kiru}"completely"). These inconsistencies pose significant hurdles for the
+reliable extraction of specific grammatical forms for criterial features and can lead to unreliable counts for
+complexity measures.
+% maybe say something about taking this into consideration when writing rules for criterial features.
 
 \section{About the International Corpus of Japanese as a Second Language(I-JAS)}
-information about the IJATS corpus organization, prepossessing,
+information about the IJATS corpus organization
 
-This study utilizes data from the International Corpus of Japanese as a Second Language (I-JAS), as detailed in \citet{Sakoda2020}.  The I-JAS corpus includes both spoken and written samples of Japanese from a diverse pool of 1,000 adult learners aged between 17 and 63 years, all of whom are learning Japanese as a second language. 50 Native speaker samples are also included in the corpus.
+Data from the International Corpus of Japanese as a Second Language (I-JAS), as detailed in \citet{Sakoda2020}, was
+used.  The
+I-JAS corpus includes both spoken and written samples of Japanese from a diverse pool of 1,000 adult learners aged between 17 and 63 years, all of whom are learning Japanese as a second language. 50 Native speaker samples are also included in the corpus.
 
-To assess each participant's proficiency level, the Japanese Computer Adaptive Test (J-Cat) by \citet{Imai2009} was administered. Further information about this test, including its scoring methodology, is provided in the subsequent section. In addition to language proficiency data, various metadata, such as participants' native language, prior experiences of visiting or living in Japan, and current location (whether outside or within Japan), were also recorded.
+To assess each participant's proficiency level, the Japanese Computer Adaptive Test (J-Cat) by \citet{Imai2009} was
+administered. Further information about this test, including its scoring methodology, is provided in the subsequent
+section. In addition to language proficiency data, various metadata, such as participants' native language,
+prior experiences of visiting or living in Japan, and current location (whether outside or within Japan), were also recorded.
 
 %%%%%%% This part below contains information only on the essay writing samples I previously analyzed. I have also
 %%%%%%% included additional writing samples added to the corpus which has brought the total particiapnt pool to 1000
@@ -65,7 +74,7 @@ N1 & 44 \\
 Native & 50 \\
 \hline
 \end{tabular}
-\caption{\label{participants-chart} breakdown of participants per proficiency level}
+\caption{\label{participants-chart} A breakdown of participants per JLPT proficiency level. The J-cat proficency level has been mapped to JLPT level }
 \end{table}
 
 
@@ -93,7 +102,11 @@ the areas of Vocabulary, Grammar, Listening, and Reading.
 \end{figure}
 
 Each student receives a numerical score that corresponds to one of seven distinct proficiency levels, as detailed in
-Table \ref{tab:proficency-table}. This study will categorize participants according to their J-Cat proficiency level. Participants in the
+Table \ref{tab:proficency-table}. These proficency levels have also been mapped to an equivallent Japanese Language
+Proficency
+Test(JLPT) score.
+This study will categorize
+participants according to their JLPT level. Participants in the
 native speaker control group were given a default J-cat score of 999.
 
 \begin{table}
@@ -104,10 +117,12 @@ N5 & 0 - 149 \\
 N4 & 150 - 199 \\
 N3 & 200 - 249 \\
 N2 & 250 - 299 \\
-N1 Pre-Advanced & 300 + \\
+N1 & 300 - \\
+Native & 999
 \hline
 \end{tabular}
-\caption[Proficency Levels]{Proficency level classification based on J-cat score taken from \cite{jcat_interpretation_guide}.}
+\caption[Proficency Levels]{JLPT proficency level classification based on J-cat score taken from
+\cite{jcat_interpretation_guide}.}
 \label{tab:proficency-table}
 \end{table}
 
@@ -126,6 +141,13 @@ task types. The inclusion of a range of task types and formalities was intended 
 the students and possibly mitigate a potential "task effect" similar to what  was described in \cite{Alexpoulou2017}.
 The writing samples were processed-as-is without being corrected for learner errors.
 
+\subsection{Text Preprocessing}
+Mention the preprocessing of the text. Talk about spacys' ginza pipeline used for parsing-tagging etc.
+The text of each writing
+%% Revise below to explain in more detail the processing of the text... POS, Dependency parsing, Pronunciation,
+%% lemmatization.... punctuation was removed for some of the morphological measures
+Spacy's Ginza package \cite{Ginza} (v 5.2) for Japanese was utilized to process the corpus texts, given the
+absence of existing tools for the analysis of Japanese learner text. The algorithms for calculating various complexity measures were developed by the author of this study\footnote{Code is available at the following github page:  \href{https://github.com/meghorikawa/JFE}{https://github.com/meghorikawa/JFE} }.
 
 \section{Complexity Measures}
 detail the complexity measures I will use, how I developed the scripts to automatically "extract them" and the statistical significance between the proficiency levels
