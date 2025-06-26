@@ -156,12 +156,23 @@ errors.
 \end{figure}
 
 \subsection{Text Preprocessing}
-Mention the preprocessing of the text. Talk about spacys' ginza pipeline used for parsing-tagging etc.
-The text of each writing
-%% Revise below to explain in more detail the processing of the text... POS, Dependency parsing, Pronunciation,
-%% lemmatization.... punctuation was removed for some of the morphological measures
-Spacy's Ginza package \cite{Ginza} (v 5.2) for Japanese was utilized to process the corpus texts, given the
-absence of existing tools for the analysis of Japanese learner text. The algorithms for calculating various complexity measures were developed by the author of this study\footnote{Code is available at the following github page:  \href{https://github.com/meghorikawa/JFE}{https://github.com/meghorikawa/JFE} }.
+%Mention the preprocessing of the text. Talk about spacys' ginza pipeline used for parsing-tagging etc.
+The raw text data from each writing sample underwent a comprehensive preprocessing pipeline. Given the specific
+challenges of Japanese text processing, particularly for learner language where standard NLP tools may not be
+robust, Spacy's Ginza package \cite{Ginza} (v 5.2) a Japanese language model for spaCy for Japanese was employed.
+Ginza was selected for its comprehensive capabilities in handling Japanese text, including tokenization,
+Part-of-Speech(POS) tagging, depedency parsing, lemmatization, morphological analysis, and its integration with
+spaCy's rule based matcher.
+
+For certain morphological lexical and measures, punctuation was removed from the text to prevent its influence on
+token counts and other analyses. All characters in the writing were first converted to full-size characters \footnote{This is to prevent any errors due to unintentional half-size characters that may have been included in the writings when converting between different formating. For this the mojimoji package was used https://pypi.org/project/mojimoji/}, then
+the texts were tokenized, tagged for parts-of-speech,
+Lemmatizatized, dependency parsed.
+
+ The algorithms for calculating various complexity measures and criterial features, discussed in subsequent
+sections, were
+were developed by the author based on the output of this preprocessing pipeline. The source code for these
+algorithms in publicly available at: \href{https://github.com/meghorikawa/JFE}{https://github.com/meghorikawa/JFE} }.
 
 \section{Complexity Measures}
 detail the complexity measures I will use, how I developed the scripts to automatically "extract them" and the statistical significance between the proficiency levels
