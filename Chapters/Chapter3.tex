@@ -1,7 +1,10 @@
 \chapter{Methodology}
 % information on the corpus and writing data
 %define  features that I will use for classification how I decided on this and motivation behind these features.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Characteristics of Japanese}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 The agglutinative nature of Japanese coupled with the absence of explicit word delimiters, presents challenges for
 accurate word segmentation. Furthermore, the use of three distinct writing systems
 \footnote{Hiragana, Katakana, and Kanji} leads to considerable orthographic variation. for instance, learners at
@@ -32,7 +35,10 @@ reliable extraction of specific grammatical forms for criterial features and can
 complexity measures.
 % maybe say something about taking this into consideration when writing rules for criterial features.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{About the International Corpus of Japanese as a Second Language(I-JAS)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 This study utilizes data from the International Corpus of Japanese as a Second Language (I-JAS), as
 detailed in
 \citet{Sakoda2020}, was
@@ -76,9 +82,10 @@ Native Speakers & 50 \\
 \caption{\label{tab:participants-chart} Distribution of participants across JLPT proficiency levels. J-cat scores have been mapped to their equivallent JLPT levels. }
 \end{table}
 
-
-\subsection{J-CAT test}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Japanese Computerized Adaptive Test (J-CAT)}
 \label{j-cat}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %background and information on the J-CAT test compare to JLPT.
 
@@ -122,7 +129,9 @@ Native & 999
 \label{tab:proficency-table}
 \end{table}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Writing Tasks}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % add the additional SW 1 and 2 tasks where participants were expected to write a story based on a picture.
 Each participant submitted up to six samples of writing for specific tasks, detailed below that were designed to
@@ -155,7 +164,10 @@ errors.
     \label{fig:ST}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Text Preprocessing}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %Mention the preprocessing of the text. Talk about spacys' ginza pipeline used for parsing-tagging etc.
 The raw text data from each writing sample underwent a comprehensive preprocessing pipeline. Given the specific
 challenges of Japanese text processing, particularly for learner language where standard NLP tools may not be
@@ -175,21 +187,62 @@ sections, were
 were developed by the author based on the output of this preprocessing pipeline. The source code for these
 algorithms in publicly available at: \href{https://github.com/meghorikawa/JFE}{https://github.com/meghorikawa/JFE} }.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Complexity Measures}
-detail the complexity measures I will use, how I developed the scripts to automatically "extract them" and the statistical significance between the proficiency levels
-list, Sent Length, Clauses per sentence, Noun phrase length,  Subordination, coordination, noun phrase length, MTLD,Morphological complexity? , ADD measures?
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-lexical sophistication measures use this corpus: \cite{BCCWJ_List} and article citation: \cite{maekawa2014}, Think
-about the Tsukuba web corpus also...
-When implementing LFP punctuation is removed from the text. Need to mention how text is tokenized in japanese: in
-the freq list ばいい is written but would be tokenized as ば　and いい ...how to overcome this? Remove verbs? should I use
-tokenizer to split the verbs in the word list??
+Complexity measures were chosen for a multi-dimensional approach to cover multiple linguistic domains including
+Lexical, Syntactic, Morphological. Below I will detail the measures chosen for each domain
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Syntactic Complexity Measures}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Sent Length, Clauses per sentence, Noun phrase length,  Subordination, coordination, noun phrase length, MDD, MHD
+
+Describe any motivation for each - how I extracted them/calculated them from the texts
 
 mention the difficulties in finding clauses - specifically in discriminating between coordinate and subordinate
 automatically.  POS label SCONJ for subordinate conjunction is used even in the case of coordination, therefore
 other methods are needed.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Lexical Complexity Measures}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+CTTR
+
+\begin{center}
+    \centering CTTR = ${\displaystyle \frac{total \hspace{5pt} unique\hspace{5pt} words}{\sqrt{2*total words}} } $
+    \end{center}\\
+\hspace{5pt} \\
+
+MTLD,
+
+Lexical Frequency Profile
+lexical sophistication measures use this corpus: \cite{BCCWJ_List} and article citation: \cite{maekawa2014}
+When implementing LFP punctuation is removed from the text. Need to mention how text is tokenized in japanese: in
+the freq list ばいい is written but would be tokenized as ば　and いい ...how to overcome this? Remove verbs? should I use
+tokenizer to split the verbs in the word list??
+
+
+Describe any motivation for each - how I extracted them/calculated them from the texts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Morphological Complexity}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Describe any motivation for each - how I extracted them/calculated them from the texts
+
+JRMA
+MCI  - Surface vs. inflection
+
+
+ Think
+about the Tsukuba web corpus also...
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Criterial Features}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Describe the rule based feature matcher I made for extracting certain grammar patterns to disconcern their use
 across proficiency levels. Mention how many grammar points at each level I was able to include. Use of the lower
 levels doesn't disconcern much so focus should be on the intermediate and upper levels.  Forms that are mainly form
@@ -204,7 +257,10 @@ Official documents with grammar from the different levels of JLPT do not exist h
 grammar, vocabulary, Kanji are available - including Jisho.org, personally compared againast published material from
 ARUKU
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{EBMS}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
  Overview was already done in Background section. Mention more details about training etc.
 
 
