@@ -1,4 +1,5 @@
-\chapter{An Appendix}
+\chapter{Appendix}
+\appendix
 
 list of measures (I will make this pretty later)
 Syntactic Complexity
@@ -50,10 +51,25 @@ Cohesion/Coherence
 
 
 Criterial Features
-\begin{table}
-\centering
-\begin{tabular}{lll}
-\hline \textbf{JLPT Level} & \textbf{Grammar Form} & textbf{English Equivalent}  \\ \hline
+\begin{longtable}{lll}
+\caption{Grammar Forms extracted as criterial features from the learner texts.}
+\label{tab:table of Criterial Features}\\
+\toprule
+\textbf{JLPT Level} & \textbf{Grammar Form} & \textbf{English Equivalent}  \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{JLPT Level} & \textbf{Grammar Form} & \textbf{English Equivalent}
+\midrule
+\endhead
+
+\midrule \multicolumn{3}{r}{{Continued on next page}}\\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
 
 N1  &	あえて &	        dare to \\
 N1  &	案の定 &	        just as one thought\\
@@ -210,15 +226,5 @@ N5	&   てください   &	please do…\\
 N5	&   ほうがいい   &	it'd be better to, state a preference\\
 N5	&   ほうがいい2  &   	it'd be better to not\\
 
+\end{longtable}
 
-
-
-
-\hline
-\end{tabular}
-\caption[Proficency Levels]{JLPT proficency level classification based on J-cat score ranges, adapted from
-\cite{jcat_interpretation_guide}.}
-\label{tab:proficency-table}
-\end{table}
-
-Also list the features/forms I am including in my analysis
