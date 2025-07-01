@@ -2,10 +2,29 @@
 \appendix
 
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{llll}
-\hline \textbf{JLPT} & \textbf{Writing Task} & \textbf{Avg. Len} & {std} & \text{# of Texts}\\ \hline
+\begin{longtable}{lllll}
+\cation{Statistics on Average Text Length by Task and JLPT Proficiency Level}
+\label{tab:text_len}
+
+\toprule
+\textbf{JLPT} & \textbf{Writing Task} & \textbf{Avg. Len} & {std} & \text{\# of Texts}\\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{JLPT} & \textbf{Writing Task} & \textbf{Avg. Len} & {std} & \text{\# of Texts}\\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{5}{r}{{Continued on next page}}\\
+\midrule
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+
 N5	&   SW1	&   91.61	&   33.32	&   176\\
 N5	&   SW2	&   99.69	&   37.77	&   176\\
 N5	&   e	&   333.83	&   89.82	&   95\\
@@ -43,11 +62,7 @@ NS	&   m1	&   167.60	&   51.12	&   48\\
 NS	&   m2	&   144.27	&   59.16	&   48\\
 NS	&   m3	&   170.25	&   67.43	&   48\\
 
-\hline
-\end{tabular}
-\caption[]{Statistics on Average Text Length by Task and JLPT proficency level}
-\label{tab:text_len}
-\end{table}
+\end{longtable}
 
 \begin{figure}[h!]
     \centering
@@ -57,6 +72,7 @@ NS	&   m3	&   170.25	&   67.43	&   48\\
 \end{figure}
 
 
+\section{Complexity Features}
 list of measures (I will make this pretty later)
 Syntactic Complexity
 \begin{itemize}
@@ -91,7 +107,7 @@ Morphological Complexity
     \item KOMORA (MATTR and MTLD)
 \end{itemize}
 
-Criterial Features
+\section{Criterial Features}
 \begin{longtable}{p{2cm} p{4cm} p{8cm}}
 \caption{Grammar Forms extracted as criterial features from the learner texts.}
 \label{tab:Criterial-Features}\\
