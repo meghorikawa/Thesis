@@ -220,6 +220,7 @@ Due to the large size of the corpus, one of the main criteria for choosing these
 they could be automatically calculated. For this reason, T-unit based measures, which require more complex and often
 manual annotation, were not included.
 
+\subsection{Global Measures}
 Among the global measures, average sentence length and clauses per sentence were included. Sentence length is
 calculated as the average number of tokens in each sentence, while clauses per sentence counts both finite and
 non-finite clauses divided by the number of sentences. These measures indicate how much structural elaboration
@@ -255,12 +256,14 @@ clauses. This method relies on detecting specific surface forms of conjunctions 
 for subordination, or chains of te-forms for coordination. Although this may not capture non-standard constructions,
 it is a practical way to estimate clause types in a large corpus.
 
+\subsection{Local Measures}
 On the local level, measures such as noun phrase length, verb phrase length, mean dependency distance (MDD), and mean
 hierarchical
 distance (MHD) were included. Noun phrase length is the average number of tokens per noun phrse, reflecting phrase
 complexity, or more descriptiveness by adding adjectives to compliment nouns.  Similar to noun phrase length, verb
 phrase length also analyzes the length of verb phrases and any adverbs, complementizers, used.  MDD and MHD,
 indicate linear and hierarchical syntactic complexity and offer a more detailed view of sentence processing demands.
+
 
 Overall, this combination of global and local measures offers a comprehensive evaluation of syntactic complexity in
 learner
@@ -279,17 +282,36 @@ flexible word order.
 %MTLD
 %Lexical Frequency Profile
 
-CTTR
+Lexical complexity in this study is analyzed using both text internal measures and
+text
+external measures. Text internal measures are based solely on the vocabulary used within each text and measure the
+diversity and density of the vocabulary in a text. In contrast, text-external measures assess sophistication by
+comparing the vocabulary in a learner text to an external source such as a
+frequency list or graded vocabulary resources.
 
+\subsection{Text Internal Measures}
+%internal
+CTTR, MTLD, Density measures
+The internal measures selected for this study include the
+Corrected-Type-Token-Ratio(CTTR),Measure of Textual Lexical Diversity (MTLD), and part of speech (POS) density
+measures, including noun density, verb density(including auxiliaries), adjective density and adverb density.
+
+%%%%CTTR Formula
 \begin{center}
     \centering CTTR = ${\displaystyle \frac{total \hspace{5pt} unique\hspace{5pt} words}{\sqrt{2*total words}} } $
     \end{center}
-\vspace{5pt} 
+\vspace{5pt}
+
+\subsection{Text External Measures}
+% External
+LFP - Using JLPT word lists BCCWJ
+
+%add MTLD formula%
 
 Lexical Frequency Profile
 lexical sophistication measures use this corpus: \cite{BCCWJ_List} and article citation: \cite{maekawa2014}
 When implementing LFP punctuation is removed from the text. Need to mention how text is tokenized in japanese: in
-the freq list ばいい is written but would be tokenized as ば　and いい ...how to overcome this? Remove verbs? should I use
+the freq list ばいい is written but would be tokenized as ば　and いい ...to overcome this I used
 tokenizer to split the verbs in the word list??
 
 Also JLPT Word lists for LFP...
