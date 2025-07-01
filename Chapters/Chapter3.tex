@@ -210,30 +210,42 @@ Table \ref{tab:complexity-measures}
 \subsection{Syntactic Complexity Measures}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Syntactic complexity is assessed using a combination of global and local measures, which together provide a fuller
-picture of learners' syntactic development. Global measures reflect on complexity at the sentence or clause level,
+picture of learners' syntactic development. Global measures reflect complexity at the sentence or clause level,
 and illustrate a learner's ability to build extended structures. Local measures focus on phrase-level elaboration
 and the richness of internal units.
 
-Due to the large size of the corpus, one of the main motivations for choosing these measures was the ease with which
-they can be automatically calculated. For this reason, T-unit based measures-which require more complex and often
-manual annotation- were not included.
+Due to the large size of the corpus, one of the main criteria for choosing these measures was the ease with which
+they could be automatically calculated. For this reason, T-unit based measures, which require more complex and often
+manual annotation, were not included.
 
 Among the global measures, average sentence length and clauses per sentence were included. Sentence length is
 calculated as the average number of tokens in each sentence, while clauses per sentence counts both finite and
 non-finite clauses divided by the number of sentences. These measures indicate how much structural elaboration
 learners achieve, as longer sentences/clauses indicate more units used.
 
-Further, subordinate and coordinate clauses per sentence are analyzed to distinguish different types of clausal
-embedding. Subordinate clauses represent hierachical syntactic relationships (i.e. conditionals or complements),
-while coordinate clauses connect clauses additively or sequentially. Together these provide insight into learners'
-use of complex sentence structures. A method employed in \citep{Vyatkina2012} used
-coordinating conjunctions and subordinating conjuctions as a proxy measure for coordination and subordination which
-I will also explore.
+In addition, the frequency of subordinate and coordinate clauses per sentence was used to examine learners' use of
+clausal embedding.
+Subordinate clauses represent hierarchical syntactic relationships (e.g. conditionals or complements),
+while coordinate clauses reflect additive or sequential connections between clauses. These measures provide insight
+into learners'
+use of complex sentence structures. A similar method was employed in \citet{Vyatkina2012}, where the frequency of
+subordinating and
+coordinating conjunctions as a proxy for coordination and subordination
+Following Vyatkina's approach, this study also uses the frequency of surface forms as a proxy for subordination and
+coordination. To
+allow for comparability across text of different lengths, these counts were normalized by total word count using the
+following formula:
+% this is the formula
+\begin{center}
+${\displaystyle \frac{\# \hspace{5pt} of \hspace{5pt}SC \hspace{5pt}or \hspace{5pt}CC}{total \hspace{5pt} \hspace{
+5pt}word \hspace{5pt}count} }  * 100$
+\end{center}
+where SC and CC refer to subordinating and coordinating conjunctions, respectively.
 
 However, automatically identifying subordinate and coordinate clauses in Japanese in challenging. The POS tag for
 subordinating conjunctions (SCONJ) is often applied to particles that may function as coordinators or subordinators
 depending on the context. Also, dependency labels that mark coordination are not always reliably assigned by parsers
-due to ambiguity or structure \citep{UDJapanese}. Because of this, standard automatic annotation may not clearly
+due to ambiguity in structure \citep{UDJapanese}. Because of this, standard automatic annotation may not clearly
 differentiate coordination from subordination in Japanese.
 
 To work around this, a rule-based approach was used to approximate the frequencies of subordinate and coordinate
@@ -248,30 +260,11 @@ complexity, or more descriptiveness by adding adjectives to compliment nouns.  S
 phrase length also analyzes the length of verb phrases and any adverbs, complementizers, used.  MDD and MHD,
 indicate linear and hierarchical syntactic complexity and offer a more detailed view of sentence processing demands.
 
-Overall, this set of global and local measures offers a comprehensive evaluation of syntactic complexity in learner
+Overall, this combination of global and local measures offers a comprehensive evaluation of syntactic complexity in
+learner
 Japanese texts. It also highlights the difficulties in applying automated syntactic analysis to learner data in a
-language like Japanese, which is morphosyntactically rich and often uses elliptical consturctions.
-
-Global and local measures
-
-Sent Length, Clauses per sentence,
-
-
-Local measures: Noun phrase length,  Subordination, coordination, noun
-clause length length, MDD, MHD
-
-Describe any motivation for each - how I extracted them/calculated them from the texts
-
-mention the difficulties in finding clauses - specifically in discriminating between coordinate and subordinate
-automatically.  POS label SCONJ for subordinate conjunction is used even in the case of coordination, therefore
-other methods are needed.
-
-frequency of SC or CC as proxy in measuring subordination and coordination
-% this is the formula
-\begin{center}
-${\displaystyle \frac{\# \hspace{5pt} of \hspace{5pt}SC \hspace{5pt}or \hspace{5pt}CC}{total \hspace{5pt} \hspace{
-5pt}word \hspace{5pt}count} }  * 100$
-\end{center}
+language like Japanese, a language which is morphosyntactically rich and often characterized by  ellipsis and
+flexible word order.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lexical Complexity Measures}
