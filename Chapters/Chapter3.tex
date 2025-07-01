@@ -214,15 +214,51 @@ picture of learners' syntactic development. Global measures reflect on complexit
 and illustrate a learner's ability to build extended structures. Local measures focus on phrase-level elaboration
 and the richness of internal units.
 
+Due to the large size of the corpus, one of the main motivations for choosing these measures was the ease with which
+they can be automatically calculated. For this reason, T-unit based measures-which require more complex and often
+manual annotation- were not included.
+
 Among the global measures, average sentence length and clauses per sentence were included. Sentence length is
-calculated as the average number of
+calculated as the average number of tokens in each sentence, while clauses per sentence counts both finite and
+non-finite clauses divided by the number of sentences. These measures indicate how much structural elaboration
+learners achieve, as longer sentences/clauses indicate more units used.
+
+Further, subordinate and coordinate clauses per sentence are analyzed to distinguish different types of clausal
+embedding. Subordinate clauses represent hierachical syntactic relationships (i.e. conditionals or complements),
+while coordinate clauses connect clauses additively or sequentially. Together these provide insight into learners'
+use of complex sentence structures. A method employed in \citep{Vyatkina2012} used
+coordinating conjunctions and subordinating conjuctions as a proxy measure for coordination and subordination which
+I will also explore.
+
+However, automatically identifying subordinate and coordinate clauses in Japanese in challenging. The POS tag for
+subordinating conjunctions (SCONJ) is often applied to particles that may function as coordinators or subordinators
+depending on the context. Also, dependency labels that mark coordination are not always reliably assigned by parsers
+due to ambiguity or structure \citep{UDJapanese}. Because of this, standard automatic annotation may not clearly
+differentiate coordination from subordination in Japanese.
+
+To work around this, a rule-based approach was used to approximate the frequencies of subordinate and coordinate
+clauses. This method relies on detecting specific surface forms of conjunctions such as 「から」(kara) and 「ので」(node)
+for subordination, or chains of te-forms for coordination. Although this may not capture non-standard constructions,
+it is a practical way to estimate clause types in a large corpus.
+
+On the local level, measures such as noun phrase length, verb phrase length, mean dependency distance (MDD), and mean
+hierarchical
+distance (MHD) were included. Noun phrase length is the average number of tokens per noun phrse, reflecting phrase
+complexity, or more descriptiveness by adding adjectives to compliment nouns.  Similar to noun phrase length, verb
+phrase length also analyzes the length of verb phrases and any adverbs, complementizers, used.  MDD and MHD,
+indicate linear and hierarchical syntactic complexity and offer a more detailed view of sentence processing demands.
+
+Overall, this set of global and local measures offers a comprehensive evaluation of syntactic complexity in learner
+Japanese texts. It also highlights the difficulties in applying automated syntactic analysis to learner data in a
+language like Japanese, which is morphosyntactically rich and often uses elliptical consturctions.
+
 Global and local measures
 
 Sent Length, Clauses per sentence,
 
 
 Local measures: Noun phrase length,  Subordination, coordination, noun
-phrase length, MDD, MHD
+clause length length, MDD, MHD
 
 Describe any motivation for each - how I extracted them/calculated them from the texts
 
