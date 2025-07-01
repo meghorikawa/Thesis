@@ -121,7 +121,7 @@ N4 & 150 - 199 \\
 N3 & 200 - 249 \\
 N2 & 250 - 299 \\
 N1 & 300 - \\
-Native & 999
+Native & 999\\
 \hline
 \end{tabular}
 \caption[Proficency Levels]{JLPT proficency level classification based on J-cat score ranges, adapted from
@@ -154,7 +154,7 @@ elicit a variety of linguistic responses across different discourse types and le
 
 These tasks were standardized across all participants, regardless of their proficiency levels, encompassing a range
 of communicative functions and formalities. Average text length can be see to vary widely across the task as shown
-in figure \ref{fig:text_lengths}.
+in figure \ref{fig:text-lengths}.
 While the possibility of a "task
 effect" as
 observed in
@@ -168,9 +168,9 @@ errors.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.5]{img/text_length_chart}
-    \caption{\textbf{fig:text_lengths} The average text length across task and JLPT level. A detailed chart is
-    included in the appendix Table \ref{tab:text_len}}
-    \label{fig:text_lengths}
+    \caption{\textbf{fig:text-lengths} The average text length across task and JLPT level. A detailed chart is
+    included in the Appendix table \ref{tab:text_len}}
+    \label{fig:text-lengths}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -195,7 +195,7 @@ the reliance on measures that can be automatically calculated.
  The algorithms for calculating various complexity measures and criterial features, discussed in subsequent
 sections, were
 were developed by the author based on the output of this preprocessing pipeline. The source code for these
-algorithms in publicly available at: \href{https://github.com/meghorikawa/JFE}{https://github.com/meghorikawa/JFE} }.
+algorithms in publicly available at: \href{https://github.com/meghorikawa/JFE}{https://github.com/meghorikawa/JFE} .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Complexity Measures}
@@ -232,6 +232,7 @@ other methods are needed.
 
 frequency of SC or CC as proxy in measuring subordination and coordination
 % this is the formula
+\begin{center}
 ${\displaystyle \frac{\# \hspace{5pt} of \hspace{5pt}SC \hspace{5pt}or \hspace{5pt}CC}{total \hspace{5pt} \hspace{
 5pt}word \hspace{5pt}count} }  * 100$
 \end{center}
@@ -243,8 +244,8 @@ CTTR
 
 \begin{center}
     \centering CTTR = ${\displaystyle \frac{total \hspace{5pt} unique\hspace{5pt} words}{\sqrt{2*total words}} } $
-    \end{center}\\
-\hspace{5pt} \\
+    \end{center}
+\vspace{5pt} 
 
 MTLD,
 
@@ -291,8 +292,6 @@ ARUKU
 A comprehensive list of all 154 grammar forms extract from the text is included in table \ref{
 tab:Criterial-Features} in the appendix.
 
-
-}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{EBMS}
