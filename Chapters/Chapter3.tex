@@ -220,7 +220,7 @@ Due to the large size of the corpus, one of the main criteria for choosing these
 they could be automatically calculated. For this reason, T-unit based measures, which require more complex and often
 manual annotation, were not included.
 
-\subsection{Global Measures}
+\subsubsection{Global Measures}
 Among the global measures, average sentence length and clauses per sentence were included. Sentence length is
 calculated as the average number of tokens in each sentence, while clauses per sentence counts both finite and
 non-finite clauses divided by the number of sentences. These measures indicate how much structural elaboration
@@ -256,7 +256,7 @@ clauses. This method relies on detecting specific surface forms of conjunctions 
 for subordination, or chains of te-forms for coordination. Although this may not capture non-standard constructions,
 it is a practical way to estimate clause types in a large corpus.
 
-\subsection{Local Measures}
+\subsubsection{Local Measures}
 On the local level, measures such as noun phrase length, verb phrase length, mean dependency distance (MDD), and mean
 hierarchical
 distance (MHD) were included. Noun phrase length is the average number of tokens per noun phrse, reflecting phrase
@@ -289,9 +289,8 @@ diversity and density of the vocabulary in a text. In contrast, text-external me
 comparing the vocabulary in a learner text to an external source such as a
 frequency list or graded vocabulary resources.
 
-\subsection{Text Internal Measures}
+\subsubsection{Text Internal Measures}
 %internal
-CTTR, MTLD, Density measures
 The internal measures selected for this study include the
 Corrected-Type-Token-Ratio(CTTR),Measure of Textual Lexical Diversity (MTLD), and part of speech (POS) density
 measures, including noun density, verb density(including auxiliaries), adjective density and adverb density.
@@ -304,10 +303,22 @@ using the formula:
     \end{center}
 \vspace{5pt}
 
+MTLD was used as a complementary measure of lexical diversity that is robust against text length. It calculates the
+average length of word strings that maintain a minimum type=token ratio threshold, often ort at .72. A higher MTLD
+score indicates a more diverse vocabulary.
+
+POS density measures were calculated by dividing the number of nouns, verbs adjectives and adverbs by the total
+number of tokens in a given text. These measures provide insight into the functional distribution of lexical items and
+descriptive elaboration.
+
+%%%Formula of
+
 \subsection{Text External Measures}
 % External
-LFP - Using JLPT word lists BCCWJ
-
+%LFP - Using JLPT word lists BCCWJ
+To assess lexical sophistication, the Lexical Frequency Profile was implemented using two frequency based resources:
+\itemize
+\
 %add MTLD formula%
 
 Lexical Frequency Profile
@@ -339,6 +350,7 @@ levels doesn't disconcern much so focus should be on the intermediate and upper 
 based(and therefore easier to pattern match) should be given priority over. Give some examples of rules derrived
 %154 grammar points from JLPT have been annotated make a list for appendix
 
+% add an example of the rules for matching
 mention that I chose forms which spanned multiple levels. I.e. しか at N4 used with Nouns and しか〜ないat N3 used
 with verbs to see if their use at the different levels actually follows this.
 
