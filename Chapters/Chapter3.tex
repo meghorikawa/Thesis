@@ -264,13 +264,6 @@ complexity, or more descriptiveness by adding adjectives to compliment nouns.  S
 phrase length also analyzes the length of verb phrases and any adverbs, complementizers, used.  MDD and MHD,
 indicate linear and hierarchical syntactic complexity and offer a more detailed view of sentence processing demands.
 
-
-Overall, this combination of global and local measures offers a comprehensive evaluation of syntactic complexity in
-learner
-Japanese texts. It also highlights the difficulties in applying automated syntactic analysis to learner data in a
-language like Japanese, a language which is morphosyntactically rich and often characterized by  ellipsis and
-flexible word order.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Lexical Complexity Measures}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -304,8 +297,14 @@ using the formula:
 \vspace{5pt}
 
 MTLD was used as a complementary measure of lexical diversity that is robust against text length. It calculates the
-average length of word strings that maintain a minimum type=token ratio threshold, often ort at .72. A higher MTLD
-score indicates a more diverse vocabulary.
+average length of word strings that maintain a minimum type-token ratio threshold, often at .72 (this threshold was
+also used in this study). A higher
+MTLD
+score indicates a more diverse vocabulary. MTLD was implemented using a modified version of a publicly available
+Python script \citep{MTLD_repo}. The script was adapted to support both surface-level and lemma-based calculation
+modes and was integrated with the GiNZA tokenizer to handle Japanese text. Punctuation was removed before
+calculating the MTLD score. % mention that MTLD works only on text 50 tokens or more so texts smaller than this were
+%not assigned a score.
 
 POS density measures were calculated by dividing the number of nouns, verbs adjectives and adverbs by the total
 number of tokens in a given text. These measures provide insight into the functional distribution of lexical items and
@@ -316,21 +315,27 @@ descriptive elaboration.
 \subsection{Text External Measures}
 % External
 %LFP - Using JLPT word lists BCCWJ
-To assess lexical sophistication, the Lexical Frequency Profile was implemented using two frequency based resources:
-\itemize
-\
+To assess lexical sophistication, the Lexical Frequency Profile (LFP) was implemented using two frequency based
+resources:
+\begin{itemize}
+    \item Balanced Corpus of Contemporary Written Japanese (BCCWJ) frequency list \citep{maekawa2014}, which
+    includes frequency data on words taken from a wide varitey of genres including books, magazine, blogs, internet
+    forums, textbooks etc.
+    \item JLPT word lists, extracted from \citep{jisho.org}. The lists are organized by levels of the JLPT from N5(
+    basic) to N1 (advanced).
+    \end{itemize}
 %add MTLD formula%
 
-Lexical Frequency Profile
-lexical sophistication measures use this corpus: \cite{BCCWJ_List} and article citation: \cite{maekawa2014}
-When implementing LFP punctuation is removed from the text. Need to mention how text is tokenized in japanese: in
-the freq list ばいい is written but would be tokenized as ば　and いい ...to overcome this I used
-tokenizer to split the verbs in the word list??
+In the LFP, each word in a learner text is categorized into a frequency band or JLPT level. The percentage of tokens
+from each band is then calculated to assess the extent to which learners rely on vocabulary from each of the bands.
 
-Also JLPT Word lists for LFP...
+To esure compatibility with these resources, preprocessing was required. The "words" in the list were tokenized for
+easier matching. For example, care must be taken to align compound or conjugated forms, since words like もう一度 (
+mouichido; one more time) would be tokenized as seperate items in spaCY/GiNZA but may appear as a single item in
+the frequency lists. To address this, the
+frequency lists were also tokenized using the same pipeline, enabling consistent mapping between learner texts and
+external word lists.
 
-
-Describe any motivation for each - how I extracted them/calculated them from the texts
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Morphological Complexity}
