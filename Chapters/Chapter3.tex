@@ -296,19 +296,25 @@ using the formula:
     \end{center}
 \vspace{5pt}
 
-MTLD was used as a complementary measure of lexical diversity that is robust against text length. It calculates the
-average length of word strings that maintain a minimum type-token ratio threshold, often at .72 (this threshold was
+MTLD was used as a complementary measure of lexical diversity that is robust against text lengths. It calculates the
+average length of word strings that maintain a minimum type-token ratio threshold, commonly .72 (this threshold was
 also used in this study). A higher
 MTLD
-score indicates a more diverse vocabulary. MTLD was implemented using a modified version of a publicly available
-Python script \citep{MTLD_repo}. The script was adapted to support both surface-level and lemma-based calculation
-modes and was integrated with the GiNZA tokenizer to handle Japanese text. Punctuation was removed before
-calculating the MTLD score. % mention that MTLD works only on text 50 tokens or more so texts smaller than this were
-%not assigned a score.
+score indicates a more lexical diversity.
 
-POS density measures were calculated by dividing the number of nouns, verbs adjectives and adverbs by the total
+MTLD was implemented using a modified version of a
+publicly
+available
+Python script \citep{MTLD_repo}. The script was adapted to support both surface-level and lemma-based calculation
+modes and was integrated with the GiNZA tokenizer to handle Japanese texts. Punctuation was removed based on
+spaCy's POS tags before
+calculating the MTLD score. Because the measure is only sensitive to variation after a minimum number of tokens \citep{McCarthy2010},
+texts with fewer than 50 tokens were excluded from MTLD calculation.
+
+POS density measures were calculated by dividing the number of nouns, verbs(including auxiliaries), adjectives and
+adverbs by the total
 number of tokens in a given text. These measures provide insight into the functional distribution of lexical items and
-descriptive elaboration.
+descriptive elaboration used by learners.
 
 %%%Formula of
 
@@ -318,23 +324,28 @@ descriptive elaboration.
 To assess lexical sophistication, the Lexical Frequency Profile (LFP) was implemented using two frequency based
 resources:
 \begin{itemize}
-    \item Balanced Corpus of Contemporary Written Japanese (BCCWJ) frequency list \citep{maekawa2014}, which
-    includes frequency data on words taken from a wide varitey of genres including books, magazine, blogs, internet
-    forums, textbooks etc.
-    \item JLPT word lists, extracted from \citep{jisho.org}. The lists are organized by levels of the JLPT from N5(
-    basic) to N1 (advanced).
+    \item The Balanced Corpus of Contemporary Written Japanese (BCCWJ) frequency list \citep{maekawa2014}, which
+    provides frequency information for words appearing across a wide range of genres including books, magazine,
+    blogs,
+    internet
+    forums, and textbooks.
+    \item JLPT word lists, sourced from \citep{jisho.org}, classifies vocabulary into five levels from N5(
+    basic) to N1 (advanced) based on the Japanese Language Proficiency Test (JLPT).
     \end{itemize}
-%add MTLD formula%
 
 In the LFP, each word in a learner text is categorized into a frequency band or JLPT level. The percentage of tokens
-from each band is then calculated to assess the extent to which learners rely on vocabulary from each of the bands.
+from each band is then calculated to assess the extent to which learners rely on high-frequency (common) versus
+lower-frequency (uncommon) vocabulary  from
+each of the bands.
 
-To esure compatibility with these resources, preprocessing was required. The "words" in the list were tokenized for
-easier matching. For example, care must be taken to align compound or conjugated forms, since words like もう一度 (
-mouichido; one more time) would be tokenized as seperate items in spaCY/GiNZA but may appear as a single item in
-the frequency lists. To address this, the
-frequency lists were also tokenized using the same pipeline, enabling consistent mapping between learner texts and
-external word lists.
+To esure compatibility betwee the learner texts and the word lists, preprocessing was required. Word from the
+frequency lists were tokenized using the same pipeline (GiNZA) as the learner texts to allow consistent matching.
+ For example, some expressions such as
+「もう一度」 (
+\textit{mouichido}, "one more time") would appear as single entries in the vocabulary list but are tokenized
+into separate
+items(e.g. 「もう」and 「一度」) . By applying the same tokenizer to both the learner data and the frequency resources, this
+mismatch was minimized.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
