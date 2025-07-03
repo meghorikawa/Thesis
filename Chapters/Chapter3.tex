@@ -388,8 +388,14 @@ across all visible forms including conjugated verbs and inflected nouns. Inflect
 calculates the diversity of
 the inflectional lemmas.
 
-Calculation of the MCI is done by diving the text into consecutive segments of a fixed size (usually 5 or 10 tokens), and for each segment, a type token ratio (TTR) is calculated based on the number of unique surface forms in
+Calculation of the MCI is done by diving the text into consecutive segments of a fixed size,\textit{k}, (usually 5
+or 10
+tokens), and for each segment, a type token ratio (TTR) is calculated based on the number of unique surface forms in
 that window. The average of these TTRs across all segments forms the final MCI score.
+
+\begin{equation}
+    \text{MCI} = \frac{1}{N}\\sum_{i=1}^{N} \frac{\text{types}_i} {k}
+\end{equation}
 
 
 
