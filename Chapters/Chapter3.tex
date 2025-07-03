@@ -382,6 +382,17 @@ auxiliaries, non-independent verbs(非自立動詞), or conjunctive particles li
 number of these elements per verb. This can demonstrate how learners layer grammatical functions within verb
 phrases, providing insight into their ability to produce structurally complex constructions.
 
+As a complementary approach, two forms of the MOrphological Complexity Index (MCI) were implemented: surface MCI and
+inflectional MCI. Surface MCI measures the diversity of the word forms at the token level, capturing variation
+across all visible forms including conjugated verbs and inflected nouns. Inflectionql MCI, on the other hand,
+calculates the diversity of
+the inflectional lemmas.
+
+Calculation of the MCI is done by diving the text into consecutive segments of a fixed size (usually 5 or 10 tokens), and for each segment, a type token ratio (TTR) is calculated based on the number of unique surface forms in
+that window. The average of these TTRs across all segments forms the final MCI score.
+
+
+
 
 
 
