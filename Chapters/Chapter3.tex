@@ -353,55 +353,71 @@ mismatch was minimized.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Morphological Complexity}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Morphological Complexity can be measured in two domains variation, which reflects the diversity of morphological
+Morphological Complexity can be measured through two domains variation, which reflects the diversity of morphological
 forms employed and
 elaboration, which captures the internal complexity of those forms. Japanese, as an
 agglutinative
-language, lends itself well to this type of analysis. Verb conjugation, auxiliary chaining, politeness marking
-extensive
-verb inflection, and
-compounding
-offer
-multiple sites
-for morphological variation and elaboration. To evaluate these aspects, two main
+language, with extensive verb inflection, auxiliary chaining, politeness marking, and compounding,
+offers
+numerous opportunities for both morphological variation and elaboration. To quantitatively evaluate these aspects, two
+main
 approaches were employed, the Morphological complexity index as proposed by
-\citet{Brezina2019} and a Japanese adaptation of the Korean Readability Morphological Analyzer (KRMA) by
+\citet{Brezina2019} and a Japanese adaptation of the Korean Readability Morphological Analyzer (JRMA) by
 \citet{Hwang2024}.
 
 The Japanese Readability Morphological Analyzer (JRMA), is based on the KRMA developed for Korean, another
-agglulative language similar to Japanese. JRMA indentifies and counts morphological constructions that reflect
-functional and grammatical elaboration, including verb inflections, honorific and polite forms, and nouns. Morphemes
-are categorized into three categories, Content morphemes (including nouns, verbs, adjectives ), function morphemes (
-auxilaries, ), and all morphemes. For each of these categories the following variation measures are calculated: the
-Measure of Textual Lexical Diversity (MTLD) and the Moving Average Type-Token Ratio (MATTR), using a fixed window
-size of 50. MATTR is calculated by sliding a fized-size window across the text and computing the type-token ratio (
-TTR) in each window (w). The final score is the average of all windowed TTR values.
+agglulative language. The JRMA indentifies and counts morphological constructions that reflect
+functional and grammatical elaboration in Japanese, including verb inflections, honorific and polite forms, and noun
+formations.
+Morphemes
+are categorized into three distinct types for analysis: Content morphemes (e.g. nouns, verbs, adjectives ),
+function
+morphemes (
+auxilaries, and particles), and all morphemes. For each of these categories two variation measures are
+calculated: the
+Measure of Textual Lexical Diversity (MTLD) and the Moving Average Type-Token Ratio (MATTR).
+
+MATTR is calculated by sliding a fixed-size window (this study used a size of 50) across the text and computing the
+type-token ratio (
+TTR) with in each window. The final MATTR score represents the average of all windowed TTR values.
+
 \begin{equation}
     \text{MATTR} = \frac{1}{N} \\sum_{i=1}^{N} \frac{\text{unique types}_i}{w}
 \end{equation}
 
-An additional measure, auxiliary chain density was
-added to evaluate
-morphological elaboration. This measure identifies auxilary-like elements that attach to main verbs- such as
-auxiliaries, non-independent verbs(非自立動詞), or conjunctive particles like 「て」and 「で」 - and computes the average the
-number of these elements per verb. This can demonstrate how learners layer grammatical functions within verb
-phrases, providing insight into their ability to produce structurally complex constructions.
+Here' N is the total number of windows, unique types, refers to the number of unique types in window \textit{i}, and
+\textit{w} is
+the
+fixed window size.
 
-As a complementary approach, two forms of the MOrphological Complexity Index (MCI) were implemented: surface MCI and
+An additional measure, auxiliary chain density was
+developed to evaluate
+morphological elaboration. This measure identifies auxilary-like elements that attach to main verbs, such as
+auxiliary verbs (e.g.ます, ない), non-independent verbs(非自立動詞)(e.g. みる,おく), or conjunctive particles like 「て」and 「で. The
+auxiliary chain density is and
+computed as the
+average the
+number of these elements per main verb. This measure demonstrates how learners layer grammatical functions providing insight into their ability to produce structurally complex constructions.
+
+As used in their original study, two forms of the Morphological Complexity Index (MCI) were implemented:
+surface
+MCI and
 inflectional MCI. Surface MCI measures the diversity of the word forms at the token level, capturing variation
-across all visible forms including conjugated verbs and inflected nouns. Inflectionql MCI, on the other hand,
+across all visible forms including conjugated verbs and inflected nouns. Inflectional MCI, on the other hand,
 calculates the diversity of
 the inflectional lemmas.
 
 Calculation of the MCI is done by diving the text into consecutive segments of a fixed size,\textit{k}, (usually 5
 or 10
 tokens), and for each segment, a type token ratio (TTR) is calculated based on the number of unique surface forms in
-that window. The average of these TTRs across all segments forms the final MCI score.
+that window. The final MCI score is the average of these TTRs across all segments.
 
 \begin{equation}
     \text{MCI} = \frac{1}{N}\sum_{i=1}^{N} \frac{\text{Unique forms}_i}{k}
 \end{equation}
 
+Here, \textit{N} is the total number of segments, Unique Forms is the number of unique forms (surface or
+inflectional) in segment \textit{i}, and \textit{k} is the fixed segment size.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Criterial Features}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
