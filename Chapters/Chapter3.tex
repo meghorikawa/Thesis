@@ -374,8 +374,11 @@ functional and grammatical elaboration, including verb inflections, honorific an
 are categorized into three categories, Content morphemes (including nouns, verbs, adjectives ), function morphemes (
 auxilaries, ), and all morphemes. For each of these categories the following variation measures are calculated: the
 Measure of Textual Lexical Diversity (MTLD) and the Moving Average Type-Token Ratio (MATTR), using a fixed window
-size of 50. These measures estimate the lexical diversity of morphemes are are relatively robust against text
-length, making them suitable for large-scale learner corpora.
+size of 50. MATTR is calculated by sliding a fized-size window across the text and computing the type-token ratio (
+TTR) in each window (w). The final score is the average of all windowed TTR values.
+\begin{equation}
+    \text{MATTR} = \frac{1}{N} \\sum_{i=1}^{N} \frac{\text{unique types}_i}{w}
+\end{equation}
 
 An additional measure, auxiliary chain density was
 added to evaluate
