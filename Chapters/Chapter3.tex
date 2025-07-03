@@ -351,22 +351,39 @@ mismatch was minimized.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Morphological Complexity}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Morphological Complexity can be measured in two domains-variation and elaboration. In Japanese, with agglutinative
-morphology, extensive verb inflection, and compounding offer multiple sites for variation.  In this study, two main
-approaches were used to assess morphological complexity, the Morphological complexity index as proposed by
+Morphological Complexity can be measured in two domains variation, which reflects the diversity of morphological
+forms employed and
+elaboration, which captures the internal complexity of those forms. Japanese, as an
+agglutinative
+language, lends itself well to this type of analysis. Verb conjugation, auxiliary chaining, politeness marking
+extensive
+verb inflection, and
+compounding
+offer
+multiple sites
+for morphological variation and elaboration. To evaluate these aspects, two main
+approaches were employed, the Morphological complexity index as proposed by
 \citet{Brezina2019} and a Japanese adaptation of the Korean Readability Morphological Analyzer (KRMA) by
 \citet{Hwang2024}.
 
-The Japanese Readbility Morphological Analyzer (JRMA), is based on the KRMA developed for Korean, another
-agglulative language similar to Japanese. JRMA indentifies and counts morphological consturctions that reflect
-functional and grammatical elaboration, including verb inflections, honorific and polite forms, and nouns. Texts
-were preprocessed via tokenization, and
+The Japanese Readability Morphological Analyzer (JRMA), is based on the KRMA developed for Korean, another
+agglulative language similar to Japanese. JRMA indentifies and counts morphological constructions that reflect
+functional and grammatical elaboration, including verb inflections, honorific and polite forms, and nouns. Morphemes
+are categorized into three categories, Content morphemes (including nouns, verbs, adjectives ), function morphemes (
+auxilaries, ), and all morphemes. For each of these categories the following variation measures are calculated: the
+Measure of Textual Lexical Diversity (MTLD) and the Moving Average Type-Token Ratio (MATTR), using a fixed window
+size of 50. These measures estimate the lexical diversity of morphemes are are relatively robust against text
+length, making them suitable for large-scale learner corpora.
+
+An additional measure, auxilary chain density was
+added to evaluate
+morphological elaboration. This measure identifies auxilary-like elements that attach to main verbs- such as
+auxiliaries, non-independent verbs(非自立動詞), or conjunctive particles like 「て」and 「で」 - and computes the average the
+number of these elements per verb. This can demonstrate how learners layer grammatical functions within verb
+phrases, providing insight into their ability to produce structurally complex constructions.
 
 
-this includes
-extensive use of verb inflections, agglutinative constructions, auxiliaries, and compounding.
 
-Describe any motivation for each - how I extracted them/calculated them from the texts
 
 JRMA Japanese Readability Morphological Analyzer based on \citet{Hwang2024}  includes both diversity and
 elaboration measures
