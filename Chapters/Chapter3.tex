@@ -521,19 +521,23 @@ ichidan verbs or 'れる' for godan verbs), leveraging the POS tags 'VERB' and '
 \item \textbf{JLPT Level:} N4
 \item \textbf{Example Pattern:}
 \item \begin{lslisting}
-[# 一段　ーられる\\
+[\# 一段　ーられる\\
             {"pos":"VERB"},\\
             {"pos": "AUX", "lemma": "られる"},\\
-        ],[ # 五段　ーれる\\
+        ],[\# 五段　ーれる\\
             {"pos": "VERB"},\\
             {"pos": "AUX","lemma": "れる"},\\
         ]\\
 \end{lslisting}
 \end{enumerate}
 
-Each of the 154 criterial features was translated into one or more such rule patterns. Raw counts of the criterial
-features were first extracted from the text for futher statistical analyses to examine the frequency and
-distribution of the criterial features across proficency groups to identify developmental patters.
+Each of the 154 criterial features was translated into one or more such rule patterns, which were then
+systematically applied across the corpus. The raw counts of these criterial
+features were extracted from the text and subsequently normalized (per 100 tokens) to account for variations in
+essay length. These normalized frequencies were then used for further statistical analyses to
+examine the
+distribution and usage patterns of the criterial features across proficiency groups and to identify developmental
+patterns.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{EBMS}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
