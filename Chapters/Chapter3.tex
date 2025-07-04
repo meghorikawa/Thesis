@@ -432,22 +432,22 @@ unrepresentative due to overlap. These shorter texts were left out of the analys
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 The selection of Criterial Features was guided by unofficial, yet widely recognized, pedagogical resources that map
 grammatical structures to the Japanese Language Proficiency Test (JLPT) levels. While no offical, public documents
-outline specific grammar points for each JLPT level exist, numerous reputable unofficial lists (e.g. Jisho.org,
-various published textbooks which were used to cross-reference the list taken from Jisho.org ) are available and
+outline specific grammar points for each JLPT level exist, numerous reputable unofficial lists (e.g. Jisho.org \citep{jisho.org}, and
+various published textbooks which were used to cross-reference the list) are available and
 commonly used by learners and educators. From these resources, a comprehensive set of 154 grammar forms was
 identified as potentially criterial for Japanese L2 proficiency. A complete list of all 154 grammar forms extracted
-for analysis is provided in the appendix in Table \ref{tab:Criterial-Features}.
+for analysis is provided in the Appendix in Table \ref{tab:Criterial-Features}.
 
-When selecting features, Priority was given to grammatical forms that are primarily form-based and exhibit
+When selecting features, priority was given to grammatical forms that are primarily form-based and exhibit
 relatively consistent surface patterns, making them more amenable to automated identification and reducing
 ambiguity in the matching process. This focus allowed for a robust, rule-based approach to feature extraction. While
 forms across all five levels of the JLPT were included the focus of the annotation was for patterns in the
 intermediate and upper levels (N3, N2, N1). This decision was based on preliminary observation from \citet{akef2025}
-that the presence or absence of very basic forms (N5, N4) often does not sufficiently differentiate between higher
-proficiency levels, whereas the accurate use of advanced structures provides a clearer sign of development. A table of
-the
-breakdown of forms for each level can be seen in
-\ref{tab:CF-Counts}
+that the presence or absence of very basic forms (N5, N4), or very complex forms (N1), often does not sufficiently
+differentiate between higher
+proficiency levels, whereas the accurate use of advanced structures provides a clearer sign of development. The
+distribution of these annotated forms across JLPT levels is detailed in Table
+\ref{tab:CF-Counts}.
 
 %%%%add chart of Criterial Features Breakdown%%%%%%%
 \begin{table}[h!]
@@ -467,51 +467,60 @@ N1 & 17 \\
 
 
 A key aspect of this selection process involved identifying grammar forms that are introduced at one level but continue
-to be used with more complex functions or collocations at higher levels. The particle 「しか」(shika) is typically
+to be used with more complex functions or collocations at higher levels. For instance, The particle 「しか」(shika) is
+typically
 introduced at N4 where it commonly appears with nouns to convey "only" or "nothing but" (e.g., 「学生しかいない。」
-\textit{There are only students}). However, at N3, its useage often expands to combine other negative verb forms,
-indicating a more advanced grammatical pattern. While the above change in useage is clearly reflected in surface
-form this isn't always the case for all the grammar forms.
+\textit{There are only students}). However, at N3, its usage often expands to combine other negative verb forms,
+indicating a more advanced grammatical pattern(e.g., 「日本語しか話しません。」 \textit{I only speak Japanese}). This
+change above in
+useage is
+clearly
+reflected in the
+surface
+form, allowing for distinct rule-based identification.
 
-
-Another example is the phrase「ことがる」(koto ga aru) which
+However, distinguishing between different uses solely based on surface form is not always possible. Consider the
+phrase「ことがる」(koto ga aru),
+which
 first
-appears at the N4 level where it is used for the speaker to state they have done something, or experienced something
-before. The usage expands
-from N3 and
-the upper levels to describe hypothetical,emphatic uses which are highly nuanced, but the surface expression does
-not change in its use as can be seen below.
+appears at the N4 level to state a peast experience (e.g. "have done/experienced something before"). At N3 and upper
+levels, its usage expands to describe hypothetical or emphatic situations, which are highly nuanced, yet the surface
+expression remains unchanged, as illustrated below.
 
 \begin{quote}
-\textbf{Example 1}\\
+\textbf{Example 1 (Past Experience - N4)}\\
 寿司は食べた\textbf{ことがあります}。\\
 \textit{'I have eaten sushi before.'}\\　
-\textbf{Example 2}\\
+\textbf{Example 2 (Hypothetical/Emphatic - N3+)}\\
 誰でも一度泣いた\textbf{ことがある}はずだ\\
 \textit{'Everyone must have cried at least once (in their lives)'}\\
 \end{quote}
+In such cases, where the grammatical function or nuance shifts without a corresponding change in surface morphology
+or clear syntactic markers, a purely rule-based matching system, reliant on the surface annotations, would be unable to
+differentiate between these distinct uses. This limitation was acknowledged during the
+selection of criterial features, prioritizing forms where surface form reliably indicates the target grammar point.
 
-Consequently as the form does not change across uses it is difficult to distinguish between the different uses. 
-
-
-
-In this case using the rule based matching system from spacy would be able to
-differentiate between these grammar points on form alone
 \subsubsection{Rule-Based Feature Matching Function}
 
 To automatically identify and count instances of these 154 criterial features within the preprocessed learner
 corpus, a custom rule-based feature matching function was developed. This function leverages the linguistic
 annotations generated by Spacy's Ginza package (tokenization, POS tagging, lemmatization, and dependency parsing) to
-define patterns for each target grammar form.
+define specific patterns for each target grammar form.
 
 The matching function operates by iterating through each sentence in a given writing sample and applying a set of
 predefined rules. Each rule is essentially a sequence of conditions based on a token's lemma, POS tag, morphological
-features, and dependency relations within the sentence.
+features, and dependency relations within the sentence. These rules are implemented as spaCy Matcher patterns,
+which allow for flexible and powerful pattern matching based on token attributes.
+
+Below is an illustrative example of a spaCy Matcher pattern designed to capture passive verb forms, typically
+introduced around JLPT N4. This pattern looks for a verb followed by a specific auxiliary verb lemma ('られる' for
+ichidan verbs or 'れる' for godan verbs), leveraging the POS tags 'VERB' and 'AUX' assigned by Ginza.
 
 \begin{enumerate}
 \item \textbf{Target Feature:} Passive form
 \item \textbf{JLPT Level:} N4
-\item \textbf{Example Pattern:}\\
+\item \textbf{Example Pattern:}
+\begin{lslisting}
 [# 一段　ーられる\\
             {"pos":"VERB"},\\
             {"pos": "AUX", "lemma": "られる"},\\
@@ -519,6 +528,7 @@ features, and dependency relations within the sentence.
             {"pos": "VERB"},\\
             {"pos": "AUX","lemma": "れる"},\\
         ]\\
+\end{lslisting}
 \end{enumerate}
 
 Each of the 154 criterial features was translated into one or more such rule patterns. Raw counts of the criterial
