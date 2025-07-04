@@ -446,26 +446,58 @@ intermediate and upper levels (N3, N2, N1). This decision was based on prelimina
 that the presence or absence of very basic forms (N5, N4) often does not sufficiently differentiate between higher
 proficiency levels, whereas the accurate use of advanced structures provides a clearer sign of development. A table of
 the
-breakdown of forms for each level can be see in
+breakdown of forms for each level can be seen in
 \ref{tab:CF-Counts}
+
 %%%%add chart of Criterial Features Breakdown%%%%%%%
+\begin{table}[h!]
+\centering
+\begin{tabular}{cc}
+\hline \textbf{JLPT Proficiency Level} & \textbf{\# of Annotated Forms} \\ \hline
+N5 & 9 \\
+N4  & 35 \\
+N3 & 47\\
+N2 & 46 \\
+N1 & 17 \\
+\hline
+\end{tabular}
+\caption{Distribution of annotated grammar forms across JLPT levels. }
+\label{tab:CF-Counts}
+\end{table}
+
 
 A key aspect of this selection process involved identifying grammar forms that are introduced at one level but continue
-to be used with more complex functions or collocations at higher levels.
+to be used with more complex functions or collocations at higher levels. The particle 「しか」(shika) is typically
+introduced at N4 where it commonly appears with nouns to convey "only" or "nothing but" (e.g., 「学生しかいない。」
+\textit{There are only students}). However, at N3, its useage often expands to combine other negative verb forms,
+indicating a more advanced grammatical pattern. While the above change in useage is clearly reflected in surface
+form this isn't always the case for all the grammar forms.
 
 
-Describe the rule based feature matcher I made for extracting certain grammar patterns to disconcern their use
-across proficiency levels. Mention how many grammar points at each level I was able to include. Use of the lower
-levels doesn't disconcern much so focus should be on the intermediate and upper levels.  Forms that are mainly form
-based(and therefore easier to pattern match) should be given priority over. Give some examples of rules derrived
-%154 grammar points from JLPT have been annotated make a list for appendix
+Another example is the phrase「ことがる」(koto ga aru) which
+first
+appears at the N4 level where it is used for the speaker to state they have done something, or experienced something
+before. The usage expands
+from N3 and
+the upper levels to describe hypothetical,emphatic uses which are highly nuanced, but the surface expression does
+not change in its use as can be seen below.
 
-% add an example of the rules for matching
-mention that I chose forms which spanned multiple levels. I.e. しか at N4 used with Nouns and しか〜ないat N3 used
-with verbs to see if their use at the different levels actually follows this.
+\begin{quote}
+\textbf{Example 1}\\
+寿司は食べた\textbf{ことがあります}。\\
+\textit{'I have eaten sushi before.'}\\　
+\textbf{Example 2}\\
+誰でも一度泣いた\textbf{ことがある}はずだ\\
+\textit{'Everyone must have cried at least once (in their lives)'}\\
+\end{quote}
 
-don't forget about implementing normalization.
+Consequently as the form does not change across uses it is difficult to distinguish between the different uses. 
 
+
+
+In this case using the rule based matching system from spacy would be able to
+differentiate between these grammar points on form alone
+\subsubsection{Rule-Based Feature Matching Function}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{EBMS}
