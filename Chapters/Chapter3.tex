@@ -430,6 +430,29 @@ unrepresentative due to overlap. These shorter texts were left out of the analys
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Criterial Features}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+The selection of Criterial Features was guided by unofficial, yet widely recognized, pedagogical resources that map
+grammatical structures to the Japanese Language Proficiency Test (JLPT) levels. While no offical, public documents
+outline specific grammar points for each JLPT level exist, numerous reputable unofficial lists (e.g. Jisho.org,
+various published textbooks which were used to cross-reference the list taken from Jisho.org ) are available and
+commonly used by learners and educators. From these resources, a comprehensive set of 154 grammar forms was
+identified as potentially criterial for Japanese L2 proficiency. A complete list of all 154 grammar forms extracted
+for analysis is provided in the appendix in Table \ref{tab:Criterial-Features}.
+
+When selecting features, Priority was given to grammatical forms that are primarily form-based and exhibit
+relatively consistent surface patterns, making them more amenable to automated identification and reducing
+ambiguity in the matching process. This focus allowed for a robust, rule-based approach to feature extraction. While
+forms across all five levels of the JLPT were included the focus of the annotation was for patterns in the
+intermediate and upper levels (N3, N2, N1). This decision was based on preliminary observation from \citet{akef2025}
+that the presence or absence of very basic forms (N5, N4) often does not sufficiently differentiate between higher
+proficiency levels, whereas the accurate use of advanced structures provides a clearer sign of development. A table of
+the
+breakdown of forms for each level can be see in
+\ref{tab:CF-Counts}
+%%%%add chart of Criterial Features Breakdown%%%%%%%
+
+A key aspect of this selection process involved identifying grammar forms that are introduced at one level but continue
+to be used with more complex functions or collocations at higher levels.
+
 
 Describe the rule based feature matcher I made for extracting certain grammar patterns to disconcern their use
 across proficiency levels. Mention how many grammar points at each level I was able to include. Use of the lower
