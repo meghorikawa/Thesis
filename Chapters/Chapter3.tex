@@ -577,14 +577,17 @@ easy to observe how each variable contributes to the model's predictions across 
 \subsubsection{Data Preparation}
 Prior to training the model several preprocessing steps were performed. First, removal of identifying and non-essential
 features from the data, such as location, age, and participant number. JCAT scores were also removed as they
-directly correlate with the JLPT scores.
+directly correlate with the JLPT scores and could bias the model.
 
-Metadata variables such as L1, location, gender, were initially included for
+Variables such as L1, location, gender, were initially included for
 exploratory
-runs, but were also excluded as they overly dominated the model's output and were subsequently removed to avoid
-masking linguistic features of interest. This is most likely due to the imbalance of L1s in the corpus.
+testing, but were removed in the final model. These metadata variables  tended to dominate the model's
+predictions, likely due to imbalances in the corpus (e.g. a dominant L1 group), and were subsequently removed to avoid
+masking linguistic features of interest.
 
-To focus on L2 developmental patterns, the native speaker group was removed from the data. As it is also one of the
+To focus solely on L2 developmental patterns, the native speaker group (NS) was excluded. As it is also
+one
+of the
 smaller groups in the dataset....
 
 \subsection{Model Training and Evaluation}
@@ -594,14 +597,17 @@ levels across each fold. Random Over-sampling was also applied within each train
 imbalanced class sizes.
 
 Only main effects were modeled (no pairwise interactions), to prioritize interpretability and avoid overfitting
-due to the relatively small quantity of writings for the higher and lower proficiency levels.
+due to the relatively small quantity of writings for the higher (N1) and lower(N5) proficiency levels.
 
-Predictions across folds were aggregated and evaluated using a confusion matrix to visualize misclassifications
-across JLPT levels, and per-level breakdown of accuracy, precision, recall, and F1 scores computed for each JLPT level.
+Model performance was evaluated by aggregating predictions across folds. A confusion
+matrix was used to visualize misclassifications,
+across JLPT levels, and per-level breakdown of accuracy, precision, recall, and F1 scores calculated for each JLPT
+level.
 
 After cross validation, a final EBM was trained on the entire dataset to allow for global interpretation of feature
-effects. The global explanation was then visualized to indentify and interpret the most influential features across
-the JLPT proficiency scale.
+effects. This allowed for visualization of the
+the most influential features and how they varied across
+the JLPT proficiency levels.
 
 
 
