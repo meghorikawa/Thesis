@@ -544,17 +544,21 @@ patterns.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{EBMs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Explainable Boosting Machines (EBMs) \citep{nori2019} are well-suited for langauge development research because of their ability to
+This study employed Explainable Boosting Machines (EBMs) \citep{nori2019} as the primary machine learning model for
+classifying learner proficiency levels. The EBM's ability to model complex, nonlinear relationships in a transparent
+manner is
+particularly advantageous for understanding the nuances of second language
+are well-suited for langauge development
+research because of their ability to
 capture
 nonlinear
 effects in a
-transparent and interpretable manner. Unlike linear models, EBMs do not assume that feature effects remain constant
-across the a continuous scale. This aligns with principles from Dynamic Systems Theory \citep{Debot2007}, which
-proposes that L2 development is nonlinear and sensitive to multiple interacting influences.
-
-% include example: certain features
-%may not increase linearly, but may rise sharply and beginning
-%leves, and then plateau, decrease etc.
+transparent and interpretable manner. In contrast to this, logisitic regression assumes a linear relationship
+between the features and target variable, is not how language development progresses as was
+demonstrated in \citet{Debot2007}, that L2 development is nonlinear and sensitive to multiple interacting influences.
+Decision trees while non-linear, suffer from
+instability and bias towards
+unbalanced classes.
 
 The interpretml package\footnote{https://github.com/interpretml/interpret}, was used for training the EBMs. It
 provides glass-box machine learning models which are interpretable by design. Feature-wise plots can be generated to
