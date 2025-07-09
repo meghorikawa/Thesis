@@ -533,39 +533,58 @@ ichidan verbs or 'れる' for godan verbs), leveraging the POS tags 'VERB' and '
 
 Each of the 154 criterial features was translated into one or more such rule patterns, which were then
 systematically applied across the corpus. The raw counts of these criterial
-features were extracted from the text and subsequently normalized (per 100 tokens) to account for variations in
+features were extracted from the text and subsequently normalized to account for variations in
 essay length. These normalized frequencies were then used for further statistical analyses to
 examine the
 distribution and usage patterns of the criterial features across proficiency groups and to identify developmental
 patterns.
-%%% (Total Frequency / Total tokens)* 100 normalization
+%%% (Total Frequency / Total tokens)
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{EBMS}
+\section{EBMs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-EBM are well-suited for langauge development research because of their ability to capture nonlinear effects in a
-transparent and interpretable way. certain features may not increase linearly, but may rise sharply and beginning
-leves, and then plateau, decrease etc.
+Explainable Boosting Machines (EBMs) \citep{nori2019} are well-suited for langauge development research because of their ability to
+capture
+nonlinear
+effects in a
+transparent and interpretable manner. Unlike linear models, EBMs do not assume that feature effects remain constant
+across the a continuous scale. This aligns with principles from Dynamic Systems Theory \citep{Debot2007}, which
+proposes that L2 development is nonlinear and sensitive to multiple interacting influences.
 
-Dynamic system theory????%refresh my memory on this aritcle.
+% include example: certain features
+%may not increase linearly, but may rise sharply and beginning
+%leves, and then plateau, decrease etc.
 
-Ebm- do not assume constant relationships..
+The interpretml package\footnote{https://github.com/interpretml/interpret}, was used for training the EBMs. It
+provides glass-box machine learning models which are interpretable by design. Feature-wise plots can be generated to
+show how each variable contributes to the models's predictions.
 
-Interpret ml package used - train interpretable glassbox models.
+\subsubsection{Data Preparation}
+Prior to training the model several preprocessing steps were performed. First, removal of identifying and non-essential
+features from the data, such as location, age, and participant number. JCAT scores were also removed as they
+directly correlate with the JLPT scores.
 
-remove identifying information i.e. loc, participant name, etc
+Metadata variables such as L1, location, gender, were initially included for
+exploratory
+runs, but were also excluded as they overly dominated the model's output and were subsequently removed to avoid
+masking linguistic features of interest. This is most likely due to the imbalance of L1s in the corpus.
 
-keep some variables like L1, gender? to check for effect - these variables ended up dominating first results so I am
-running again without them.
+To focus on L2 developmental patterns, the native speaker group was removed from the data. As it is also one of the
+smaller groups in the dataset....
 
-participants language was removed due to
+\subsection{Model Training and Evaluation}
 
-Native group was removed?
+To address class imbalance stratified 5-fold Cross-Validation was used to maintain proportional distribution of JLPT
+levels across each fold. Random Over-sampling was also applied within each training fold to compensate for
+imbalanced class sizes.
 
-balance dataset(keep proportions across folds) via oversampling
+Only main effects were modeled (no pairwise interactions), prioritizing interpretability and avoiding overfitting
+due to the relatively small quantity of writings for the higher and lower proficiency levels.
 
-Stratified 5-fold cross validation
+Predictions across folds were aggregated and evaluated using a confusion matrix to visualize misclassifications
+across JLPT levels, and
 
-over sampling of smaller classes within each fold
+
+
 
