@@ -545,24 +545,34 @@ patterns.
 \section{EBMs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 This study employed Explainable Boosting Machines (EBMs) \citep{nori2019} as the primary machine learning model for
-classifying learner proficiency levels. The EBM's ability to model complex, nonlinear relationships in a transparent
-manner is
-particularly advantageous for understanding the nuances of second language
-are well-suited for langauge development
-research because of their ability to
-capture
-nonlinear
-effects in a
-transparent and interpretable manner. In contrast to this, logisitic regression assumes a linear relationship
-between the features and target variable, is not how language development progresses as was
-demonstrated in \citet{Debot2007}, that L2 development is nonlinear and sensitive to multiple interacting influences.
-Decision trees while non-linear, suffer from
-instability and bias towards
-unbalanced classes.
+classifying learner proficiency levels. EBMs are especially well-suited for this study as they can capture complex
+nonlinear relationships between linguistic features and learner proficiency in a transparent and interpretable way.
 
-The interpretml package\footnote{https://github.com/interpretml/interpret}, was used for training the EBMs. It
-provides glass-box machine learning models which are interpretable by design. Feature-wise plots can be generated to
-show how each variable contributes to the models's predictions.
+Unlike linear models such as logistic regression, EBMs do not assume a constant linear relationship
+between the features and target variable. As features within language development
+sometimes involve sharp increases, plateaus, or even decreases in feature usage, patterns consistent with dynamic
+systems
+theory \citet{
+Debot2007},language
+development is nonlinear and dynamic. Decision trees can model nonlinear patterns, but are often unstable and prone to
+overfitting, especially with imbalanced
+datasets. EBMs strike a balance of being able to flexibiliy model nonlinear patterns while maintaining interpretable
+outputs in the form of feature-wise plots that show how each variable affects the prediction.
+
+However, EBMs do have limitations. One is that overlap between adjacent classes can contribute to misclassification (
+especially
+between N2 and N1 levels) even when using methods to mitigate class imbalance. Another is that EBMs assume each
+feature is contributes independently, which may overlook important interactions between some linguistic features.
+Despite
+these limitations, the primary aim of this study is not to achieve perfect
+classification, but to identify meanigingful and interpretable relationships between linguistic
+features and
+proficiency.
+
+The models were trained using the interpretml package\footnote{https://github.com/interpretml/interpret}, which
+provides glass-box machine learning tools designed for interpretability. The EBM outputs include plots that make it
+easy to observe how each variable contributes to the model's predictions across the JLPT proficiency scale.
+
 
 \subsubsection{Data Preparation}
 Prior to training the model several preprocessing steps were performed. First, removal of identifying and non-essential
