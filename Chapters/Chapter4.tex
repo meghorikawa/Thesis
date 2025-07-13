@@ -327,12 +327,7 @@ verb use expands early, it stabilizes in the upper ranges.
     %*increase across levels except a drop in use for N1 (due to low sample size?)
     %*Statistically significant in distinguishing between lower levels N4&N5, N3&N5 N3&N2
 Adjective density showed a consistent increase across proficiency levels and was statistically significant in
-distinguishing lower and intermediate pairs (N5-N4, N5-N3, N3-N2). However, this measure may be task-dependent and
-should
-be interpreted cautiously.
-%TODO - check against task.
-
-Adverb density also increased across levels, though with a noticeable drop at N1. This may be due to sample size
+distinguishing lower and intermediate pairs (N5-N4, N5-N3, N3-N2). Adverb density also increased across levels, though with a noticeable drop at N1. This may be due to sample size
 limitations or task variation. Statistically significant differences were found between N5-N4, N5-N3, and N3-N2,
 indicating usefulness in assessment of early-stage proficiency.
 
@@ -354,7 +349,7 @@ indicating usefulness in assessment of early-stage proficiency.
     \end{figure}
 
 \subsubsection{Lexical Frequency Profile Measures}
-The Lexical Frequency Profile (LFP) was calculated using two difference reference corpora: the Balanced Corpus of
+The Lexical Frequency Profile (LFP) was calculated using two different reference corpora: the Balanced Corpus of
 Contemporary Written Japanese (BCCWJ) \citep{maekawa2014} and a JLPT-aligned wordlist.
 
 LFP
@@ -362,7 +357,17 @@ LFP
 LFP -BWCCJ Corpus
     * high frequency of items in top 1,000 band across all proficiency levels
     *N1 and Ns group had the largest raw count of vocab used across each band
-    * However,
+    * MANOVA revealed P value of Exact Wilks' Lambda p-value for JLPT 4.4492403847988e-133 meaning statistically
+    significant difference exists between bands, Taking a closer look at the individual bands....
+        *1k Band ->N5&N4, N5&N3, N1&NS, Percentage of vocab from 1k band decreases as proficiency increases.
+        especially at teh higher proficiency level.
+        *2K Bandin contrast to 1k band the 2k band sees increase in percent of vocab used across proficiency levels ,
+same for the following bands as well, even if the actual frequency decreases as explained by zipfs distribution.
+No significant difference between N1 & NS group even though there is across the other bands.
+* because of low frequency in the higher bands statistical significance between levels is From 6k band onward no
+significant statistical difference observed between any of the levels, most likely due to low frequency. because of
+this bands 6 and onwards were removed from plots, etc.
+*Out of Vocabulary -
 
 LFP - JLPT WordList
     *
