@@ -356,41 +356,65 @@ Contemporary Written Japanese (BCCWJ) \citep{maekawa2014} and a JLPT-aligned wor
 analyses aimed to capture how learners distribute their vocabulary use across different frequency/proficiency bands
 as their proficiency develops.
 
+In the BCCWJ-based LFP, words were grouped into 1,000 word frequency bands ranging for the most frequent (1k) to the
+least frequent (10k), with an additional category for out-of-vocabulary (OOV) words. Unsurprisingly for all 5
+proficiency levels the majority of vocabulary came from the 1k band(Figure~\ref{fig:percentBands}). A multivariate analysis of variance (
+MANOVA)
+confirmed that significant differences existed between JLPT levels (p<.001). When individual bands were examined the
+1k Band showed a clear decrease in usage as proficiency increased, especially at higher levels(Figure~
+\ref{fig:1kband}). Significant pairwise differences were observed between N5-N4, N3-N2, and N1-NS, suggesting that
+reliance of high frequency vocabulary diminishes with proficiency.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[scale=.4]{img/LFP/percentBands}
+    \caption[A chart of the distribution of the average percent of tokens used across frequency band]{A chart of the precentage of tokens used across frequency bands}
+    \label{fig:percentBands}
+\end{figure}
+In contrast, vocabulary from the 2k to 5k bands showed an updated trend in usage across proficiency levels. This
+suggest a broadening of lexical range as learners become more advanced, even tough these bands contain fewer tokens
+due to Zipf's law. From the 6k band onward, frequency of use dropped sharply across all bands, and no statistically
+significant differnces were observed between levels. Due to their low useage and minimal disriminatory power, bands
+6k through 10k were excluded from further analusis and visualization.
+
+
+
+
 \begin{figure}[htbp]
     \centering
     \begin{minipage}{.48\textwidth}
         \centering
-    \includegraphics[scale=.4]{img/AdjDen}
-    \caption[Adjective Density Across JLPT Proficiency Levels]{Adjective Density}
-        \label{fig:adjDen}
+    \includegraphics[scale=.4]{img/LFP/1k}
+    \caption[Percentage of tokens used from 1k band]{}
+        \label{fig:1kband}
     \end{minipage}
     \hfill
 \begin{minipage}{.48\textwidth}
         \centering
-        \includegraphics[scale=.4]{img/AdvDen}
-        \caption[Adverb Density Across JLPT Proficiency Levels]{Adverb Density}
-\label{fig:advDen}
+        \includegraphics[scale=.4]{img/LFP/2k}
+        \caption[Percentage of tokens used from 2k band]{}
+\label{fig:2kband}
 \end{minipage}
     \end{figure}
 
-\subsubsubsection{Balanced Corpus of Contemporary Written Japanese (BWCCJ)}
-LFP -BWCCJ Corpus
-    * high frequency of items in top 1,000 band across all proficiency levels
-    *N1 and Ns group had the largest raw count of vocab used across each band
-    * MANOVA revealed P value of Exact Wilks' Lambda p-value for JLPT 4.4492403847988e-133 meaning statistically
-    significant difference exists between bands, Taking a closer look at the individual bands....
-        *1k Band ->N5&N4, N5&N3, N1&NS, Percentage of vocab from 1k band decreases as
-proficiency increases.
-        especially at teh higher proficiency level.
-        *2K Band in contrast to 1k band the 2k band sees increase in percent of vocab used across proficiency levels ,
-same for the following bands as well, even if the actual frequency decreases as explained by zipfs distribution.
-No significant difference between N1 & NS group even though there is across the other bands.
-* because of low frequency in the higher bands statistical significance between levels is From 6k band onward no
-significant statistical difference observed between any of the levels, most likely due to low frequency. because of
-this bands 6 and onwards were removed from plots, etc.
+%LFP -BWCCJ Corpus
+    %* high frequency of items in top 1,000 band across all proficiency levels
+    %*N1 and Ns group had the largest raw count of vocab used across each band
+    %* MANOVA revealed P value of Exact Wilks' Lambda p-value for JLPT 4.4492403847988e-133 meaning statistically
+    %significant difference exists between bands, Taking a closer look at the individual bands....
+        %*1k Band ->N5&N4, N2&N3, N1&NS, Percentage of vocab from 1k band decreases as
+%proficiency increases.
+        %especially at teh higher proficiency level.
+        %*2K Band in contrast to 1k band the 2k band sees increase in percent of vocab used across proficiency levels ,
+%same for the following bands as well, even if the actual frequency decreases as explained by zipfs distribution.
+%No significant difference between N1 & NS group even though there is across the other bands.
+%* because of low frequency in the higher bands statistical significance between levels is From 6k band onward no
+%significant statistical difference observed between any of the levels, most likely due to low frequency. because of
+%this bands 6 and onwards were removed from plots, etc.
 
-*Out of Vocabulary - decreases across proficiency levels, perhaps due to more errors in beginnger texts? statistical
-significant between N1 and NS group as well as the beginner levels, N5&N4 and N4&N3
+%*Out of Vocabulary - decreases across proficiency levels, perhaps due to more errors in beginnger texts? statistical
+%significant between N1 and NS group as well as the beginner levels, N5&N4 and N4&N3
 
 \subsubsubsection{JLPT Vocabulary Lists}
 LFP - JLPT WordList
