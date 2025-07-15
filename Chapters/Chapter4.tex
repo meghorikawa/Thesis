@@ -679,47 +679,81 @@ levels in distinguishing between N5-N4 and N3-N2 levels(Figure~\ref{fig:MTLDcont
     \centering
     \begin{minipage}{.48\textwidth}
         \centering
-    \includegraphics[scale=.4]{img/JRMA-MTLDcontent}
-    \caption[MTLD content]{}
-        \label{fig:MTLDcontent}
+    \includegraphics[scale=.4]{img/JRMA-MATTRfunction}
+    \caption[MATTR function]{}
+        \label{fig:MATTRfunction}
     \end{minipage}
     \hfill
 \begin{minipage}{.48\textwidth}
         \centering
-        \includegraphics[scale=.4]{img/JRMA-MATTRall}
-        \caption[MATTR Function]{}
-\label{fig:MATTRall}
+        \includegraphics[scale=.4]{img/JRMA-MATTRcontent}
+        \caption[MATTR content]{}
+\label{fig:MATTRcontent}
 \end{minipage}
     \end{figure}
 
 
 
-JRMA_all_MATTR
-    *Significant difference between all levels except the N1&NS,and N1&N2
-    * slight increase across levels, variance also decreases
+%JRMA_all_MATTR
+    %*Significant difference between all levels except the N1&NS,and N1&N2
+    %* slight increase across levels, variance also decreases
 
-JRMA_Function_MATTR
-    *Slight decrease across levels.
-    *decrease in variance across levels
-    * significant pairs: (N5,N4), (N4,N3),(N5,N3)
+%JRMA_Function_MATTR
+    %*Slight decrease across levels.
+    %*decrease in variance across levels
+    %* significant pairs: (N5,N4), (N4,N3),(N5,N3)
 
-JRMA_Content_MATTR
-    * decrease in variance across levels
-    * significant pairs: (N2,N3), (N5,N3)
+%JRMA_Content_MATTR
+    %* decrease in variance across levels
+    %* significant pairs: (N2,N3), (N5,N3)
 
-Auxiliary Chains
-    * significant pairs (N5,N4),(N3,N5)
-    * increase from N5 to N4, but after that plateaus. Meaning that after the beginning levels chain size doesn't
-    increase
+For the MATTR-based variants, the combined list of function and content words showed a slight increase in diversity
+and a reduction in variance across proficiency levels. It yielded statistically significant differences between all
+levels except N1-N2 (Figure~\ref{fig:MATTRall}). Function-based MATTR showed a slight decrease in diversity and
+variance, distinguishing N5-N4, and N4-N3 levels (Figure~\ref{fig:MATTRfunction}). Content-based MATTR exhibited a
+similar decline in variance and showed significant contrasts for N5-N3 and N3-N2 (Function~\ref{fig:MATTRcontent}).
+
+\begin{figure}[htpb]
+\centering
+\includegraphics[scale=.5]{img/auxchains}
+\caption[Average Length of auxilary verb chains]{}
+\label{fig:auxchain}
+\end{figure}
+%Auxiliary Chains
+    %* significant pairs (N5,N4),(N3,N5)
+    %* increase from N5 to N4, but after that plateaus. Meaning that after the beginning levels chain size doesn't
+    %increase
+Lastly, auxiliary chain length was explored as a local morphological measure. It revealed a significant increase
+from N5 to N4, but plateaued afterward (Figure~\ref{fig:auxchain}), suggesting that auxiliary chaining develops
+primarily
+at he
+initial stages
+and stabilizes among intermediate and advanced learners.
+
 
 \subsection{Summary}
-Write here summarizing the most demonstrative complexity measures:
-i.e. Syntactic: Sent Length,Coordinate Clauses per sentence,  MDD, MHD
+%Write here summarizing the most demonstrative complexity measures:
+%i.e. Syntactic: Sent Length,Coordinate Clauses per sentence,  MDD, MHD
+%Lexical: CTTR over MTLD? BCCJW corpus or JLPT wordlist? I'm not sure.
+%Morphological: MCI5-surface, MATTR-all (combined function and content word list)
+Several complexity measures stood out as particularly effective in capturing developmental trends across JLPT
+proficiency levels.
+From a syntactic standpoint, sentence length, coordinate clauses per sentences, and both Mean Dependency Distance (
+MDD) and Mean Hierarchical Distance (MHD) consistently reflected increasing structural complexity. These measures
+reliably distinguished between adjacent levels, especially in the intermediate to advanced range.
 
-Lexical: CTTR over MTLD? BCCJW corpus or JLPT wordlist?
+For lexical complexity, CTTR was sensitive to development at lower levels but plateaued later. While MTLD is
+theoretically robust, its utility was limited due to text-length constraints. The BCCWJ-based Lexical Frequency
+Profile proved more informative than the JLPT wordlist, especially in showing shifts in vocabulary distribution
+across the 1k-4k bands.
 
-Morphological: MCI5-surface
+In terms of morphological complexity, the MCI-5 surface form index was the most practical and sensitive measure,
+avoiding the data loss seen with MCI-10 while still capturing developmental patterns. JRMA all-MATTR, combining both
+ufnction and content word diversity, also showed a clear progression across levels and offered a stable profile of
+lexical variation.
 
+Overall, sentence length, coordinate clauses per sentence, MDD/MHD, CTTR, BCCWJ-based LFP, MCI-5 surface, and JRMA
+all-MATTR were the most reliable indicators of linguistic development.
 
 \section{Criterial Features}
 Raw counts of features, 
