@@ -8,18 +8,31 @@ Which features contributed to classification at each level as per the EBM?
     \label{fig:featureimportance}
 \end{figure}
 
+\section{Model Training Results}
+*Discuss f1, accuracy, precision
+*share confusion matrix
+*discuss small sample size for N1 group which likely affected the classification
+*could not achieve better than 50\% accuracy, probably due to the 5 groups and overlap between some proficiency levels.
+
+model had difficulty classifying N3, N2, N1 better distinguishing features needed...
+
 \section{Discussion}
-Are any findings surprising? Why might this be? If not surprising why?
+Summarize previous findings in section 4 of features and development trajectory how it aligns with the previous studies
+
+
+%surprising findings:?
+
 
 
 shortfalls/difficulties
 - mention lerner language and the corpus being uncorrected so this may lead to misinterpretations by the tokenizer to classify things correctly.
     also difficulties in capturing lexical forms - many "mispellings" included on LFP OOV list.
 - issue of some texts being too short for MTLD calculation
-
 - use of only form-based grammar difficulty in correctly extracting meaning based forms
 - also difficulty of not knowing which forms are considered one word expressions versus expressions that will
-actually be broken down into smaller parts by the tokenizer (as noted below with 言い切る etc.)
+actually be broken down into smaller parts by the tokenizer (as noted below with 言い切る etc.) meaning not all forms
+will be extracted
+-small N1 group size effecting model training, and also the statistical relavance of certain features.
 
 In consistency in parsing of 〜切るto show completely finishing an action. 言い切る 売り切る are considered one verb. in the
 case of 食べ(verb)　切る(非自立可能Verb) and 食べ(Verb) 切れる (AUX 非自立可能)　makes it difficult to when dealing with rule based
@@ -38,3 +51,6 @@ learners. Variations due to dialects and casual written variations not included 
 able to extract text with these. Also chose grammar constructs which were largely form based (i.e. easier to extract
 vs. use based) and ones that are likely to be used in written language. (leaving out spoken expressions as they
 wouldn't likely appear much in writing. )
+
+Mention again the shortfall of not analyzing errors or having them as a feature, this could probably lead to better
+classification
