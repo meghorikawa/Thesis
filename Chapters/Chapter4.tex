@@ -780,12 +780,59 @@ across proficiency levels.  As was also observed in \citet{akef2025}, the absolu
 forms was relatively low, likely due to individual stylistic preferences, avoidance strategies, or incomplete
 acquisition.
 
+Table~\ref{tab:CF-form-freq} and Table~\ref{tab:CF-form-freq-ratio} provide further context on the overall
+prevalence and normalized frequencies of grammar forms in the I-JAS Corpus.
+
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ccc}
+\hline \textbf{Form} & \textbf{\# JLPT Level} & \textbf{Raw Count} \\ \hline
+受身形 (ukemi; passive)                & N4 & 2529 \\
+〜たい (tai; desire)                  & N5 & 2156 \\
+〜と思う (to omou; to think)          & N4 & 1981 \\
+〜という (to iu; to quote)            & N3 & 1389 \\
+〜たら (tara; conditional)            & N4 & 1330 \\
+〜ように (youni; so that/in order to) & N4 & 948 \\
+〜てくる (tekuru; aspectual)          & N4 & 926 \\
+〜させる (saseru; causative)          & N4 & 555 \\
+〜てください (tekudasai; request)     & N5 & 533 \\
+〜たびに (tabini; each time)          & N3 & 527 \\
+\hline
+\end{tabular}
+\caption[Raw frequency of Top 10 Forms extracted from the I-JAS Corpus]{The raw count of the top 10 forms extracted
+from the learner texts}
+\label{tab:CF-form-freq}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{ccc}
+\hline \textbf{Form} & \textbf{\# JLPT Level} & \textbf{Ratio} \\ \hline
+〜たい (tai; desire)                      & N5 & 0.00285 \\
+受身形 (ukemi; passive)                  & N4 & 0.00270 \\
+〜と思う (to omou; to think)             & N4 & 0.00201 \\
+〜たら (tara; conditional)               & N4 & 0.00158 \\
+〜てくる (tekuru; aspectual)             & N4 & 0.00126 \\
+〜という (to iu; to quote)               & N3 & 0.00121 \\
+〜ように (youni; so that/in order to)    & N4 & 0.00078 \\
+〜てください (tekudasai; request)        & N5 & 0.00066 \\
+〜させる (saseru; causative)             & N4 & 0.00065 \\
+〜つもり (tsumori; intention)            & N5 & 0.00058 \\
+\hline
+\end{tabular}
+\caption[Top 10 Grammar forms by normalized token ratio extracted from the I-JAS Corpus]{Normalized frequency of top
+10 grammar forms. Normalization was done with the ratio of form to token count to control for text length. }
+\label{tab:CF-form-freq-ratio}
+\end{table}
+
+
 To account for differences in text length, all grammar forms were normalized by token count (i.e., form-to-token
 ratio). Given the large number of zeros values, non-parametric tests were used. Kruskal-Wallis
 tests identified overall group-level effects, followed by Dunn's post hoc comparison for pairwise significance testing.
 
-Five
-grammar forms were selected for closer analysis based on their frequency and theoretical relevance:
+
+Five grammar forms were selected for closer analysis based on their frequency and theoretical relevance:
 
 \begin{itemize}
 \item \textbf{「〜たい」}(N5) - \textit{tai}, used to express desire.
@@ -831,46 +878,6 @@ and advanced groups underscore its value in capturing major developmental differ
 
 
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{ccc}
-\hline \textbf{Form} & \textbf{\# JLPT Level} & \textbf{Raw Count} \\ \hline
-受身形 (ukemi; passive)                & N4 & 2529 \\
-〜たい (tai; desire)                  & N5 & 2156 \\
-〜と思う (to omou; to think)          & N4 & 1981 \\
-〜という (to iu; to quote)            & N3 & 1389 \\
-〜たら (tara; conditional)            & N4 & 1330 \\
-〜ように (youni; so that/in order to) & N4 & 948 \\
-〜てくる (tekuru; aspectual)          & N4 & 926 \\
-〜させる (saseru; causative)          & N4 & 555 \\
-〜てください (tekudasai; request)     & N5 & 533 \\
-〜たびに (tabini; each time)          & N3 & 527 \\
-\hline
-\end{tabular}
-\caption{Raw frequency of Top 10 Forms extracted from the I-JAS Corpus}
-\label{tab:CF-form-freq}
-\end{table}
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{ccc}
-\hline \textbf{Form} & \textbf{\# JLPT Level} & \textbf{Ratio} \\ \hline
-〜たい (tai; desire)                      & N5 & 0.00285 \\
-受身形 (ukemi; passive)                  & N4 & 0.00270 \\
-〜と思う (to omou; to think)             & N4 & 0.00201 \\
-〜たら (tara; conditional)               & N4 & 0.00158 \\
-〜てくる (tekuru; aspectual)             & N4 & 0.00126 \\
-〜という (to iu; to quote)               & N3 & 0.00121 \\
-〜ように (youni; so that/in order to)    & N4 & 0.00078 \\
-〜てください (tekudasai; request)        & N5 & 0.00066 \\
-〜させる (saseru; causative)             & N4 & 0.00065 \\
-〜つもり (tsumori; intention)            & N5 & 0.00058 \\
-\hline
-\end{tabular}
-\caption{Top 10 Grammar forms by normalized token ratio extracted from the I-JAS Corpus}
-\label{tab:CF-form-freq-ratio}
-\end{table}
-
 
 「〜てくる」(tekuru) showed a steady increase in frequency across proficiency levels, and was used most by the native speaker
 group. It was
@@ -879,18 +886,19 @@ Figure~\ref{CFheatmap}. Exceptions included N2-N1 and N2-N2, indicating a possib
 development at the higher intermediate to advanced stages.
 
 
-「〜とおもう」 (to omou) peaked at the N4 level, followed by a decline in the higher proficiency groups. Its use was
-significant across most pairings up to N1, possibly reflecting its transitional role in expressing internal state or
-opinion.
+The useage of 「〜とおもう」 (to omou) peaked at the N4 level, followed by a noticable decline in the higher proficiency
+groups. Its
+use was
+significant across most pairings up to N1 as shown in Figure~\ref{fig:CFheatmap}. This pattern might reflect its
+transitional
+role, perhaps being a common early strategy for expressing
+internal states or
+opinions before learners acquire a wider range of more nuanced expressions.
 
-「〜たら」(tara) plateaued around the intermediate levels (N3), which declining variation at higher levels. It was still
-statistically significant across several adjacent groups, including N5-N3 and N4-N2
-
-Overall, while the frequency of many forms remains low, their development trajectories suggest potential as
-criterial features, particularly the passive form and 「てくる」(tekuru, aspectural constructions). One limitation of
-this analysis is that it is purely based on frequency and does not capture form-based errors. In forms like the
-passive construction, which require complex verb transformation, accuracy could offer additional insight into
-learner acquisition patterns.
+The conditional marker,「〜たら」(tara) appeared to plateau  around the intermediate levels (
+N3). Despite this, it was still statistically significant across several adjacent groups, including N5-N3 and N4-N2,
+as indicated by the significant p-values in Figure~\ref{fig:CFheatmap}. This suggests its utility in discriminating
+between certain non-adjacent or adjacent lower-to-mid proficiency levels.
 
 %Talk about this chart and how Tekudasai only appears at the beginner level N5 and that the causative form appears at
 %N1.
@@ -913,6 +921,24 @@ learner acquisition patterns.
 \caption{Top Grammar Forms by Ratio Across JLPT Levels (Top 6 per level)}
 \label{tab:CF-top6-per-level}
 \end{table}
+
+
+
+\subsection{Summary}
+Overall, while the frequency of many individual forms remains relatively low, their distinct developmental trajectories
+suggest potential as
+criterial features. Particularly the passive form (受身形) and 「〜てくる」(tekuru) emerge as particularly strong candidates
+for tracking proficiency development due to their consistent upward trends and widespread statistical significane
+across multiple proficiency level comparisons.
+
+%should I also mention the limitation of the tasks? certain tasks ellicit certain forms...
+One limitation of
+this analysis is that it is purely based on frequency of use and does not capture form-based errors. For forms like the
+passive construction(受身形), which require complex verb transformation and are introduced in later levels, analyzing
+accuracy and types of errors in their production could provide invaluable additional insight into learner
+acquisition patterns and developmental stages. Future research should aim to incorporate error analysis to provide a
+more comprehensive understanding of the mastery of grammar features. Thsi would enable a more nuanced understanding
+of not just what forms learners use, but how correctly they use them at different stages of development.
 
 
 %TODO
