@@ -795,19 +795,9 @@ grammar forms were selected for closer analysis based on their frequency and the
 \item \textbf{受身形}(N5) - \textit{ukemikei}, the passive form.
 \end{itemize}
 
-Among beginner learners (N5 and N4) 「〜たい」(tai) was the most frequently used form. Its usage gradually decided with
-increasing proficiency and was not statistically significant across levels(p=0.5821). A table showing the top 10
-frequently used grammar forms can be seen in Tables~\ref{tab:CF-form-freq} and \ref{tab:CF-form-freq-ratio}. A
-breakdown of frequencies by JLPT
-level can
-also be
-found in
-Appendix~\ref{}. In contrast, the
-passive form　
-increased sharply with proficiency and was found to be statistically significant across nearly all levels (p<.001),
-with especially strong contrasts between N1 and native speaker group. This could be a strong measure for also
-distinguishing between the advanced proficiency levels and native and non-native speakers. % however nothing with
-%N2-N1 was found statistically significant. N3-N2 as well.
+A general line plot showing the useage ratio of each of the above grammar forms across levels is shown in
+Figure~\ref{fig:CF-plot}. It can be seen that certain proficiency groups use different forms more frequently in
+their writing.
 
 \begin{figure}[h]
 \centering
@@ -815,6 +805,31 @@ distinguishing between the advanced proficiency levels and native and non-native
 \caption[The use of the top 5 frequently used grammar forms across JLPT levels]{}
 \label{fig:CFplot}
 \end{figure}
+
+
+Among beginner learners (N5 and N4), 「〜たい」(tai) was the most frequently used form. Its use gradually declined with
+increasing proficiency and was not statistically significant across groups($p$=0.5821), as confirmed by the lack of
+significant p-values in Figure~\ref{fig:CFheatmap} for any pairwise comparison involving thie form. This suggests that
+while used by beginners, it does not serve as a strong discriminator for developmental stages.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[scale=.4]{img/CFheatmap}
+\caption[Heatmap of top 5 grammar forms]{}
+\label{fig:CFheatmap}
+\end{figure}
+
+In
+contrast, the
+passive form　(受身形) showed a clear upward trend in usage across proficiency levels. It was statistically significant
+across many level comparisons ($p$<.001), including N5-N4, N4-N3, N4-N2, as indicated in Figure~\ref{fig:CFheatmap}.
+This suggest strong potential as a critical feature for tracking development in the lower to intermediate
+proficiency ranges. However, its developmental signal appeard to flatten at higher levels, as it was not significant
+between certain adjacent levels(e.g. N3-N2, N2-N1). Nonetheless, the large effect sizes observed between beginner
+and advanced groups underscore its value in capturing major developmental differences.
+
+
 
 \begin{table}[h!]
 \centering
@@ -832,11 +847,9 @@ distinguishing between the advanced proficiency levels and native and non-native
 〜たびに (tabini; each time)          & N3 & 527 \\
 \hline
 \end{tabular}
-\caption{Raw count frequency of Top 10 Forms in I-JAS Corpus }
+\caption{Raw frequency of Top 10 Forms extracted from the I-JAS Corpus}
 \label{tab:CF-form-freq}
 \end{table}
-
-
 
 \begin{table}[h!]
 \centering
@@ -854,14 +867,17 @@ distinguishing between the advanced proficiency levels and native and non-native
 〜つもり (tsumori; intention)            & N5 & 0.00058 \\
 \hline
 \end{tabular}
-\caption{Raw count frequency of Top 10 Forms in I-JAS Corpus }
+\caption{Top 10 Grammar forms by normalized token ratio extracted from the I-JAS Corpus}
 \label{tab:CF-form-freq-ratio}
 \end{table}
 
 
-「〜てくる」(tekuru) also showed a steady increase in use, with the highest use among native speakers. It was statistically
-significant at all
-proficiency levels.
+「〜てくる」(tekuru) showed a steady increase in frequency across proficiency levels, and was used most by the native speaker
+group. It was
+statistically significant across almost all JLPT levels, as shown by the significant p-values for most pairings in
+Figure~\ref{CFheatmap}. Exceptions included N2-N1 and N2-N2, indicating a possible plateau or more nuanced
+development at the higher intermediate to advanced stages.
+
 
 「〜とおもう」 (to omou) peaked at the N4 level, followed by a decline in the higher proficiency groups. Its use was
 significant across most pairings up to N1, possibly reflecting its transitional role in expressing internal state or
