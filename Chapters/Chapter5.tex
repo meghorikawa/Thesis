@@ -1,32 +1,50 @@
 \chapter{Results and Discussion}
-This chapter present the results of training the Explainable Boosting Machine (EBM) on the extracted linguistic
+This chapter presents the results of training the Explainable Boosting Machine (EBM) on the extracted linguistic
 features from the I-JAS corpus. The section begins with an overview of the model's performance, followed by an
-analysis of feature imporances and concludes with a discussion of the results in light of previous findings and
+analysis of feature importance and concludes with a discussion of the results in light of previous findings and
 methodological considerations.
 
 
 \section{Model Training Results}
-*Discuss f1, accuracy, precision
-*share confusion matrix
-*discuss small sample size for N1 group which likely affected the classification
-*could not achieve better than 50\% accuracy, probably due to the 5 groups and overlap between some proficiency
-levels. Still better performance than the 20\% random guess baseline....
+%*Discuss f1, accuracy, precision
+%*share confusion matrix
+%*discuss small sample size for N1 group which likely affected the classification
+%*could not achieve better than 50\% accuracy, probably due to the 5 groups and overlap between some proficiency
+%levels. Still better performance than the 20\% random guess baseline....
 
-Results:
- Overall Classification Report (All Folds Combined):
-              precision    recall  f1-score   support
+The EBM was trained using the full set of extracted features on a five-class classification task corresponding to
+the five JLPT proficiency levels (N5-N1). The model was evaluated using 5 fold cross validation, with over sampling
+used to balance the minority classes. The combined classifcation report is shown below, in Table~
+\ref{tab:trainingResults}.
 
-          N5       0.46      0.51      0.48       735
-          N4       0.44      0.41      0.43      1431
-          N3       0.39      0.35      0.37      1342
-          N2       0.34      0.39      0.36       816
-          N1       0.14      0.17      0.16       224
 
-    accuracy                           0.39      4548
-   macro avg       0.36      0.37      0.36      4548
-weighted avg       0.40      0.39      0.39      4548
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{lcccc}
+        \hline \textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{f1-score} & \textbf{Support} \\ \hline
+        N5    &   0.46   &   0.51   &   0.48   &    735\\
+          N4    &   0.44   &   0.41   &   0.43   &   1431\\
+          N3    &   0.39   &   0.35   &   0.37  &    1342\\
+          N2  &     0.34   &   0.39  &    0.36   &    816\\
+          N1    &   0.14   &   0.17   &   0.16    &   224\\ \hline
+        accuracy &   -    &      -    &     0.39  &    4548\\
+   macro avg  &     0.36   &   0.37  &    0.36   &   4548\\
+weighted avg  &     0.40  &    0.39    &  0.39   &   4548\\ \hline
+    \end{tabular}
+    \caption[Overall Classification Report (All Folds Combined)]{}
+    \label{tab:trainingResults}
+\end{table}
 
 model had difficulty classifying N3, N2, N1 better distinguishing features needed...
+
+\begin{figure}[h!]
+           \centering
+           \includegraphics[scale=.4]{img/confusionMatrix}
+           \caption[Confusion Matrix]{}
+           \label{fig:conMA}
+\end{figure}
+
+
 \section{Feature Importance Analysis}
 \begin{figure}[h!]
     \centering
