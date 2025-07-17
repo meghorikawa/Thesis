@@ -775,13 +775,26 @@ all-MATTR were the most reliable indicators of linguistic development.
 %tai with kruskal willis found to be nonsignificant, other grammar points were found to be significant (p<.005)
 
 
-To examine the developmental trajectory of specific grammar forms, several JLPT aligned grammar forms were tracked
-across proficiency levels.  As was also observed in \citet{akef2025}, the absolute frequencies of individual grammar
-forms was relatively low, likely due to individual stylistic preferences, avoidance strategies, or incomplete
+This section examines the developmental trajectory of specific Japanese grammar forms across different proficiency
+levels (JLPT N5 to Navtive Speaker), investigating their potential  as "criterial features" for assessing linguistic
+development. As observed in previous research, (e.g \citet{akef2025}), the absolute
+frequencies of individual grammar
+forms are often relatively low, likely due to individual stylistic preferences, avoidance strategies, or incomplete
 acquisition.
 
-Table~\ref{tab:CF-form-freq} and Table~\ref{tab:CF-form-freq-ratio} provide further context on the overall
-prevalence and normalized frequencies of grammar forms in the I-JAS Corpus.
+To account for differences in text length, all grammar forms were normalized by token count (i.e., form-to-token
+ratio). Given the large number of zeros values, non-parametric tests specifically Kruskal-Wallis followed by Dunn's
+post hoc comparison for pairwise significance- were employed. The statistical significance of these pairwise
+comparisons between proficiency levels for selected grammar forms is visualized in Figure~\ref{fig:CFheatmap}, which
+presents a heatmap of Dunn's test p-values.
+
+
+\subsection{Overall Grammar Form Frequencies}
+To provide context on the general prevalence of grammar forms in the I-JAS corpus, Table~\ref{tab:CF-form-freq}
+presents the raw counts of the top 10 most frequent forms extracted from the learner texts. Complementing this,
+Table~\ref{
+tab:CF-form-freq-ratio} provides their normalized frequencies (ratio of form to token count), which controls for
+variations in text length and offers a clearer picture of their proportional use across the entire corpus.
 
 
 \begin{table}[h!]
@@ -826,11 +839,7 @@ from the learner texts}
 \label{tab:CF-form-freq-ratio}
 \end{table}
 
-
-To account for differences in text length, all grammar forms were normalized by token count (i.e., form-to-token
-ratio). Given the large number of zeros values, non-parametric tests were used. Kruskal-Wallis
-tests identified overall group-level effects, followed by Dunn's post hoc comparison for pairwise significance testing.
-
+\subsection{Overall Grammar Form Frequencies}
 
 Five grammar forms were selected for closer analysis based on their frequency and theoretical relevance:
 
@@ -842,9 +851,11 @@ Five grammar forms were selected for closer analysis based on their frequency an
 \item \textbf{受身形}(N5) - \textit{ukemikei}, the passive form.
 \end{itemize}
 
-A general line plot showing the useage ratio of each of the above grammar forms across levels is shown in
-Figure~\ref{fig:CF-plot}. It can be seen that certain proficiency groups use different forms more frequently in
-their writing.
+Figure~\ref{fig:CF-plot} presents a general line plot illustrating the usage ratio of each of these grammar forms
+across the proficiency levels, allowing for an initial qualitative observation of developmental trends. The detailed
+analysis of these forms, including their specific trajectories and statistical significance from the Dunn's post hoc
+tests (Figure~\ref{fig:CFheatmap}), reveals distinct patterns indicative of learner development.
+
 
 \begin{figure}[h]
 \centering
@@ -854,10 +865,25 @@ their writing.
 \end{figure}
 
 
-Among beginner learners (N5 and N4), 「〜たい」(tai) was the most frequently used form. Its use gradually declined with
-increasing proficiency and was not statistically significant across groups($p$=0.5821), as confirmed by the lack of
-significant p-values in Figure~\ref{fig:CFheatmap} for any pairwise comparison involving thie form. This suggests that
-while used by beginners, it does not serve as a strong discriminator for developmental stages.
+Among beginner learners (N5 and N4), 「〜たい」(tai) was frequently used, as seen in Figure~\ref{fig:CFplot}. However, its
+use gradually declined
+with
+increasing proficiency and was not statistically significant across groups($p$=0.5821), which confirmed by the lack of
+significant p-values in Figure~\ref{fig:CFheatmap} for any pairwise comparison involving this form. This suggests that
+while used by beginners, it does not serve as a strong discriminator for developmental stages. This aligns
+with previous
+findings that demonstrated early acquired features plateau at specific stages and do not discriminate well across
+levels \citep{Ortega2003}
+
+One possible
+explanation for this pattern is that 「〜たい」expresses desire in a straightforward, formulaic manner and is taught very
+early in most Japanese language curricula. Its functional simplicity and direct mapping to communicative intent make
+it highly accessible for beginners and pragmatically useful across many task types. Interestingly, the native
+speaker group also demonstrated relatively high usage of 「〜たい」, exceeding that of the advanced learners (N2 and N1)
+. This form's persistence among native speakers may reflect its general conversational, utility especially in tasks
+requiring expressions of personal intent, preferences, or future plans (such as those in the I-JAS). Thus rather than
+signaling proficiency, perhaps the use of this form may reflect genre conventions and discourse functions encouraged
+by the task.
 
 
 \begin{figure}[h!]
@@ -866,22 +892,25 @@ while used by beginners, it does not serve as a strong discriminator for develop
 \caption[Heatmap of top 5 grammar forms]{}
 \label{fig:CFheatmap}
 \end{figure}
-
+%TODO add effect scores (Cliffs Delta for ordinal data)....
 In
 contrast, the
 passive form (受身形) showed a clear upward trend in usage across proficiency levels. It was statistically significant
 across many level comparisons ($p$<.001), including N5-N4, N4-N3, N4-N2, as indicated in Figure~\ref{fig:CFheatmap}.
-This suggest strong potential as a critical feature for tracking development in the lower to intermediate
-proficiency ranges. However, its developmental signal appeard to flatten at higher levels, as it was not significant
+This suggests strong potential as a critical feature for tracking development in the lower to intermediate
+proficiency ranges. However, its developmental signal appeared to flatten at higher levels, as it was not significant
 between certain adjacent levels(e.g. N3-N2, N2-N1). Nonetheless, the effect sizes observed between beginner
 and advanced groups underscore its value in capturing major developmental differences.
 
-「〜てくる」(tekuru) showed a steady increase in frequency across proficiency levels, and was used most by the native speaker
-group. It was
+「〜てくる」(tekuru), as aspectual form, demonstrated a steady increase in frequency across proficiency
+levels, culminating in its most frequent use by the native speaker group. It was
 statistically significant across almost all JLPT levels, as shown by the significant p-values for most pairings in
-Figure~\ref{CFheatmap}. Exceptions included N2-N1 and N2-N2, indicating a possible plateau or more nuanced
-development at the higher intermediate to advanced stages.
-
+Figure~\ref{CFheatmap}. Exceptions included N2-N1 and N2-N3, indicating a possible plateau or more nuanced
+development at the higher intermediate to advanced stages. This sustained increase suggest that while the basic
+temporal or motion-related usage of 「〜てくる」may be acquired earlier, its full functional range- including
+discourse-pragmatic or spectral nuances such as expressing emotional change, backgrounding an action or event, or
+temporal layering could require more advanced proficiency. This could be validated by a close analysis of the
+outputs of the learners. %TODO include an analysis of the extracted forms
 
 The usage of 「〜とおもう」 (to omou) peaked at the N4 level, followed by a noticeable decline in the higher proficiency
 groups. Its
@@ -890,12 +919,16 @@ significant across most pairings up to N1 as shown in Figure~\ref{fig:CFheatmap}
 transitional
 role, perhaps being a common early strategy for expressing
 internal states or
-opinions before learners acquire a wider range of more nuanced expressions.
+opinions before learners acquire a wider range of more nuanced expressions as their proficiency advances. This can 
+be applied to \citet{selinker1972} who emphasized that certain high-frequency forms exist in which learners rely on
+in the earlier stages (referred to as Fossilized forms). Over time as proficiency increases the use of the form may
+decrease as the interlanguage system of the learner expands and diversifies.
 
 The conditional marker,「〜たら」(tara) appeared to plateau  around the intermediate levels (
-N3). Despite this, it was still statistically significant across several adjacent groups, including N5-N3 and N4-N2,
+N3). Despite this, it was still statistically significant across several non-adjacent groups, including N5-N3 and N4-N2,
 as indicated by the significant p-values in Figure~\ref{fig:CFheatmap}. This suggests its utility in discriminating
-between certain non-adjacent or adjacent lower-to-mid proficiency levels.
+between certain non-adjacent or adjacent lower-to-mid proficiency levels, even if its overall trajectory shows a
+more stable presence at intermediate stages rather than continuous growth.
 
 %Talk about this chart and how Tekudasai only appears at the beginner level N5 and that the causative form appears at
 %N1. integrate into the rest of the section so it isn't redundant.....

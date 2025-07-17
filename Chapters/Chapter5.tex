@@ -4,7 +4,7 @@ Which features contributed to classification at each level as per the EBM?
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/feature_importance}
-    \caption{The chart of features contributing to the classificaiton of JLPT proficency levels and their weighted scores. }
+    \caption{The chart of features contributing to the classificaiton of JLPT proficency levels and their weighted scores.}
     \label{fig:featureimportance}
 \end{figure}
 
@@ -12,7 +12,22 @@ Which features contributed to classification at each level as per the EBM?
 *Discuss f1, accuracy, precision
 *share confusion matrix
 *discuss small sample size for N1 group which likely affected the classification
-*could not achieve better than 50\% accuracy, probably due to the 5 groups and overlap between some proficiency levels.
+*could not achieve better than 50\% accuracy, probably due to the 5 groups and overlap between some proficiency
+levels. Still better performance than the 20% random guess baseline....
+
+Results:
+ Overall Classification Report (All Folds Combined):
+              precision    recall  f1-score   support
+
+          N5       0.46      0.51      0.48       735
+          N4       0.44      0.41      0.43      1431
+          N3       0.39      0.35      0.37      1342
+          N2       0.34      0.39      0.36       816
+          N1       0.14      0.17      0.16       224
+
+    accuracy                           0.39      4548
+   macro avg       0.36      0.37      0.36      4548
+weighted avg       0.40      0.39      0.39      4548
 
 model had difficulty classifying N3, N2, N1 better distinguishing features needed...
 
@@ -33,6 +48,7 @@ shortfalls/difficulties
 actually be broken down into smaller parts by the tokenizer (as noted below with 言い切る etc.) meaning not all forms
 will be extracted
 -small N1 group size effecting model training, and also the statistical relavance of certain features.
+-Possible overlap between adjacent levels making it difficult to correctly predict....
 
 In consistency in parsing of 〜切るto show completely finishing an action. 言い切る 売り切る are considered one verb. in the
 case of 食べ(verb)　切る(非自立可能Verb) and 食べ(Verb) 切れる (AUX 非自立可能)　makes it difficult to when dealing with rule based
