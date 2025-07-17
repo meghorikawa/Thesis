@@ -1,19 +1,14 @@
 \chapter{Results and Discussion}
-Which features contributed to classification at each level as per the EBM?
+Introduction
+    here will examine the results of training the EBM on the extracted features from the I-JAS corpus
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[scale=.4]{img/feature_importance}
-    \caption{The chart of features contributing to the classificaiton of JLPT proficency levels and their weighted scores.}
-    \label{fig:featureimportance}
-\end{figure}
 
 \section{Model Training Results}
 *Discuss f1, accuracy, precision
 *share confusion matrix
 *discuss small sample size for N1 group which likely affected the classification
 *could not achieve better than 50\% accuracy, probably due to the 5 groups and overlap between some proficiency
-levels. Still better performance than the 20% random guess baseline....
+levels. Still better performance than the 20\% random guess baseline....
 
 Results:
  Overall Classification Report (All Folds Combined):
@@ -31,6 +26,13 @@ weighted avg       0.40      0.39      0.39      4548
 
 model had difficulty classifying N3, N2, N1 better distinguishing features needed...
 \section{Feature Importance Analysis}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=.4]{img/feature_importance}
+    \caption{The chart of features contributing to the classificaiton of JLPT proficency levels and their weighted scores.}
+    \label{fig:featureimportance}
+\end{figure}
+
 
 \section{Discussion}
 Summarize previous findings in section 4 of features and development trajectory how it aligns with the previous studies
@@ -39,7 +41,7 @@ Summarize previous findings in section 4 of features and development trajectory 
 %surprising findings:?
 
 
-\section{Limitations and Difficulties}
+\subsection{Limitations and Difficulties}
 shortfalls/difficulties
 - mention lerner language and the corpus being uncorrected so this may lead to misinterpretations by the tokenizer to classify things correctly.
     also difficulties in capturing lexical forms - many "mispellings" included on LFP OOV list.
