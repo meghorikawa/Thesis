@@ -123,6 +123,29 @@ characteristics of advanced learners.
 
 
 \subsection{Limitations and Difficulties}
+The corpus, consisting of uncorrected learner language, posed challenges for feature extraction. Misspellings and
+grammatical errors common in learner output could lead to incorrect tokenization and POS tagging by the underlying
+NLP tools (e.g. SpaCy's Ginza package), thus impacting the accuracy of extracted features. For instance, irregular
+forms of "mispellings" might be incorrectly counted as out-of-vocabulary words (in the context of the LFP complexity
+measure), rather than as specific error types. More crucially, the morphological complexity of Japanese,
+particularly with compound verbs and auxiliary constructions (e.g. 「言い切る」 as one verb vs. 「食べ切る」 parsed into two
+parts), meant that rule-based feature extraction struggled with consistency. This could lead to undercounting or
+miscategorizing certain complex forms, which are critical indicators of advanced proficiency.
+
+The variability in text length, with some text being very short, likely affected the reliability of certain
+density-based metrics, such as MTLD (Mean Type-Token Ratio), if it were included. Such metrics are sensitive to text
+length, and calculation over very short texts can yield less stable or representative values, potentially
+introducing noise into the feature set.
+
+While features like coordinate clauses per sentence were highly important, the accuracy of their extraction was
+dependent on the underlying tokenizer's ability to correctly identify conjunctions and clause boundaries. As noted
+previously, many Japanese conjunctions can be used in both coordinating and subordinating contexts, and rule-based
+parsers like SpacCy may not fully account for contextual nuances. This potential inaccuracy in the input features
+could directly limit the model's ability to use these syntactic measures for precise classification. A more robust,
+context-aware parsing system would likely improve the quality of these features.
+
+
+
 shortfalls/difficulties
 - mention lerner language and the corpus being uncorrected so this may lead to misinterpretations by the tokenizer to classify things correctly.
     also difficulties in capturing lexical forms - many "mispellings" included on LFP OOV list.
