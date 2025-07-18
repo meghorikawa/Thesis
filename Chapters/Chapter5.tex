@@ -144,40 +144,31 @@ parsers like SpacCy may not fully account for contextual nuances. This potential
 could directly limit the model's ability to use these syntactic measures for precise classification. A more robust,
 context-aware parsing system would likely improve the quality of these features.
 
+The feature extractor largely focused on form-based grammatical constructs that are relatively easier to identify
+programmatically and are common in standardized written Japanese. This approach may have overlooked more nuanced,
+use-based grammatical patterns that could be highly discriminative of proficiency. Futhermore, the reliance on rules
+for standardized written language means that variations due to dialects or highly casual written forms, if present
+in the learner corpus, would not have been accurately captured, potentially missing valuable information for
+classification.
+
+A significant limitation of the current study was the exclusion of learner errors as a direct feature Different proficiency levels are often
+characterized by distinct error patterns, as was illustrated in \citet{Hawkins_Buttery_2010}. Incorporating systematic error analysis as a
+feature
+set
+could provide
+highly discriminative information, potentially leading to substantial improvements in classification accuracy,
+especially for distinguishing between adjacent intermediate and advanced levels where subtle error reductions or
+shifts in error types might be crucial indicators. % add something about developmental tradjectory of errors as well??
 
 
-shortfalls/difficulties
-- mention lerner language and the corpus being uncorrected so this may lead to misinterpretations by the tokenizer to classify things correctly.
-    also difficulties in capturing lexical forms - many "mispellings" included on LFP OOV list.
-- issue of some texts being too short for MTLD calculation
-- use of only form-based grammar difficulty in correctly extracting meaning based forms
-- also difficulty of not knowing which forms are considered one word expressions versus expressions that will
-actually be broken down into smaller parts by the tokenizer (as noted below with 言い切る etc.) meaning not all forms
-will be extracted
--small N1 group size effecting model training, and also the statistical relavance of certain features.
--Possible overlap between adjacent levels making it difficult to correctly predict....
 
-In consistency in parsing of 〜切るto show completely finishing an action. 言い切る 売り切る are considered one verb. in the
-case of 食べ(verb)　切る(非自立可能Verb) and 食べ(Verb) 切れる (AUX 非自立可能)　makes it difficult to when dealing with rule based
-matching to extract the form..死ぬほど and other constructions with ほどare also similar.
+%ToDO Also add the fact that these JLPT levels are approximated from J-Cat - although they have been validated, JLPT
+%does%not
+%cover writing or speaking (production) so there can be large variance in what someone who passes one of the JLPT
+%tests can actually accomplish with the language.
 
--Issues with clause parsing - the tokenizer by spacy is inaccurate in classyfying some coordinating and
-subordinating conjunctions - many conjunctions in Japanese can be used in both contexts and spacy doesn't take the
-context into consideration when labeling the conjunctions. - tried to mitigate this by using a rule based formula to
-classify coordinating and subordinating clauses but it is difficult to control for each case. thereofore a more
-robust system would possibly lead to better results......I need to say something more about clausal use in Japanese
-for learners.
-
-
-Need to mention the feature extractor follows rules for the standardized language which is widely taught to
-learners. Variations due to dialects and casual written variations not included and therefore this would not be
-able to extract text with these. Also chose grammar constructs which were largely form based (i.e. easier to extract
-vs. use based) and ones that are likely to be used in written language. (leaving out spoken expressions as they
-wouldn't likely appear much in writing. )
-
-Mention again the shortfall of not analyzing errors or having them as a feature, this could probably lead to better
-classification
-
-Also the fact that these JLPT levels are approximated from J-Cat - although they have been validated, JLPT does not
-cover writing or speaking (production) so there can be large variance in what someone who passes one of the JLPT
-tests can actually accomplish with the language.
+While EBM demonstrated capability to classify JLPT levels better than chance, performance highlights the inherent
+complexity of distinguishing between closely related proficiency levels in a continuous developmental specture. The
+identified features were significant, but future improvements would benefit from addressing the methodological
+challenges in feature extraction, particularly for nuanced Japanese linguistic structures, and exploring the
+integration of error-based features.
