@@ -16,7 +16,8 @@ The EBM was trained using the full set of extracted features on a five-class cla
 the five JLPT proficiency levels (N5-N1). Interactions were set to 0 to allow for clear interpretation of the
 feature importances. The model was
 evaluated using 5 fold cross validation,
-with over sampling to balance the minority classes (N1). The results, aggregated across all cross validation folds, are summarized
+with over sampling to balance the minority classes (N1 and N5). The results, aggregated across all cross validation
+folds, are summarized
 in Table~
 \ref{tab:trainingResults}.
 
@@ -34,7 +35,7 @@ in Table~
    macro avg  &     0.35   &   0.36  &    0.35   &   4548\\
 weighted avg  &     0.39  &    0.38    &  0.38   &   4548\\ \hline
     \end{tabular}
-    \caption[Overall Classification Report (All Folds Combined)]{}
+    \caption[Overall Classification Report (All Folds Combined)]{Overall Classification Report (All Folds Combined)}
     \label{tab:trainingResults}
 \end{table}
 
@@ -56,24 +57,27 @@ confusion matrix in Figure~\ref{fig:conMA}.
 \begin{figure}[h!]
            \centering
            \includegraphics[scale=.4]{img/confusionMatrix}
-           \caption[Confusion Matrix for JLPT Level Prediction]{}
+           \caption[Confusion Matrix for JLPT Level Prediction]{Confusion Matrix for JLPT Level Prediction}
            \label{fig:conMA}
 \end{figure}
 
-A common mis-classification was a substantial number of true N3 instances were misclassified as N4(368) or N2 (306).
+A common mis-classification was a substantial number of true N3 instances were misclassified as N4(380) or N2 (299).
 Similarly, N2 texts were frequently predicted as N3(245) or N1 (107), and N1 texts were often misclassified as N2(
 98) or N3(62). This suggests that the model frequently confused text belonging to adjacent proficiency levels,
 indicating a high overlap between the proficiency levels. This was confirmed when
 
-When aggregating the proficiency levels into 3 groups - Beginner (N5+N4), Intermediate (N3+N2), and Advanced (N1)
-Classification of the three groups improved greatly (), supporting the fact that there exists overlap between the
-proficiency levels making it difficult for the model to distinguish between adjacent classes.
+This overlap was further supported when aggregating the proficiency levels into broader 3 groups - Beginner (N5+N4),
+Intermediate (N3+N2), and
+Advanced (N1).
+Classification performance for these three groups improved significantly, achieving an overall F1-score of .54. This
+substantial increase from .38 F1-score for the five-lcass problem further corroborates the hypothesis that the
+continuous nature of adjacent JLPT levels present a significant challenge for fine-grained classification.
 
 \section{Feature Importance Analysis}
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/feature_importance}
-    \caption[Feature Importance Chart]{The chart of features contributing to the classificaiton of JLPT proficency levels and their weighted
+    \caption[Feature Importance Chart]{ Feature Importance Chart: The chart of features contributing to the classificaiton of JLPT proficency levels and their weighted
     scores.}
     \label{fig:featureimportance}
 \end{figure}
@@ -87,7 +91,8 @@ Percent of N2 vocabulary :
 
 Scfreq: This distinguished from the lower proficiency levels, here it is ranked as the 5th strongest feature
 contributing to classification. Which surprised me as this feature uses subordinating conjunctions as a proxy to
-measure subordination.
+measure subordination. This is mostly concerning due to the tendency of the tokenizer to misclassify Cordinating
+conjunctions frequently as Subordinating conjunctions.
 
 Ukemi - passive form was the only criterial feature in top 15.
 
@@ -101,9 +106,9 @@ earlier corpus based findings and previous literature. However the predictive po
 as found in the f1 scores, and some expected distinctions between adjacent levels (e.g. N3 vs N2) were not captured
 effectively.
 
-This suggest that while form-based measures of grammatical complexity and frequency based criterial features can be
+This suggests that while form-based measures of grammatical complexity and frequency based criterial features can be
 useful, they may not be sufficienct in isolation. Some grammatical forms exhibit nuanced usage that depends on
-semantic, pracmatic, or discourse-level factors- dimensions that are not easily captured through surface-form
+semantic, pragmatic, or discourse-level factors which are not easily captured through surface-form
 analysis alone.
 
 The model's diminished performance, particularly for N2 and N1 as evidenced by lower f1-scores and the high number
@@ -114,8 +119,8 @@ discretely based on the current feature set. It is plausible after all, that lea
 levels exhibit similar linguistic characteristics than, for example, a beginner (N5) and an advanced learner (N1).
 This continuous nature of language development makes sharp categorical distinctions difficult for any model.
 
-%ToDO get total number of texts written from N1 level
-The small sample size of N1 group (44 participants, ) significantly impacted its classification accuracy (F1-score
+The small sample size of N1 group (44 participants, 224 texts) significantly impacted its classification accuracy (
+F1-score
 of 0.17 in Table~\ref{tab:trainingResults}). With fewer examples, the model had limited data to learn the specific
 criteria that distinguish N1 texts from other levels, leading to a high rate of misclassification, particularly into
 N2 and N3 categories. This data imbalance likely constrained the model's ability to fully capture the
@@ -153,21 +158,19 @@ for standardized written language means that variations due to dialects or highl
 in the learner corpus, would not have been accurately captured, potentially missing valuable information for
 classification.
 
-A significant limitation of the current study was the exclusion of learner errors as a direct feature Different proficiency levels are often
-characterized by distinct error patterns, as was illustrated in \citet{Hawkins_Buttery_2010}. Incorporating systematic error analysis as a
+A significant limitation of the current study was the exclusion of learner errors as a direct feature. Different
+proficiency levels are often
+characterized by distinct error patterns, as was illustrated in \citet{Hawkins_Buttery_2010}.  The
+developmental tradjectory of errors, where specific error types and frequencies change systematically with
+proficiency, could provide highly discriminative information for the model.
+Incorporating
+systematic error analysis as a
 feature
 set
 could provide
 highly discriminative information, potentially leading to substantial improvements in classification accuracy,
 especially for distinguishing between adjacent intermediate and advanced levels where subtle error reductions or
-shifts in error types might be crucial indicators. % add something about developmental tradjectory of errors as well??
-
-
-
-%ToDO Also add the fact that these JLPT levels are approximated from J-Cat - although they have been validated, JLPT
-%does%not
-%cover writing or speaking (production) so there can be large variance in what someone who passes one of the JLPT
-%tests can actually accomplish with the language.
+shifts in error types might b proficiency levels used as the target classes. While these levels have been validated \citet{jcat_interpretation_guide}, they are primarily based on recognition tasks (reading and listening) and do not directly assess productive skills like writing or speaking. Therefore, the proficiency labels assigned to the learner texts, derived from J-Cat, are approximations of a broader construct of proficiencu. There can be considerable variance in the productive language capabilities of individuals who score similarly on the JLPT, which might introduce inherent 'noise' or ambiguity into the dataset, further complicating the task of classification for the model.
 
 While EBM demonstrated capability to classify JLPT levels better than chance, performance highlights the inherent
 complexity of distinguishing between closely related proficiency levels in a continuous developmental specture. The
