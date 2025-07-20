@@ -181,11 +181,29 @@ however futher investiation is needed to prove this.
 \end{figure}
 
 
+Finally, only one criterial feature, Ukemi(受身形, passive voice), appeared among the top 15 features.  The ratio of
+passive form, which is usually introduced to learners at the N4 level and due to the difficulty in conjugating the
+form it takes time for learners to feel comfortable and use it correctly, with highest use (excluding the
+native group) at the N1 level.  While it is shown in Figure~\ref{fig:EBMukemi} to distinguish between all levels,
+with some overlap between N2 and N3, the low density of this feature means that due to its overall low frequency,
+more improvement to the model can be made by including more instances. As the feature extracter would have only
+detected correct instances of this form, possibly expanding to detect incorrect attempts could also lead to better
+classificaiton.
 
-Ukemi - passive form was the only criterial feature in top 15.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=.4]{img/EBM/EBMukemi}
+    \caption[Contribution of ratio of passive form (受身形、ukemi)]{This chart represents how the feature of Lexical Frequency Profile (LFP)Out of Vocabulary (OOV) tokens contributes to the prediction of each proficiency level}
+    \label{fig:EBMukemi}
+\end{figure}
+
 
 Unsurprisingly Sentence length is also included in this list. This was the only measure that distinguished between
 all proficiency levels and native speaker group.
+
+The EBM feature importance analysis confirms that no single metric defines learner proficiency. Rather, a
+combination of syntactic elaboration, morphological diversity, and lexical distribution provide the strongest
+predictive power.
 
 \section{Discussion}
 
@@ -196,7 +214,7 @@ earlier corpus based findings and previous literature. However the predictive po
 as found in the f1 scores, and some expected distinctions between adjacent levels (e.g. N3 vs N2) were not captured
 effectively.
 
-This suggests that while form-based measures of grammatical complexity and frequency based criterial features can be
+This suggests that while form-based measures of grammatical complexity and frequency-based criterial features can be
 useful, they may not be sufficienct in isolation. Some grammatical forms exhibit nuanced usage that depends on
 semantic, pragmatic, or discourse-level factors which are not easily captured through surface-form
 analysis alone.
