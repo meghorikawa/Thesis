@@ -88,22 +88,45 @@ prominent among the top-ranked features. A diverse variety of complexity
 measures from Syntactic to lexical, and morphological contributed to the classification indicating that indeed, a
 wide variety of features are needed to classify learner texts.
 
-The top two features were coordinate clauses per sentence and coordinate clauses per cluase, both measure of
+The top two features were coordinate clauses per sentence and coordinate clauses per clause, both measures of
 syntactic complexity. These features suggest that the frequency of coordination structures is a strong
-differentiator across proficiency levels, potentially reflection developmental gains in syntactic elaboration. This
+differentiator across proficiency levels, potentially a reflection of developmental gains in syntactic elaboration. This
 also makes sense as this feature as also found in the previous section to discriminate between adjacent levels in
-the low to mid-proficiency ranges while also being used more frequently at the higher proficiency levels as well.
+the low to mid-proficiency ranges while also being used more frequently at the higher proficiency levels. The class
+separation can be seen in Figure~\ref{EBMccPerSent}, where N5 shows a strong positive score when the CC per sentence
+measure is lower than .25, whereas a score above 1 is shown to be associated with N1, and the higher proficiency
+levels. In other words, a lower score indicates lower
+proficiency.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=.04]{img/EBM/EBMccPerSent}
+    \caption[Contribution of Coordinate Clauses per Sentence]{This chart represents how the feature of Coordinate clauses per sentence conributes to the prediction of each proficiency level}
+    \label{fig:EBMccPerSent}
+\end{figure}
+
 
 The third-ranked feature, ratio of words from JLPT N2 list to token ratio (Lexical Frequency Profile), highlights
 lexical sophistication as another important dimension. A higher proportion of N2-level vocabulary appears to
-correlate with higher proficiency levels, aligning with expectations from previous lexical profiling studies
-\citep{Laufer1995}. This feature was also found to distinguish reliably between the higher proficency levels.
+correlate with higher proficiency levels, aligning with expectations from previous lexical profiling studies\citep{Laufer1995}. This feature was also found to distinguish reliably between the higher proficency levels.
 
-Scfreq: This distinguished from the lower proficiency levels, here it is ranked as the 5th strongest feature
-contributing to classification. Which surprised me as this feature uses subordinating conjunctions as a proxy to
-measure subordination. This is mostly concerning due to the tendency of the tokenizer to misclassify Cordinating
-conjunctions frequently as Subordinating conjunctions.
+Subordinate conjunction frequency (SCfreq), a proxy measure for subordination, was ranked fifth. This finding is
+somewhat surprising given the higher discriminative power observed for other lexical complexity measures such as Out
+of vocabulary words for the Lexical Frequency Profile(LFP). It is important to remember that even though this was
+used as a proxy measure to represent subordination, it is better in this context to think of this measure as
+representing both, coordination and subordination combined due to the tokenizers' tendency to label coordinating
+conjunctions
+as subordinating ones. As coordination was observed to increase across proficiency levels this than makes sense that
+measure (which also includes coordination) would also be ranked highly.
 
+Several morphological complexity indicators also appeared among the top features. Both MCI-5 surface and MCI-10
+surface were ranked in the top ten, indicating that surface-level morhpological diversity increases with
+proficiency. Additionaly, MCI-10 Inflection, a variant of the MCI measuring inflectional diversity, was also
+influential. This is a surprising finding as due to the increased text window size leading to shorter texts being
+ excluded. Although this was the only MCI measure that was found to distinguish between the N1 and native speaker
+group.
+
+LFP OOV Percent (percentage of tokens outside the 10k frequency band)
 Ukemi - passive form was the only criterial feature in top 15.
 
 
