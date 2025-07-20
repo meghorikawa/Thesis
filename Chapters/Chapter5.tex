@@ -77,17 +77,27 @@ continuous nature of adjacent JLPT levels present a significant challenge for fi
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/feature_importance}
-    \caption[Feature Importance Chart]{ Feature Importance Chart: The chart of features contributing to the classificaiton of JLPT proficency levels and their weighted
-    scores.}
+    \caption[Feature Importance Chart]{ Feature Importance Chart: Top-ranked features contributing to the classifcation of JLPT proficency levels, based on thier additive contribution scores from the EBM model.}
     \label{fig:featureimportance}
 \end{figure}
 
-Mostly complexity measures were seen as the important features in the top 15 however a diverse variety of complexity
-measures are used from Syntactic Complexity Measures, lexical sophistication, morphological
 
-Coordinate Clauses per sentence and Coordinate Clauses per clause : were the two top contributing features
+The feature importance results from the final EBM model are shown in Figure~\ref{fig:featureimportance}. Overall, a
+diverse range of linguistic features contributed to classification accuracy, though complexity measures were most
+prominent among the top-ranked features. A diverse variety of complexity
+measures from Syntactic to lexical, and morphological contributed to the classification indicating that indeed, a
+wide variety of features are needed to classify learner texts.
 
-Percent of N2 vocabulary :
+The top two features were coordinate clauses per sentence and coordinate clauses per cluase, both measure of
+syntactic complexity. These features suggest that the frequency of coordination structures is a strong
+differentiator across proficiency levels, potentially reflection developmental gains in syntactic elaboration. This
+also makes sense as this feature as also found in the previous section to discriminate between adjacent levels in
+the low to mid-proficiency ranges while also being used more frequently at the higher proficiency levels as well.
+
+The third-ranked feature, ratio of words from JLPT N2 list to token ratio (Lexical Frequency Profile), highlights
+lexical sophistication as another important dimension. A higher proportion of N2-level vocabulary appears to
+correlate with higher proficiency levels, aligning with expectations from previous lexical profiling studies
+\citep{Laufer1995}. This feature was also found to distinguish reliably between the higher proficency levels.
 
 Scfreq: This distinguished from the lower proficiency levels, here it is ranked as the 5th strongest feature
 contributing to classification. Which surprised me as this feature uses subordinating conjunctions as a proxy to
