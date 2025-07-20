@@ -82,23 +82,23 @@ continuous nature of adjacent JLPT levels present a significant challenge for fi
 \end{figure}
 
 
-The to 15 feature importance results from the final EBM model are shown in Figure~\ref{fig:featureimportance}. A
+The feature importance results from the final EBM model are shown in Figure~\ref{fig:featureimportance}. A
 more detailed chart showing the top 30 features with weights can be found in Appendix Table~\ref{tab:top30-importance}
 Overall, a
 diverse range of linguistic features contributed to classification accuracy, though complexity measures were most
-prominent among the top-ranked features. A diverse variety of complexity
-measures from Syntactic to lexical, and morphological contributed to the classification indicating that indeed, a
-wide variety of features are needed to classify learner texts.
+prominent among the top-ranked features. A wide variety of complexity
+measures consisting of syntactic, lexical and morphological contributed to classification, indicating that a
+multidimentional approach is essential for classifying learner texts.
 
 The top two features were coordinate clauses per sentence and coordinate clauses per clause, both measures of
 syntactic complexity. These features suggest that the frequency of coordination structures is a strong
 differentiator across proficiency levels, potentially a reflection of developmental gains in syntactic elaboration. This
-also makes sense as this feature as also found in the previous section to discriminate between adjacent levels in
-the low to mid-proficiency ranges while also being used more frequently at the higher proficiency levels. The class
-separation can be seen in Figure~\ref{EBMccPerSent}, where N5 shows a strong positive score when the CC per sentence
-measure is lower than .25, whereas a measure above 1 is shown to be associated with N1, and the higher proficiency
-levels. In other words, a lower score indicates lower
-proficiency.
+aligns with findings in the previous section, where this feature was also found to discriminate between adjacent
+levels in
+the low to mid-proficiency ranges while also increasing at higher levels. The class
+separation can be seen in Figure~\ref{EBMccPerSent}, where N5 is associated with lower values (below 0.25),
+while above 1 are associated with N1 and N2.
+
 
 \begin{figure}[h!]
     \centering
@@ -108,72 +108,71 @@ proficiency.
 \end{figure}
 
 
-The third-ranked feature, ratio of words from JLPT N2 list to token ratio (Lexical Frequency Profile), highlights
-lexical sophistication as another important dimension. A higher proportion of N2-level vocabulary appears to
-correlate with higher proficiency levels, aligning with expectations from previous lexical profiling studies
-\citep{Laufer1995}. This feature was also found to distinguish reliably between the higher proficency levels. As can
-be seen in Figure~\ref{fig:EBMjlptN2}, there is spread between the N1 and N2 lines while the other proficiency
-levels overlap. Meaning this measure distinguished
-the N1 and N2 levels from the begining levels.
+The third-ranked feature, the ratio of words from JLPT N2 list to total tokens (Lexical Frequency Profile), highlights
+lexical sophistication. A higher proportion of N2-level vocabulary
+correlates with higher proficiency levels, consistent with previous lexical profiling studies\citep{Laufer1995}.
+As shown in Figure~\ref{fig:EBMjlptN2}, this feature reliably distinguished between the N1 and N2 from the lower
+levels.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/EBM/JLPTn2P}
-    \caption[Contribution of percentage of tokens from JLPT N2 vocabulary list]{This chart represents how the feature of percent of tokens from JLPT N2 word list contributes to the prediction of each proficiency level}
+    \caption[Contribution of percentage of tokens from JLPT N2 vocabulary list]{This chart shows how the percentage of tokens from JLPT N2 word list contributes to the prediction of each proficiency level}
     \label{fig:EBMjlptN2}
 \end{figure}
 
-Subordinate conjunction frequency (SCfreq), a proxy measure for subordination, was ranked fifth. This finding is
-somewhat surprising given the higher discriminative power observed for other lexical complexity measures such as Out
-of vocabulary words for the Lexical Frequency Profile(LFP). It is important to remember that even though this was
-used as a proxy measure to represent subordination, it is better in this context to think of this measure as
-representing both, coordination and subordination combined due to the tokenizers' tendency to label coordinating
-conjunctions
-as subordinating ones. As coordination was observed to increase across proficiency levels this than makes sense that
-measure (which also includes coordination) would also be ranked highly. Figure~\ref{fig:EBMSCfreq} shows that this
-feature helps distinguish N5 from the other proficiency levels and with a wide density range this means data is
-well represented in the corpus..
+Mean Hierarchical Distance (MHD), the fourth ranked feature, quantifies the average depth of syntactic embedding.
+It's presence in this list suggests that deeper syntactic constructions are a reliable signal to distinguish the
+higher proficiency levels.
+
+Subordinate conjunction frequency (SCfreq), a proxy measure for subordination, was ranked fifth. This was somewhat
+surprising, as lexical complexity measures such as LFP OOV were expected to be more predictive. However due to the
+tokenizer's tendency to misclassify coordinating conjunctions as subordinating ones, SCfreq may effectively capture
+both types of clause-linking (coordination and subordination). Since coordination frequency was shown to increase
+with proficiency, this blended feature still carries strong predictive value. Figure~\ref{fig:EBMSCfreq} shows its
+role in distinguishing N5 from other levels, supported by a broad density range.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/EBM/EBMSCfreq}
-    \caption[Contribution of Subordinating Conjuction Frequency]{This chart represents how the feature of Suboardinating Conjunction frequency contributes to the prediction of each proficiency level}
+    \caption[Contribution of Subordinating Conjuction Frequency]{This chart shows how feature of Suboardinating Conjunction frequency contributes to the prediction of each proficiency level}
     \label{fig:EBMSCfreq}
 \end{figure}
 
-Several morphological complexity indicators also appeared among the top features. Both MCI-5 surface and MCI-10
-surface were ranked in the top ten, indicating that surface-level morhpological diversity increases with
-proficiency. Additionaly, MCI-10 Inflection, a variant of the MCI measuring inflectional diversity, was also
-influential. This is a surprising finding as due to the increased text window size leading to shorter texts being
- excluded. Although this was the only MCI measure that was found to distinguish between the N1 and native speaker
-group, as discussed in the previous chapter, this feature also seemed to be used to differentiate the N1 proficiency
-levels as seen in Figure~\ref{fig:EBMMCI10inflection}.
+Several morphological complexity indicators also appeared in the top features. Both MCI-5 surface and MCI-10
+surface were ranked in the top ten, indicating that surface-level morphological diversity increases with
+proficiency. Additionaly, MCI-10 Inflection, which measures inflectional morphological diversity, as also
+influential. This is noteowrthy given that the larger text window used in its calculation excluded for shorter
+texts. Although previously found to distinguish N1 from a native speaker texts, Figure~\ref{fig:EBMMCI10inflection}
+also shows that this feature contributes to differentiating within learner proficiency levels.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/EBM/MCI10inflection}
-    \caption[Contribution of MCI 10 Inflection measure]{This chart represents how the feature of MCI10 inflection measure contributes to the prediction of each proficiency level}
+    \caption[Contribution of MCI 10 Inflection measure]{This chart shows how the MCI10 inflection measure contributes to the prediction of each proficiency level}
     \label{fig:EBMMCI10inflection}
 \end{figure}
 
 JRMA Function MATTR and JRMA All MATTR also ranked within the top 15 as morphological diversity measures. This
-suggests that variation in function, and content morphemes, which can also reflect grammatical eleboration as a
-relevant factor in distinguishing between proficiency levels. As can be seen in Figure~\ref{fig:JRMAallMATTR}, a higher
-all MATTR
-score leads distinguishes between the advanced (N1 and N2) and beginner and intermediate proficiency levels.
+suggests that variation in function, and all (function + content) morphemes, which also reflects grammatical
+elaboration, is a
+relevant factor in distinguishing between proficiency levels. As shown in Figure~\ref{fig:JRMAallMATTR}, higher
+All MATTR
+scores are associated with the advanced levels (N1 and N2), separating them from lower and intermediate groups.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/EBM/JRMAallMATTR}
-    \caption[Contribution of JRMA function and content morphemes]{This chart represents how the feature of MATTR of content and function morphemes contributes to the prediction of each proficiency level}
+    \caption[Contribution of JRMA function and content morphemes]{This chart shows how the feature of MATTR of content and function morphemes contributes to the prediction of each proficiency level}
     \label{fig:JRMAallMATTR}
 \end{figure}
 
-The proportion of tokens not included in the 10,000 word frequency list of the BCCJW corpus , a lexical
-sophistication measure, was also highly ranked of importance. A higher value may indicate either advanced lexical
-use or conversely, unrecognized or erroneous forms. According to Figure~\ref{fig:EBMlfpOOV} this was a feature which
-contributed toward the distinguishing of the lower proficiency levels (N5 and N4), most likely meaning the later,
-however futher investiation is needed to prove this.
+The proportion of tokens not included in the 10,000 word frequency list of the BCCJW corpus (LFP OOV Pervent) was
+also highly ranked of importance. This measure of lexical sophistication may signal either the use of advanced
+vocabulary or the presence of unrecognized or erroneous forms. As shown in Figure~\ref{fig:EBMlfpOOV}, it
+contributed most to distinguishing he lower proficiency levels (N5 and N4), possibly indicating the latter, though
+further investigation is needed.
+
 
 \begin{figure}[h!]
     \centering
@@ -183,25 +182,20 @@ however futher investiation is needed to prove this.
 \end{figure}
 
 
-Finally, only one criterial feature, Ukemi(受身形, passive voice), appeared among the top 15 features.  The ratio of
-passive form, which is usually introduced to learners at the N4 level and due to the difficulty in conjugating the
-form it takes time for learners to feel comfortable and use it correctly, with highest use (excluding the
-native group) at the N1 level.  While it is shown in Figure~\ref{fig:EBMukemi} to distinguish between all levels,
-with some overlap between N2 and N3, the low density of this feature means that due to its overall low frequency,
-more improvement to the model can be made by including more instances. As the feature extracter would have only
-detected correct instances of this form, possibly expanding to detect incorrect attempts could also lead to better
-classificaiton.
+Only one criterial feature, Ukemi(受身形, passive voice), appeared among the top 15.  Typically introduced to
+learners at the N4 level, this form is often difficult to master, due to verb form transformation and unconventional
+contexts which may differ from a learner's native language. The highest use of this form was at the N1 level. Figure~\ref{fig:EBMukemi} shows its ability to distinguish between levels, though low overall frequency limits its density and predictive power. Since the extract only caputres correct instances incorporating incorrect uses could improve performance.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/EBM/EBMukemi}
-    \caption[Contribution of ratio of passive form (受身形、ukemi)]{This chart represents how the feature of Lexical Frequency Profile (LFP)Out of Vocabulary (OOV) tokens contributes to the prediction of each proficiency level}
+    \caption[Contribution of ratio of passive form (受身形、ukemi)]{This chart shows how the feature of Lexical Frequency Profile (LFP)Out of Vocabulary (OOV) tokens contributes to the prediction of each proficiency level}
     \label{fig:EBMukemi}
 \end{figure}
 
 
-Unsurprisingly Sentence length is also included in this list. This was the only measure that distinguished between
-all proficiency levels and native speaker group.
+Unsurprisingly, Sentence length was also among the top features. This was the only measure that consistently
+distinguished between all JLPT levels and the native speaker group.
 
 The EBM feature importance analysis confirms that no single metric defines learner proficiency. Rather, a
 combination of syntactic elaboration, morphological diversity, and lexical distribution provide the strongest
