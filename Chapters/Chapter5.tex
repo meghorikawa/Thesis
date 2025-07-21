@@ -43,7 +43,7 @@ The model achieved an overall accuracy of 38\%, demonstrating some capacity to d
 levels.
 While the overall performance did not exceed 50\%, it represents a significant improvement over a random guess
 baseline of 20\% for a five-class classification problem. The F1-scores, which provide a harmonic mean of precision
-and recall ranged from .15 for N1 and .45 for N5 (Table~\ref{tab:trainingResults}).
+and recall ranged from .17 for N1 and .48 for N5 (Table~\ref{tab:trainingResults}).
 
 Notably, classification performance declined as proficiency increased, with the N1 group showing the weakest
 performance across all metrics (precision = 0.15, recall=0.19, f1=0.17). This is likely attributable in part to the
@@ -70,7 +70,7 @@ This overlap was further supported when aggregating the proficiency levels into 
 Intermediate (N3+N2), and
 Advanced (N1).
 Classification performance for these three groups improved significantly, achieving an overall F1-score of .54. This
-substantial increase from .38 F1-score for the five-lcass problem further corroborates the hypothesis that the
+substantial increase from .38 F1-score for the five-class problem further corroborates the hypothesis that the
 continuous nature of adjacent JLPT levels present a significant challenge for fine-grained classification.
 
 \section{Feature Importance Analysis}
@@ -88,7 +88,7 @@ Overall, a
 diverse range of linguistic features contributed to classification accuracy, though complexity measures were most
 prominent among the top-ranked features. A wide variety of complexity
 measures consisting of syntactic, lexical and morphological contributed to classification, indicating that a
-multidimentional approach is essential for classifying learner texts.
+multidimensional approach is essential for classifying learner texts.
 
 The top two features were coordinate clauses per sentence and coordinate clauses per clause, both measures of
 syntactic complexity. These features suggest that the frequency of coordination structures is a strong
@@ -103,7 +103,7 @@ while above 1 are associated with N1 and N2.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/EBM/EBMccPerSent}
-    \caption[Contribution of Coordinate Clauses per Sentence]{This chart represents how the feature of Coordinate clauses per sentence conributes to the prediction of each proficiency level}
+    \caption[Contribution of Coordinate Clauses per Sentence]{This chart represents how the feature of Coordinate clauses per sentence contributes to the prediction of each proficiency level}
     \label{fig:EBMccPerSent}
 \end{figure}
 
@@ -135,14 +135,14 @@ role in distinguishing N5 from other levels, supported by a broad density range.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/EBM/EBMSCfreq}
-    \caption[Contribution of Subordinating Conjuction Frequency]{This chart shows how feature of Suboardinating Conjunction frequency contributes to the prediction of each proficiency level}
+    \caption[Contribution of Subordinating Conjuction Frequency]{This chart shows how feature of Subordinating Conjunction frequency contributes to the prediction of each proficiency level}
     \label{fig:EBMSCfreq}
 \end{figure}
 
 Several morphological complexity indicators also appeared in the top features. Both MCI-5 surface and MCI-10
 surface were ranked in the top ten, indicating that surface-level morphological diversity increases with
-proficiency. Additionaly, MCI-10 Inflection, which measures inflectional morphological diversity, as also
-influential. This is noteowrthy given that the larger text window used in its calculation excluded for shorter
+proficiency. Additionally, MCI-10 Inflection, which measures inflectional morphological diversity, as also
+influential. This is notewrothy given that the larger text window used in its calculation excluded for shorter
 texts. Although previously found to distinguish N1 from a native speaker texts, Figure~\ref{fig:EBMMCI10inflection}
 also shows that this feature contributes to differentiating within learner proficiency levels.
 
@@ -167,10 +167,10 @@ scores are associated with the advanced levels (N1 and N2), separating them from
     \label{fig:JRMAallMATTR}
 \end{figure}
 
-The proportion of tokens not included in the 10,000 word frequency list of the BCCJW corpus (LFP OOV Pervent) was
+The proportion of tokens not included in the 10,000 word frequency list of the BCCJW corpus (LFP OOV Percent) was
 also highly ranked of importance. This measure of lexical sophistication may signal either the use of advanced
 vocabulary or the presence of unrecognized or erroneous forms. As shown in Figure~\ref{fig:EBMlfpOOV}, it
-contributed most to distinguishing he lower proficiency levels (N5 and N4), possibly indicating the latter, though
+contributed most to distinguishing the lower proficiency levels (N5 and N4), possibly indicating the latter, though
 further investigation is needed.
 
 
@@ -184,12 +184,12 @@ further investigation is needed.
 
 Only one criterial feature, Ukemi(受身形, passive voice), appeared among the top 15.  Typically introduced to
 learners at the N4 level, this form is often difficult to master, due to verb form transformation and unconventional
-contexts which may differ from a learner's native language. The highest use of this form was at the N1 level. Figure~\ref{fig:EBMukemi} shows its ability to distinguish between levels, though low overall frequency limits its density and predictive power. Since the extract only caputres correct instances incorporating incorrect uses could improve performance.
+contexts which may differ from a learner's native language. The highest use of this form was at the N1 level. Figure~\ref{fig:EBMukemi} shows its ability to distinguish between levels, though low overall frequency limits its density and predictive power. Since the extract only captures correct instances incorporating incorrect uses could improve performance.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/EBM/EBMukemi}
-    \caption[Contribution of ratio of passive form (受身形、ukemi)]{This chart shows how the feature of Lexical Frequency Profile (LFP)Out of Vocabulary (OOV) tokens contributes to the prediction of each proficiency level}
+    \caption[Contribution of ratio of passive form (受身形、ukemi)]{This chart shows how the ratio of passive form to total tokens contributes to the prediction of each proficiency level}
     \label{fig:EBMukemi}
 \end{figure}
 
@@ -211,7 +211,7 @@ as found in the f1 scores, and some expected distinctions between adjacent level
 effectively.
 
 This suggests that while form-based measures of grammatical complexity and frequency-based criterial features can be
-useful, they may not be sufficienct in isolation. Some grammatical forms exhibit nuanced usage that depends on
+useful, they may not be sufficient in isolation. Some grammatical forms exhibit nuanced usage that depends on
 semantic, pragmatic, or discourse-level factors which are not easily captured through surface-form
 analysis alone.
 
@@ -263,7 +263,7 @@ classification.
 A significant limitation of the current study was the exclusion of learner errors as a direct feature. Different
 proficiency levels are often
 characterized by distinct error patterns, as was illustrated in \citet{Hawkins_Buttery_2010}.  The
-developmental tradjectory of errors, where specific error types and frequencies change systematically with
+developmental trajectory of errors, where specific error types and frequencies change systematically with
 proficiency, could provide highly discriminative information for the model.
 Incorporating
 systematic error analysis as a
@@ -272,10 +272,13 @@ set
 could provide
 highly discriminative information, potentially leading to substantial improvements in classification accuracy,
 especially for distinguishing between adjacent intermediate and advanced levels where subtle error reductions or
-shifts in error types might b proficiency levels used as the target classes. While these levels have been validated \citet{jcat_interpretation_guide}, they are primarily based on recognition tasks (reading and listening) and do not directly assess productive skills like writing or speaking. Therefore, the proficiency labels assigned to the learner texts, derived from J-Cat, are approximations of a broader construct of proficiencu. There can be considerable variance in the productive language capabilities of individuals who score similarly on the JLPT, which might introduce inherent 'noise' or ambiguity into the dataset, further complicating the task of classification for the model.
+shifts in error types might be useful indicators. While these levels have been validated
+\citet{jcat_interpretation_guide}, they
+are primarily based on recognition tasks (reading and listening) and do not directly assess productive skills like
+writing or speaking. Therefore, the proficiency labels assigned to the learner texts, derived from J-Cat, are approximations of a broader construct of proficiency. There can be considerable variance in the productive language capabilities of individuals who score similarly on the JLPT, which might introduce inherent 'noise' or ambiguity into the dataset, further complicating the task of classification for the model.
 
 While EBM demonstrated capability to classify JLPT levels better than chance, performance highlights the inherent
-complexity of distinguishing between closely related proficiency levels in a continuous developmental specture. The
+complexity of distinguishing between closely related proficiency levels in a continuous developmental spectrum. The
 identified features were significant, but future improvements would benefit from addressing the methodological
 challenges in feature extraction, particularly for nuanced Japanese linguistic structures, and exploring the
 integration of error-based features.
