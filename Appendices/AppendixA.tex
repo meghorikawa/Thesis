@@ -71,65 +71,62 @@ NS	&   m3	&   170.25	&   67.43	&   48\\
     \label{fig:ST}
 \end{figure}
 
+
 \section{Complexity Features}
 Below is are table detailing the complexity measures calculated from each domain.
 
-\begin{table}[h!]
-    \centering
-    \caption{Syntactic Complexity Features}
-    \label{tab:appen-syntactic-complexity}
-    \begin{tabular}{>{\raggedright\arraybacksplash}p{12cm}}
-        \hline
-        \textbf{Measure}\\
-        \hline
-Sentence Length\\
-Clause Length\\
-Clauses per Sentence\\
-Coordinate Clauses per Sentence\\
-Coordinate Clauses Ratio to All Clauses\\
-Subordinate Clauses per Sentence\\
-Subordinate Clause Ratio to All Clauses\\
-Subordinate Clauses to Coordinating Clauses\\
-Average Noun Phrase length\\
-Average Verb Phrase Length\\
-        \hline
-    \end{tabular}
-\end{table}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
 
-\begin{table}[h!]
-    \centering
-    \caption{Lexical Complexity Features}
-    \label{tab:appen-lexical-complexity}
-    \begin{tabular}{>{\raggedright\arraybackslash}p{12cm}}
-        \textbf{Measure}\\
-        \hline
-Corrected Type Token Ratio\\
-Noun Density\\
-Verb Density\\
-Adjective Density\\
-Adverb Density\\
-Measure of Textual Lexical Diversity (MTLD)\\
-Lexical Frequency Profile - BCCJW Corpus\\
-Lexical Frequency Profile - JLPT Vocabulary List\\
-        \end{tabular}
-\end{table}
+\begin{longtable}{>{\raggedright\arraybackslash}p{4cm} p{10cm}}
+\caption{Overview of Complexity Features} \label{tab:complexity-measures} \\
+\hline
+\textbf{Domain} & \textbf{Measure} \\
+\hline
+\endfirsthead
 
-\begin{table}[h!]
-    \centering
-    \caption{Morphological Complexity Features}
-    \label{tab:appen-morphological-complexity}
-    \begin{tabular}{>{\raggedright\arraybackslash}p{12cm}}
-        \hline
-        \textbf{Measure}\\
-        \hline
-Morphological Complexity Index(MCI) - 5 surface\\
-Morphological Complexity Index(MCI) - 5 inflection\\
-Morphological Complexity Index(MCI) - 10 surface\\
-Morphological Complexity Index(MCI) - 10 inflection\\
-Japanese Readability and Morphological Analyzer(JRMA) - MATTR\\
-Japanese Readability and Morphological Analyzer(JRMA) - MTLD\\
-    \end{tabular}
-    \end{table}
+\multicolumn{2}{c}%
+{\tablename\ \thetable\ -- \textit{continued from previous page}} \\
+\hline
+\textbf{Domain} & \textbf{Measure} \\
+\hline
+\endhead
+
+\hline \multicolumn{2}{r}{\textit{Continued on next page}} \\
+\endfoot
+
+\hline
+\endlastfoot
+
+\multirow{10}{=}{\textbf{Syntactic Complexity}}
+& Sentence Length \\
+& Clause Length \\
+& Clauses per Sentence \\
+& Coordinate Clauses per Sentence \\
+& Coordinate Clauses Ratio to All Clauses \\
+& Subordinate Clauses per Sentence \\
+& Subordinate Clauses Ratio to All Clauses \\
+& Subordinate to Coordinating Clause Ratio \\
+& Average Noun Phrase Length \\
+& Average Verb Phrase Length \\
+
+\multirow{7}{=}{\textbf{Lexical Complexity}}
+& Corrected Type-Token Ratio (CTTR) \\
+& Noun Density \\
+& Verb Density \\
+& Adjective Density \\
+& Adverb Density \\
+& Measure of Textual Lexical Diversity (MTLD) \\
+& Lexical Frequency Profile (LFP) \\
+
+\multirow{3}{=}{\textbf{Morphological Complexity}}
+& MCI-5 (Morphological Complexity Index – surface form) \\
+& MCI-10 (Morphological Complexity Index – inflectional form) \\
+& Japanese Readability and Morphological Analyzer(JRMA) – MATTR\\
+Japanese Readability and Morphological Analyzer(JRMA) - MTLD \\
+
+\end{longtable}
 
 
 
