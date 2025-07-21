@@ -1,5 +1,27 @@
 \chapter{Conclusion and Outlook}
 % Where the research questions answered? - % summarize findings briefly again.
+This study set out to investigate which linguistic complexity measures and critierial features best reflect
+developmental changes across L2 Japanese proficiency levels, and whether such features could be used to build an
+interpretable, data-drive classification model.
+
+%3. To assess whether linguistic complexity features and/or Criterial Features can reliably predict proficiency
+%levels in L2 Japaneselearners.
+The EBM classifier achieved an overall accuracy of 38\% outperforming the 20\% for five-class classification. While
+this reflects only moderate predictive power, it underscores the inherent challenge of fine-grained proficiency
+classification, especially between adjacent JLPT leves. Notably, performance improved substantially when levels were
+grouped into broader categories, with an F1 score of .54. This result points to the continuum-like nature of the
+JLPT scale, suggesting that its proficiency bads are not as discrete in practice as their labels imply. The small
+number of N1 texts also limited classificaiton accuracy at the advanced level.
+
+Feature important analysis revealed that syntactic complexity (coordinate clause measures) and lexical
+sophistication (JLPT vocabulary percentages), and Morphological complexity measures (MCI JRMA MATTR) were the primary
+drivers of
+classification. This alsigns with findings
+in prior linguistic complexity studies which show that as learners progress, their linguistic output becomes more
+sophisticated in terms of sentence structure and vocabulary. However, despite the clear importance of these features,
+the overall classification accuracy suggests that the current set of features, may not fully capture the
+fine-grained distinctions required for highly accurate multi-level classification. Especially as learner errors
+which have also been investigated alongside as a domain of Criterial features have not been implemented in this study.
 
 
 %2. To examine how linguistic complexity features and criterial features develop across different proficiencylevels
@@ -10,16 +32,6 @@ dependcy distance
 also increases meaning
 that more complex embedding is done in sentences.
 
-%3. To assess whether linguistic complexity features and/or Criterial Features can reliably predict proficiency
-%levels in L2 Japaneselearners.
-
-Feature important analysis revealed that syntactic complexity (coordinate clause measures) and lexical
-sophistication (JLPT vocabulary percentages) were the primary drivers of classification. This alsigns with findings
-in prior linguistic complexity studies which show that as learners progress, their linguistic output becomes more
-sophisticated in terms of sentence structure and vocabulary. However, despite the clear importance of these features,
-the overall classification accuracy suggests that the current set of features, may not fully capture the
-fine-grained distinctions required for highly accurate multi-level classification. Especially as learner errors
-which have also been investigated alongside as a domain of Criterial features have not been implemented in this study.
 
 %1. To identify which linguistic complexity measures, and criterial features show reliability as indices of language
 %development in L2 Japanese learners.
