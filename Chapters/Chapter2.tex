@@ -227,23 +227,24 @@ different inflection exponents a learner uses. The Normalized Mean Size of Parad
 the average number of distinct forms per lemma, while also sampling tokens to mitigate text-length effects. Building
 on these \cite{Brezina2019} proposed the Morphological Complexity Index (MCI) which compares variation in selected
 parts of
-speech-such as verb or noun
-inflections-using
+speech, such as verb or noun
+inflections, using
 randomized resampling to control for sample size.
 
 A more recent method, Korean Morphological Richness Analyzer (KMRA)
 \citep{Hwang2024} was developed to account for the agglutinative nature of Korean. In this approach, all morphemes in
-a text are categorized into three categories: function morphemes, content morphemes, and all-morphemes(bot function
+a text are categorized into three categories: function morphemes, content morphemes, and all-morphemes(both function
 and content).
 Then, for
 each group, two lexical diversity metrics are calculated-Moving Average Type-Token Ratio (MATTR)\citep{Covington2010} and MTLD\citep{McCarthy2010}-providing
 a nuanced profile of morphological richness that distinguishes between grammatical and semantic contribution.
 
+%maybe I should remove this as it isn't relevant to the study? I didn't use any of the measurements below.....
 While the previous measures capture variation and breadth, local elaboration measures capture how intricately
 morphological elements are structured within words-such as compound formation or layered
 affiliation. For example \cite{Nishikawa2023} investigates the acquisition of Japanese case markers by l2 children
 in naturalistic settings. Case particles such as が(ga),を(wo), and に(ni), ecode critical syntactic and semantic
-information, and was demonstrated that they are acquired gradually in development. While not "elaborate" in form,
+information, and it was demonstrated that they are acquired gradually in development. While not "elaborate" in form,
 their usage reflects increasing morphological sensitivity and structural integration. Similar approaches have been
 used in SLA studies to examine the proportion of tense, case, or derivational markers has been
 examined
@@ -258,20 +259,21 @@ and adult L3 development makes them useful indications of relative morphological
 Phonetic complexity pertains to the intricacy of speech sounds and their combinations within a language, including
 features such as syllable structure, consonant clusters, intonation, and articulation\citep{Maddieson2009}.
 These measures have mostly been used to compare phonological features across different languages. While not
-widely applied in SLA contexts-due to data being predominately in the written form, phonetic complexity measures have
+widely applied in SLA contexts(due to data being predominantly in written form), phonetic complexity measures have
 been
 used to measure development in
 children's
-phonological systems across time\citep{StoelGammon2010}.
+phonological systems over time\citep{StoelGammon2010}.
 
-Semantic complexity refers to the richness and depth of meaning express through vocabulary and conceptual
+Semantic complexity refers to the richness and depth of meaning expressed through vocabulary and conceptual
 relationships in a text. Although not explicitly included in the framework proposed by \cite{Butle2012}, semantic
-complexity can be associated with factors such as abstractness, and relatedness between words. Some studies have
-linked indices of semantic sophistication to writing quality \citep{Kyle2018}. While others have used Latent Semantic
-Analysis (LSA) or word embeddings, showing that higher semantic similarity between sentences is linked to better
+complexity can be associated with factors such as abstractness and relatedness between words. Some studies have
+linked indices of semantic sophistication to writing quality\citep{Kyle2018}. Others have used Latent Semantic
+Analysis (LSA) or word embeddings, with studies showing that higher semantic similarity between sentences is linked to
+better
 writing
 quality
-\citep{Crossley2011, Briscoe2010}
+\citep{Crossley2011, Briscoe2010}.
 
 Discourse complexity refers to the degree of structural, semantic, and logical elaboration across larger units of
 text, such as multiple sentences, paragraphs, or entire texts. In \cite{Butle2012}, discourse complexity is
@@ -279,7 +281,8 @@ defined in
 terms of
 interactional moves and roles taken by participants in a conversation, focusing on the domain of
 oral
-interaction and disregarding written language. One way to analyze discourse in written texts is through the measures of
+interaction focusing primarily on the domain of oarl interaction and less on written language. One way to analyze
+discourse in written texts is through measures of
 coherence and cohesion.
 COH-METRIX \cite{Graesser2004} is an automated tool that analyzes the cohesion in written texts. It calculates over
 100 indices across lexical, syntactic and discourse levels, with a primary focus on how well ideas in a text are
