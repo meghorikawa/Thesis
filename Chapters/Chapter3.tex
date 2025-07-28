@@ -7,27 +7,21 @@
 
 The agglutinative nature of Japanese coupled with the absence of explicit word delimiters, presents challenges for
 accurate word segmentation. Furthermore, the use of three distinct writing systems
-\footnote{Hiragana, Katakana, and Kanji} leads to considerable orthographic variation. for instance, learners at
+\footnote{Hiragana, Katakana, and Kanji} leads to considerable orthographic variation. For instance, learners at
 lower proficiency levels frequently rely on the phonetic alphabets (hiragana and katakana), which can exacerbate
 segmentation and tokenization errors. This phenomenon has been observed in previous studies
 \citep{yang1998, nagata2009}, where systems demonstrated a lack of robustness against "spelling" errors or the
 erroneous use of kanji.
 
-Defining a "word" in Japanese also differs considerably from Indo-European languages. While a bound morpheme in
-Enlgish might be treated as a indificual word. this is generally not the case in Japanese. For example,
-segmentation can be difficult.
-With 3
-alphabets used there can orthographic variation is also fairly common. Learners at the lower proficentcy levels
-mostly will write using the phonetic alphabets hiragana and katakana sometimes leading to errors in
-segmentation/tokenization as was observed in \citep{yang1998, nagata2009}.
-
-What is considered a word in Japanese may differ from other languages european languages. While a bound morpheme in
+What is considered a word in Japanese may differ from that in Indo-European languages. While a bound morpheme in
 English might be treated
 as an individual word, this is generally not the case in Japanese. For example, the word 話す\textit{hanasu}(to speak)
-is considered a single word. However its potential form, 話せる \textit{hanaseru}(to be able to speak) is often analyzed as
-two distinct morphemes: 話\textit{hana} and せる\textit{seru}. Initial abalyses using the chose tokenizer and parser
+is considered a single word. However, its potential form, 話せる \textit{hanaseru}(to be able to speak) is often
+analyzed as
+two distinct morphemes: 話\textit{hana} and せる\textit{seru}. Initial analyses using the chosen tokenizer and parser
 revealed inconsistencies in this regard. Similar inconsistencies were observed with compound verbs, such as
-言い切る(\textit{iikiru}, "to completely say\footnote{\textit{to say without restraint}}"). While this was consistently
+言い切る(\textit{iikiru}, "to completely say (i.e. to say without restraint)". While this was
+consistently
 split into 言い(\textit{ii}"to say") and 切る(\textit{kiru} a suffix indicating completion), other instances were
 segmented into
 食べ (\textit{tabe}"to eat") 切る(\textit{kiru}"completely"). These inconsistencies pose significant hurdles for the
@@ -41,30 +35,27 @@ complexity measures.
 
 This study utilizes data from the International Corpus of Japanese as a Second Language (I-JAS), as
 detailed in
-\citet{Sakoda2020}, was
-used.  The
-I-JAS corpus is comprised of both spoken and written samples of Japanese.  It includes data from a diverse pool of 1,
+\citet{Sakoda2020}.  The
+I-JAS corpus consists of both spoken and written samples of Japanese.  It includes data from a diverse pool of 1,
 000 adult learners
 (aged
-between 17 and 63 years old), all of whom are learning Japanese as a second language. 50 Native speaker samples are also
+between 17 and 63 years old), all of whom are learning Japanese as a second language. Fifty Native speaker samples are
+also
 included in the corpus as a control group.
 
-Participant's proficiency levels were assessed using the Japanese Computer Adaptive Test (J-Cat)
-\citep{Imai2009}, with Further details about this assessment is provided in the
-subsequent
-section \ref{j-cat}. In addition to proficiency scores, the corpus includes various metadata for each participant,
+Participants proficiency levels were assessed using the Japanese Computer Adaptive Test (J-Cat)
+\citep{Imai2009},  further details about this assessment are provided in
+Section\ref{j-cat}. In addition to proficiency scores, the corpus includes various metadata for each participant,
 such as
 their
 native language,
 prior experience of visiting or living in Japan, and current geographical location (whether outside or within Japan).
 
-%%%%%%% This part below contains information only on the essay writing samples I previously analyzed. I have also
-%%%%%%% included additional writing samples added to the corpus which has brought the total particiapnt pool to 1000
-%%%%%%% again.
 Writing samples were extracted from the larger I-JAS corpus. Samples  were provided from 687 individuals, including the
 control group
-of 50 native speakers. A detailed breakdown of the of the participants in the writing sample subset, categorized by
-their corresponding Japanese Language Proficiency Test (JLPT) levels, is presented in \ref{tab:participants-chart}.
+of 50 native speakers. A detailed breakdown of the participants in the writing sample subset, categorized by
+their corresponding Japanese Language Proficiency Test (JLPT) levels, is presented in Table
+\ref{tab:participants-chart}.
 
 %Name: count, dtype: int64
 \begin{table}[h!]
@@ -79,7 +70,7 @@ N1 & 44 \\
 Native Speakers & 50 \\
 \hline
 \end{tabular}
-\caption{Distribution of participants across JLPT proficiency levels. J-cat scores have been mapped to their equivallent JLPT levels. }
+\caption{Distribution of participants across JLPT proficiency levels. J-cat scores have been mapped to their equivalent JLPT levels. }
 \label{tab:participants-chart}
 \end{table}
 
