@@ -390,16 +390,20 @@ analysis of other domains neglected.
 % assessment.
 % emphasize gap for Japanese
 
-Many NLP-based systems have been designed to support language learning using complexity measures. These systems vary
-in their purposes, some analyze learner texts, while others annotate input but they all
+Many NLP-based systems have been designed to support language learning by leveraginh complexity measures. While these
+systems
+vary
+in their purposes, (annotation, simplification, analysis) they all
 share
 the goal
-of connecting linguistic form and language development.
+of connecting linguistic form with language development.
 
-One application is in Automated Writing Evaluation (AWE) and Automated Essay Scoring (AES). Systems like
+A prominent application is in Automated Writing Evaluation (AWE) and Automated Essay Scoring (AES). Systems like
 ETS's Criterion \citep{criterion2006} analyze linguistic features within student essays, including various syntactic
-and lexical complexity measures, to provide scores and diagnostic feedback. While it is specifically geared towards
-analyzing the writing native speakers it still is an application worth mentioning due to use of complexity measures.
+and lexical complexity measures, to provide scores and diagnostic feedback. Notably, it is used in evaluating
+the writings of both native and non-native speakers'.
+ Criterion's reliance on complexity measures makes it a relevant example for
+understanding their broader application in automated assessment.
 
 Linguistic complexity measures are also central to readability assessment, particularly for tailoring educational
 materials to L2 learners. By analyzing a text's lexical sophistication, syntactic density and other complexity
@@ -413,17 +417,18 @@ could effectively predict the comprehension difficulties that L2 readers face wi
 show how quantitative complexity features can be leveraged in assesing readability of texts for L2 learners.
 
 CTAP (Common Text Analysis Platform) \citep{ctap} is an open-source platform that supports the automatic
-analysis of linguistic complexity in texts.  It provides a flexible framework for extracting over 100 of linguistic complexity measures including from the syntactic , lexical,
+analysis of linguistic complexity in texts.  It provides a flexible framework for extracting over 100 linguistic
+complexity measures, including those from the syntactic , lexical,
 and
 discourse domains. Originally developed to support extracting features from texts in English and German,
 extensions in Italian \citep{ctap-italian} and Chinese \citep{ctap-chinese} have also been added to the system. The
-main goal of CTAP is to facilitate comparive analysis of texts for second language learning
+main goal of CTAP is to facilitate comparative analysis of texts for second language learning
 and readability research.
 
 Despite these advancements, there remains a critical research gap concerning the validation and application of these
-complexity driven systems for Japanese as a second language. The typological disctinctiveness of Japanese means that
+complexity-driven systems for Japanese as a second language. The typological disctinctiveness of Japanese means that
 measures and models effective for Indo-European languages may not directly transfer. This highlights the necessity
-for studies, to identify and validate relevant linguistic complexity measures and criteria
+for studies, to identify and validate relevant linguistic complexity measures
 features for L2 Japanese.
 
 
@@ -436,10 +441,10 @@ features, as introduced
     absence of specific linguistic forms in a learner's
     productions at different
     stages of development. The key intutition is that certain morphosyntactic structures, lexical items, or
-grammatical patterns reliably emerge (or disappear) at specific proficency levels. These features, which correlate
-with proficiency, serve as qualatative indicators of L2 proficiency.
+grammatical patterns reliably emerge (or disappear) at specific proficiency levels. These features, which correlate
+with proficiency, serve as qualitative indicators of L2 proficiency.
 
-In contrast to Complexity measures, which are continuous metric of
+In contrast to complexity measures, which are continuous metrics of
 elaboration
 or variation in a text, criterial features tend to be discrete markers of development. That is, instead of measuring
 "how much" or "how varied," they are concerned with whether a specific form is used accurately and/or frequently
@@ -447,10 +452,10 @@ enough to
 indicate a given proficiency level.
 
 Criterial features may be analyzed across two dimensions, frequency, which captures the emergence and increasing use
-of a form across proficiency levels, and accuracy, which assess the learner's ability to use a form correctly (in
+of a form across proficiency levels, and accuracy, which assesses the learner's ability to use a form correctly (in
 comparison
-to native speaker's uses) across levels. For instance the use of passive
-constructions may increase across proficiency levels, while only consistent error-free useage may appear from upper
+to native speaker usage) across levels. For instance, the use of passive
+constructions may increase across proficiency levels, while only consistent error-free usage may appear from upper
 intermediate levels and onwards. These dual perspectives are useful for distinguishing between emergence and mastery. For instance, learners may
 begin to produce relative clauses at lower levels, but only achieve an accurate usage at the upper-intermediate
 levels.
@@ -465,24 +470,25 @@ Their corpus-based analysis also revealed L1 effects. For example, learners whos
 first language contained an article system (e.g. French, German, or Spanish) exhibited lower rates of missing articles
 compared to those whose L1 lacks articles. This supports the view that not all criterial features are universal, and
 specific developmental profiles may be needed. \citet{salamoura2010} analyzed learner texts in the Cambridge Learner
-Corpus (CLC) to identify features distinguishing between CEFR proficiency bands. Their findings support those of \citet{Hawkins_Buttery_2010,diez-bedmar2015,Kim2021}, observing that learner errors decrease and L1 influence weakens at higher proficiency levels.
+Corpus (CLC) to identify features distinguishing between CEFR proficiency bands. Their findings support those of \citet{Hawkins_Buttery_2010,diez-bedmar2015,Kim2021}, observing that learner errors decrease, and L1 influence weakens at higher proficiency levels.
 
 Specific studies reinforcing these observations include \citet{diez-bedmar2015} on Spanish ESL learners' article
-useage and \citet{Kim2021} on Korean EFL learners, where feature use generally increased with proficiencu level,
+usage and \citet{Kim2021} on Korean EFL learners, where feature use generally increased with proficiency level,
 although overall frequencies remained low, highlighting potential feature misalignments or task effects.
 
 %%Transition paragraph??
 %transition paragraph to go into JLPT framework....
 The majority of work in this domain has focused exclusively on English. However, \citet{akef2025} used criterial
-features in modeling writings from heritage learners of Portuguese,  where the frequency of some grammar forms
+features in modeling writings from heritage learners of Portuguese, where the frequency of some grammar forms
 was shown
 to be a significant variable in classifying proficiency level. Aligning with findings from other studies, an effect
-of the learners' societal language
-\footnote{Societal language, refers to the main/majority language spoken in the country/area where the learner resides}
+of the learners' societal language \footnote{, refers to the main/majority language spoken in the country/area where
+the learner resides}
 was found.
 
 The above findings not only support the value of criterial features as developmental indicators, but also
-demonstrate the need to systemize them across proficiency levels. This has motivated profiling efforts \cite{Saville2010}
+demonstrate the need to systematize them across proficiency levels. This has motivated profiling efforts
+\cite{Saville2010}
 aligned
 with
 the standardized frameworks such as the Common European Framework of Reference (CEFR).
@@ -507,7 +513,7 @@ the standardized frameworks such as the Common European Framework of Reference (
 
 To contextualize criterial features within standardized evaluation, it is essential to consider the role of
 proficiency assessment frameworks, which provide structured levels for describing and assessing a learner's language
-ability. For many European languages the Common European Framework of Reference for languages (CEFR) is the most
+ability. For many European languages, the Common European Framework of Reference for Languages (CEFR) is the most
 widely adopted framework, which offers six proficiency levels. Illustrative
 descriptors are given for each level to demonstrate what learners can achieve in communicative
 competence \citep{CEFR2020}. As can be seen in Table~\ref{tab:cefr-descriptors}, these guidelines are intentionally
@@ -525,7 +531,7 @@ B1  & Can narrate a story \\
 A2 & Can give short, basic descriptions of events and activities \\
 \hline
 \end{tabular}
-\caption{\label{tab:cefr-descriptors} Examples of CEFR Illustrative examples}
+\caption{\label{tab:cefr-descriptors} Examples of CEFR Illustrative Descriptors}
 \end{table}
 
 Efforts such
@@ -533,17 +539,19 @@ as the English Profile Programme \citep{Saville2010}, have emerged to support th
 level
 descriptions
 for learners at each CEFR level. One subproject, the English Grammar Profile (EGP) \citep{okeeffe2017},
-cataloged over 1,200 grammar forms of learner language across each of the CEFR proficiency levels.
+cataloged over 1,200 grammar forms used in learner language across each of the CEFR proficiency levels.
 \citet{tono2018} and \citet{ishii2016} have
 also adapted a
 finer-grained
-proficiency scale
-of criterial features
-geared
-towards native Japanese learners of English, known as the CEFR-J.
+proficiency scale of criterial features aimed at native Japanese learners of English, known as the CEFR-J.
 
-%to do POLKE project add later if I can get a citation.
-\citep{POLKE}
+%does this fit here?
+Recently, the POLKE (Pedagogically Oriented Language Knowledge) Extractor
+\citep{POLKE} has been developed to support the automatic extraction of the grammar forms detailed in the English
+Grammar
+Profile from raw text. This functionality enables applications such as the grammatical annotation of texts for
+learners
+\footnote{For example, the Annotated Reading Enhancement System (ARES) \citep{lee2024} system uses POLKE to provide on-demand explanations of grammar in reading materials}, as well as the analysis of learner-produced texts. Although POLKE has not been widely applied to the analysis of learner corpora, its potential to systematically identify the presence and distribution of criterial grammar features offers a promising direction for future research in SLA.
 
 \subsubsection{Japanese Proficiency Assessment Frameworks}
 While CEFR was designed to be applied to any language - the Japanese Language Proficiency Test(JPLT) remains the
