@@ -330,7 +330,8 @@ learner's language abilities over time.
 %-task effect
 %summarize Findings in other languages and domains
 Linguistic complexity has been widely recognized as a reliable indicator of language proficiency and development,
-particularly in the lexicographical and syntactic domains. In studies of English as a second language, a variety of syntactic features have been shown to index developmental
+particularly in the lexical and syntactic domains. In studies of English as a second language, a variety of syntactic
+features have been shown to index developmental
 progression. For instance, the average number of words per T-unit has consistently emerged as a robust measure
 across multiple studies \citep{Ortega2003,Wolfe1998,Lu2011, Lu2010, Iwashita2006}. Similarly, alternative unit-based
 metrics such as sentence length-rather than clause-based units-have also shown strong discrimination between
@@ -340,11 +341,12 @@ More fine-grained clausal complexity measures, such as average clause length and
 contribute to this profiling. They have shown reliable patterns of increased syntactic embedding with learner
 development across proficiency levels, suggesting a trajectory toward more hierarchically structured sentences \citep{Ortega2003, Lu2011}.
 
-Due to the limitations in design of learner corpora (most being cross-sectional instead of longitudinal) need more
-longitudinal studies to verify the above findings. In her study of German L2 learners, \cite{Vyatkina2012} found
+Due to the limitations in the design of learner corpora (most being cross-sectional instead of longitudinal) more
+longitudinal studies to verify the above findings are needed. In her study of German L2 learners, \citet{Vyatkina2012}
+found
 that both general and clausal complexity measures increased over time, correlating with the learners' developmental
 progression. Notably, the study revealed a shift in coordination and subordination: as learners become more
-proficient, coodinating structures decreased, while subordinating constructions became more prevalent. This suggests
+proficient, coordinating structures decreased, while subordinating constructions became more prevalent. This suggests
 a qualitative shift in syntactic structure, where learners begin to use more embedded structures to express more
 nuanced
 meanings.
@@ -354,34 +356,53 @@ meanings.
 %-Any contradictory/surprising findings to English
 %-Studies on Learner Japanese
 Despite being classified as a Less Commonly Taught Language (LCTL) by the National Council of Less Commonly Taught
-Languages \cite{ncolctl2025}, Japanese has seen a steady rise in learner enrollment since the early 2000s. Given its
+Languages, Japanese has seen a steady rise in learner enrollment since the early 2000s. Given its
 typological distinctiveness -particularly in terms of agglutinative morphology, SOV word order, and elaborate
 honorific and polite registers, Japanese offers a valuable opportunity to evaluate the generalizability of
 complexity measures developed in research on Indo-European languages.
 
 \cite{Iwashita2006} explored syntactic complexity in oral narratives from learners at different proficiency levels (
 three vs. four semesters of instruction). The study found increases in global length-based measures such as sentence
-length and clause language, but no significant differences for subordination or coordination, suggesting that these
+length and clause length, but no significant differences for subordination or coordination, suggesting that these
 features could possibly be acquired earlier, plateau earlier, or emerge later compared to English.
 
-More recent studies have begun incorporating a braoder range of complexity measures. \cite{komori2019} evaluated
+More recent studies have begun incorporating a broader range of complexity measures. \citet{komori2019} evaluated
 Morphological Derivation Density (MDD) and Morphological Head Density (MHD) across beginner and intermediate L2
 Japanese learners, alongside a native speaker control group. The results indicated that MHD, which focuses on
-syntactic head positions, was more sensitive to distinguishing between proficency levels, suggesting its usefulness
+syntactic head positions, was more sensitive to distinguishing between proficiency levels, suggesting its usefulness
 as an index of morphosyntactic development. However, this study was limited in scope, comparing only two learner
-levels- 3 semesters vs. 4 semesters of study.
+levels (3 semesters vs. 4 semesters of study).
 
-In a longitudinal study, \cite{Yang2023} tracked syntactic development via MDD and MHD among native chinese-speaking
+In a longitudinal study, \citet{Yang2023} tracked syntactic development via MDD and MHD among native Chinese-speaking
 learners of Japanese. The study found that while MDD remained relatively stable over time, MHD increased, suggesting
 that learners produced more hierarchically complex sentence structures as their proficiency developed. These
-findsing support the notion that hierarchical structuring may be a more sensitive indicator for syntactic development
-in Japanese than linear dependency distance(as in MDD), aligning with earlier claims about the limits of
+findings support the notion that hierarchical structuring may be a more sensitive indicator for syntactic development
+in Japanese than linear dependency distance(as in MDD) , aligning with earlier claims about the limits of
 clause-based measures in typologically distinct languages like Japanese \citep{Iwashita2006}. These measures have
 not been evaluated together to validate which measures may be most appropriate as indices for development. The
-complexity analysis also have purely focused on the syntax domain of linguistics, with
+complexity analyses have purely focused on the syntax domain of linguistics, with the
 analysis of other domains neglected.
 
 \subsection{Applications in SLA Research, Readabiliity, ICALL}
+% how complexity measures are used in applications
+% role of complexity measures in readability assessment
+% Elaborate on use in Intelligent Computer-Assisted Language Learning (ICALL), adaptive learning, feedback, automated
+% assessment.
+% emphasize gap for Japanese
+NLP-based systems have been developed to support language learning by analyzing or targeting linguistic complexity.
+These systems vary in their purposes some analyze learner texts, while others annotate input but they all
+share
+the goal
+of connecting linguistic form and language development.
+
+CTAP (Common Text Analysis Platform) \citep{ctap} is a flexible, open-source platform which supports the automatic
+analysis of linguistic complexity in texts.  It provides a flexible and extensible freamework for extensible
+framework for extracting over 100 of linguistic complexity measures including from the syntactic , lexical,
+and
+discourse domains. The main goal of CTAP is to facilitate comparive analysis of texts for second language learning
+and readability research. Originally developed to support extracting features from texts in English and German,
+extensions in Italian \citep{ctap-italian} and Chinese \citep{ctap-chinese} have also been added to the system.
+
 - CTAP
 - Readability Assessment applications
 - ICALL applications
