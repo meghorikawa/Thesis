@@ -172,8 +172,8 @@ errors.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Mention the preprocessing of the text. Talk about spacys' ginza pipeline used for parsing-tagging etc.
-The raw text data from each writing sample underwent a comprehensive preprocessing pipeline. Spacy's Ginza package \cite{Ginza} (v 5.2) a Japanese language model for spaCy,  was employed for this purpose.
-Ginza was selected for its comprehensive capabilities in handling Japanese text, including tokenization,
+The raw text data from each writing sample underwent a comprehensive preprocessing pipeline. Spacy's GiNZA package \cite{Ginza} (v 5.2) a Japanese language model for spaCy,  was employed for this purpose.
+GiNZA was selected for its comprehensive capabilities in handling Japanese text, including tokenization,
 Part-of-Speech(POS) tagging, dependency parsing, lemmatization, morphological analysis, and its integration with
 spaCy's rule-based matcher.
 
@@ -266,9 +266,8 @@ indicate linear and hierarchical syntactic complexity and offer a more detailed 
 %MTLD
 %Lexical Frequency Profile
 
-Lexical complexity in this study is analyzed using both text internal measures and
-text
-external measures. Text internal measures are based solely on the vocabulary used within each text and measure the
+Lexical complexity in this study is analyzed using both text-internal measures and
+text-external measures. Text-internal measures are based solely on the vocabulary used within each text and measure the
 diversity and density of the vocabulary in a text. In contrast, text-external measures assess sophistication by
 comparing the vocabulary in a learner text to an external source such as a
 frequency list or graded vocabulary resources.
@@ -276,8 +275,8 @@ frequency list or graded vocabulary resources.
 \subsubsection{Text Internal Measures}
 %internal
 The internal measures selected for this study include the
-Corrected-Type-Token-Ratio(CTTR),Measure of Textual Lexical Diversity (MTLD), and part of speech (POS) density
-measures, including noun density, verb density(including auxiliaries), adjective density and adverb density.
+Corrected Type-Token-Ratio(CTTR) \citep, Measure of Textual Lexical Diversity (MTLD), and part of speech (POS) density
+measures, including noun density, verb density(including auxiliaries), adjective density, and adverb density.
 
 CTTR is a refinement of the traditional type-token ratio that reduces sensitivity to text length. It is calculated
 using the formula:
@@ -288,10 +287,10 @@ using the formula:
 \vspace{5pt}
 
 MTLD was used as a complementary measure of lexical diversity that is robust against text lengths. It calculates the
-average length of word strings that maintain a minimum type-token ratio threshold, commonly .72 (this threshold was
+average length of word strings that maintain a minimum type-token ratio threshold, commonly 0.72 (this threshold was
 also used in this study). A higher
 MTLD
-score indicates a more lexical diversity.
+score indicates more lexical diversity.
 
 MTLD was implemented using a modified version of a
 publicly
@@ -302,7 +301,7 @@ spaCy's POS tags before
 calculating the MTLD score. Because the measure is only sensitive to variation after a minimum number of tokens \citep{McCarthy2010},
 texts with fewer than 50 tokens were excluded from MTLD calculation.
 
-POS density measures were calculated by dividing the number of nouns, verbs(including auxiliaries), adjectives and
+POS density measures were calculated by dividing the number of nouns, verbs, adjectives, and
 adverbs by the total
 number of tokens in a given text. These measures provide insight into the functional distribution of lexical items and
 descriptive elaboration used by learners.
@@ -316,43 +315,42 @@ To assess lexical sophistication, the Lexical Frequency Profile (LFP) was implem
 resources:
 \begin{itemize}
     \item The Balanced Corpus of Contemporary Written Japanese (BCCWJ) frequency list \citep{maekawa2014}, which
-    provides frequency information for words appearing across a wide range of genres including books, magazine,
+    provides frequency information for words appearing across a wide range of genres including books, magazines,
     blogs,
     internet
     forums, and textbooks.
-    \item JLPT word lists, sourced from \citep{jisho.org}, classifies vocabulary into five levels from N5(
+    \item JLPT word lists, sourced from \citep{jisho.org}, classify vocabulary into five levels from N5(
     basic) to N1 (advanced) based on the Japanese Language Proficiency Test (JLPT).
     \end{itemize}
 
 In the LFP, each word in a learner text is categorized into a frequency band or JLPT level. The percentage of tokens
 from each band is then calculated to assess the extent to which learners rely on high-frequency (common) versus
-lower-frequency (uncommon) vocabulary  from
+lower-frequency (uncommon) vocabulary from
 each of the bands.
 
-To esure compatibility betwee the learner texts and the word lists, preprocessing was required. Word from the
+To ensure compatibility between the learner texts and the word lists, preprocessing was required. Word from the
 frequency lists were tokenized using the same pipeline (GiNZA) as the learner texts to allow consistent matching.
  For example, some expressions such as
 「もう一度」 (
 \textit{mouichido}, "one more time") would appear as single entries in the vocabulary list but are tokenized
 into separate
-items(e.g. 「もう」and 「一度」) . By applying the same tokenizer to both the learner data and the frequency resources, this
+items (e.g.,「もう」and 「一度」) . By applying the same tokenizer to both the learner data and the frequency resources, this
 mismatch was minimized.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Morphological Complexity}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Morphological Complexity can be measured through two domains variation, which reflects the diversity of morphological
-forms employed and
+Morphological complexity can be measured through two domains: variation, which reflects the diversity of morphological
+forms employed, and
 elaboration, which captures the internal complexity of those forms. Japanese, as an
 agglutinative
 language, with extensive verb inflection, auxiliary chaining, politeness marking, and compounding,
 offers
 numerous opportunities for both morphological variation and elaboration. To quantitatively evaluate these aspects, two
 main
-approaches were employed, the Morphological complexity index as proposed by
-\citet{Brezina2019} and a Japanese adaptation of the Korean Morphological Richness Analyzer(KMRA)\citet{Hwang2024}.
-which will be
+approaches were employed: the Morphological complexity index as proposed by
+\citet{Brezina2019}, and a Japanese adaptation of the Korean Morphological Richness Analyzer (KMRA) \citet{Hwang2024}, which will be
 referred to as
 JMRA hereafter.
 
@@ -496,7 +494,7 @@ selection of criterial features, prioritizing forms where surface form reliably 
 
 To automatically identify and count instances of these 154 criterial features within the preprocessed learner
 corpus, a custom rule-based feature matching function was developed. This function leverages the linguistic
-annotations generated by Spacy's Ginza package (tokenization, POS tagging, lemmatization, and dependency parsing) to
+annotations generated by Spacy's GiNZA package (tokenization, POS tagging, lemmatization, and dependency parsing) to
 define specific patterns for each target grammar form.
 
 The matching function operates by iterating through each sentence in a given writing sample and applying a set of
@@ -506,7 +504,7 @@ which allow for flexible and powerful pattern matching based on token attributes
 
 Below is an illustrative example of a spaCy Matcher pattern designed to capture passive verb forms, typically
 introduced around JLPT N4. This pattern looks for a verb followed by a specific auxiliary verb lemma ('られる' for
-ichidan verbs or 'れる' for godan verbs), leveraging the POS tags 'VERB' and 'AUX' assigned by Ginza.
+ichidan verbs or 'れる' for godan verbs), leveraging the POS tags 'VERB' and 'AUX' assigned by GiNZA.
 
 \begin{enumerate}
 \item \textbf{Target Feature:} Passive form
