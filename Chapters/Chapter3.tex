@@ -543,16 +543,15 @@ patterns.
 \section{EBMs}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 This study employed Explainable Boosting Machines (EBMs) \citep{nori2019} as the primary machine learning model for
-classifying learner proficiency levels. EBMs are especially well-suited for this study as they can capture complex
+classifying learner proficiency levels. EBMs are especially well-suited for this study as they can capture complex,
 nonlinear relationships between linguistic features and learner proficiency in a transparent and interpretable way.
 
 Unlike linear models such as logistic regression, EBMs do not assume a constant linear relationship
-between the features and target variable. As features within language development
+between the features and target variable. Language development can be nonlinear and dynamic, as features
 sometimes involve sharp increases, plateaus, or even decreases in usage, patterns consistent with dynamic
 systems
 theory \citet{
-Debot2007},language
-development can be nonlinear and dynamic. Decision trees can model nonlinear patterns, but are often unstable and
+Debot2007}. Decision trees can model nonlinear patterns, but are often unstable and
 prone to
 overfitting, especially with imbalanced
 datasets. EBMs strike a balance of being able to flexibly model nonlinear patterns while maintaining interpretable
@@ -560,7 +559,7 @@ outputs in the form of feature-wise plots that show how each variable affects th
 
 However, EBMs do have limitations. One is that overlap between adjacent classes can contribute to misclassification (
 especially
-between N2 and N1 levels) even when using methods to mitigate class imbalance. Another is that EBMs assume each
+between N2 and N1 levels), even when using methods to mitigate class imbalance. Another is that EBMs assume each
 feature is contributes independently, which may overlook important interactions between some linguistic features.
 Despite
 these limitations, the primary aim of this study is not to achieve perfect
@@ -568,39 +567,40 @@ classification, but to identify meaningful and interpretable relationships betwe
 features and
 proficiency.
 
-The models were trained using the interpretml package\footnote{https://github.com/interpretml/interpret}, which
+The models were trained using the interpretml package \footnote{https://github.com/interpretml/interpret}, which
 provides glass-box machine learning tools designed for interpretability. The EBM outputs include plots that make it
 easy to observe how each variable contributes to the model's predictions across the JLPT proficiency scale.
 
 
 \subsubsection{Data Preparation}
-Prior to training the model several preprocessing steps were performed. First, removal of identifying and non-essential
-features from the data, such as location, age, and participant number. JCAT scores were also removed as they
+Prior to training the model several preprocessing steps were performed. First, identifying and non-essential
+features were removed from the data, such as location, age, and participant number. J-CAT scores were also removed as
+they
 directly correlate with the JLPT scores and could bias the model.
 
-Variables such as L1, location, gender, were initially included for
+Variables such as L1, location, and gender were initially included for
 exploratory
 testing, but were removed in the final model. These metadata variables  tended to dominate the model's
-predictions, likely due to imbalances in the corpus (e.g. a dominant L1 group), and were subsequently removed to avoid
+predictions, likely due to imbalances in the corpus (e.g., a dominant L1 group), and were subsequently removed to avoid
 masking linguistic features of interest.
 
 While native speaker texts can be used as a benchmark in language research, their inclusion is not appropriate in
-the current context, which focuses on modeling the procession of L2 development. Native speakers do not form part of
+the current context, which focuses on modeling the progression of L2 development. Native speakers do not form part of
 the proficiency continuum represented by JLPT levels, and their linguistic profiles differ from those
-of language learners. Moreover, in preliminary analysis, NS texts were found to not differ significantly from
+of language learners. Moreover, in preliminary analysis, NS text features were found to not differ significantly from
 tests from higher jLPT levels (
-N1-N2).  Therefore did
+N1-N2) and therefore did
 not offer meaningful insight into developmental patterns across the full range of learner proficiency. For these
 reasons, the native speaker group (NS) was excluded to maintain a consistent developmental frame of reference.
 
 \subsection{Model Training and Evaluation}
 
-To address class imbalance stratified 5-fold Cross-Validation was used to maintain proportional distribution of JLPT
-levels across each fold. Random Over-sampling was also applied within each training fold to compensate for
+To address class imbalance stratified 5-fold cross-validation was used to maintain proportional distribution of JLPT
+levels across each fold. Random over-sampling was also applied within each training fold to compensate for
 imbalanced class sizes.
 
 Only main effects were modeled (no pairwise interactions), to prioritize interpretability and avoid overfitting
-due to the relatively small quantity of writings for the higher (N1) and lower(N5) proficiency levels.
+due to the relatively small quantity of writings for the higher (N1) and lower (N5) proficiency levels.
 
 Model performance was evaluated by aggregating predictions across folds. A confusion
 matrix was used to visualize misclassifications,
