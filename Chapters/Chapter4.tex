@@ -537,7 +537,7 @@ through the given writing tasks.
 
 \subsection{Morphological Complexity Measures}
 This section reports on morphological complexity through two indices, the Morphological Complexity Index (MCI)
-\citep{Brezina2019} and JRMA based on the Korean Readability Morphological Analyzer\citep{Hwang2024}. These
+\citep{Brezina2019} and JMRA based on the Korean Morphological Richness Analyzer\citep{Hwang2024}. These
 measures aim to observe how learners employ morphological elaboration, either through surface variation or content
 and function word use.
 
@@ -625,43 +625,43 @@ Overall, surface-based MCI-5 emerged as the most practical and sensitive measure
 learners who are most likely to have shorter texts. It retains more data and yields strong significance patterns
 without the dataloss issues introduced by MCI-10's longer window size requirement.
 
-\subsubsection{JRMA-Based Measures}
+\subsubsection{JMRA-Based Measures}
 
 %*MTLD measures had dropped texts due to the minimum text length limit required. This is especially true for
 %these measures as it is using specific function/content words meaning even longer text is needed.
-Morphological diversity was also evaluated using JRMA-based variants of MTLD and MATTR. Due to the structural
-specificity of JRMA (focusing on functions vs. content words), these metrics have stricter text length requirements,
+Morphological diversity was also evaluated using JMRA-based variants of MTLD and MATTR. Due to the structural
+specificity of JMRA (focusing on functions vs. content words), these metrics have stricter text length requirements,
 leading to large numbers of text exclusions.
 
 \begin{figure}[htbp]
     \centering
     \begin{minipage}{.48\textwidth}
         \centering
-    \includegraphics[scale=.4]{img/JRMA-MTLD-all}
-    \caption[Average JRMA MTLD all score across proficiency levels]{Average JRMA MTLD all(content and function) morphemes score across proficiency levels}
+    \includegraphics[scale=.4]{img/JMRA-MTLD-all}
+    \caption[Average JMRA MTLD all score across proficiency levels]{Average JMRA MTLD all(content and function) morphemes score across proficiency levels}
         \label{fig:MTLDall}
     \end{minipage}
     \hfill
 \begin{minipage}{.48\textwidth}
         \centering
-        \includegraphics[scale=.4]{img/JRMA-MTLDfunction}
-        \caption[Average JRMA MTLD function morphemes score across proficiency levels]{Average JRMA MTLD function morphemes score across proficiency levels.}
+        \includegraphics[scale=.4]{img/JMRA-MTLDfunction}
+        \caption[Average JMRA MTLD function morphemes score across proficiency levels]{Average JMRA MTLD function morphemes score across proficiency levels.}
 \label{fig:MTLDfunction}
 \end{minipage}
     \end{figure}
-%JRMA_all_MTLD
+%JMRA_all_MTLD
    % *49 rows removed
     %*statistically significant difference in distinguishing N5&N4, N3&N2 levels
 
-%JRMA_function_MTLD
+%JMRA_function_MTLD
     %*2365 rows removed
     %* only difference in N4 and N3 were statistically significant.
     %*no clear pattern of increasing/decreasing
-%JRMA_content_MTLD
+%JMRA_content_MTLD
 %    * 2433 rows removed of 4840
 %    * Statistically significant in distinguishing the lower levels. N4&N5 N3&N2
 
-For the JRMA MTLD calculation on the combined list of function and content words (JRMA\_all\_MTLD), 36 rows were removed
+For the JMRA MTLD calculation on the combined list of function and content words (JMRA\_all\_MTLD), 36 rows were removed
 for not
 meeting the minimum token length requirement. The measure successfully distinguished N5-N4 and N3-N2 non-adjacent
 levels, with a
@@ -680,14 +680,14 @@ levels in distinguishing between N5-N4 and N3-N2 levels (Figure~\ref{fig:MTLDcon
     \centering
     \begin{minipage}{.48\textwidth}
         \centering
-    \includegraphics[scale=.4]{img/JRMA-MTLDcontent.png}
+    \includegraphics[scale=.4]{img/JMRA-MTLDcontent.png}
     \caption[MTLD Content]{}
         \label{fig:MTLDcontent}
     \end{minipage}
     \hfill
 \begin{minipage}{.48\textwidth}
         \centering
-        \includegraphics[scale=.4]{img/JRMA-MATTRall}
+        \includegraphics[scale=.4]{img/JMRA-MATTRall}
         \caption[MATTR all]{}
 \label{fig:MATTRall}
 \end{minipage}
@@ -695,16 +695,16 @@ levels in distinguishing between N5-N4 and N3-N2 levels (Figure~\ref{fig:MTLDcon
 
 
 
-%JRMA_all_MATTR
+%JMRA_all_MATTR
     %*Significant difference between all levels except the N1&NS,and N1&N2
     %* slight increase across levels, variance also decreases
 
-%JRMA_Function_MATTR
+%JMRA_Function_MATTR
     %*Slight decrease across levels.
     %*decrease in variance across levels
     %* significant pairs: (N5,N4), (N4,N3),(N5,N3)
 
-%JRMA_Content_MATTR
+%JMRA_Content_MATTR
     %* decrease in variance across levels
     %* significant pairs: (N2,N3), (N5,N3)
 
@@ -716,14 +716,14 @@ levels except N1-N2 (Figure~\ref{fig:MATTRall}).
     \centering
     \begin{minipage}{.48\textwidth}
         \centering
-    \includegraphics[scale=.4]{img/JRMA-MATTRcontent.png}
+    \includegraphics[scale=.4]{img/JMRA-MATTRcontent.png}
     \caption[MATTR content]{}
         \label{fig:MATTRcontent}
     \end{minipage}
     \hfill
 \begin{minipage}{.48\textwidth}
         \centering
-        \includegraphics[scale=.4]{img/JRMA-MATTRfunction}
+        \includegraphics[scale=.4]{img/JMRA-MATTRfunction}
         \caption[MATTR function]{}
 \label{fig:MATTRfunction}
 \end{minipage}
@@ -768,11 +768,11 @@ Profile proved more informative than the JLPT wordlist, especially in showing sh
 across the 1k-4k bands.
 
 In terms of morphological complexity, the MCI-5 surface form index was the most practical and sensitive measure,
-avoiding the data loss seen with MCI-10 while still capturing developmental patterns. JRMA all-MATTR, combining both
+avoiding the data loss seen with MCI-10 while still capturing developmental patterns. JMRA all-MATTR, combining both
 ufnction and content word diversity, also showed a clear progression across levels and offered a stable profile of
 lexical variation.
 
-Overall, sentence length, coordinate clauses per sentence, MDD/MHD, CTTR, BCCWJ-based LFP, MCI-5 surface, and JRMA
+Overall, sentence length, coordinate clauses per sentence, MDD/MHD, CTTR, BCCWJ-based LFP, MCI-5 surface, and JMRA
 all-MATTR were the most reliable indicators of linguistic development.
 
 \section{Criterial Features}
