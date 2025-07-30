@@ -247,24 +247,24 @@ characteristics of advanced learners.
 
 The corpus, consisting of uncorrected learner language, posed challenges for feature extraction. Misspellings and
 grammatical errors common in learner output could lead to incorrect tokenization and POS tagging by the underlying
-NLP tools (e.g. SpaCy's Ginza package), thus impacting the accuracy of extracted features. For instance, irregular
-forms of "mispellings" might be incorrectly counted as out-of-vocabulary words (in the context of the LFP complexity
+NLP tools (e.g. SpaCy's GinZA package), thus impacting the accuracy of extracted features. For instance, irregular
+forms or "mispellings" might be incorrectly counted as out-of-vocabulary words (in the context of the LFP complexity
 measure), rather than as specific error types. More crucially, the morphological complexity of Japanese,
 particularly with compound verbs and auxiliary constructions (e.g. 「言い切る」 as one verb vs. 「食べ切る」 parsed into two
 parts), meant that rule-based feature extraction struggled with consistency. This could lead to undercounting or
-miscategorizing certain complex forms, which are critical indicators of advanced proficiency.
+categorising certain complex forms, which could be a critical indicator of advanced proficiency.
 
-The variability in text length, with some text being very short, likely affected the reliability of certain
-density-based metrics, such as MTLD (Mean Type-Token Ratio), if it were included. Such metrics are sensitive to text
+The variability in text length, with some texts being very short, likely affected the reliability of certain
+density-based metrics. Such metrics are sensitive to text
 length, and calculation over very short texts can yield less stable or representative values, potentially
 introducing noise into the feature set.
 
 While features like coordinate clauses per sentence were highly important, the accuracy of their extraction was
 dependent on the underlying tokenizer's ability to correctly identify conjunctions and clause boundaries. As noted
 previously, many Japanese conjunctions can be used in both coordinating and subordinating contexts, and rule-based
-parsers like SpacCy may not fully account for contextual nuances. This potential inaccuracy in the input features
+parsers like SpaCy may not fully account for contextual nuances. This potential inaccuracy in the input features
 could directly limit the model's ability to use these syntactic measures for precise classification. A more robust,
-context-aware parsing system would likely improve the quality of these features.
+context-aware parsing system would likely improve the accuracy of these measures.
 
 The feature extractor largely focused on form-based grammatical constructs that are relatively easier to identify
 programmatically and are common in standardized written Japanese. This approach may have overlooked more nuanced,
@@ -275,7 +275,7 @@ classification.
 
 A significant limitation of the current study was the exclusion of learner errors as a direct feature. Different
 proficiency levels are often
-characterized by distinct error patterns, as was illustrated in \citet{Hawkins_Buttery_2010}.  The
+characterized by distinct error patterns, as was illustrated in \citet{Hawkins_Buttery_2010}. The
 developmental trajectory of errors, where specific error types and frequencies change systematically with
 proficiency, could provide highly discriminative information for the model.
 Incorporating
@@ -285,12 +285,15 @@ set
 could provide
 highly discriminative information, potentially leading to substantial improvements in classification accuracy,
 especially for distinguishing between adjacent intermediate and advanced levels where subtle error reductions or
-shifts in error types might be useful indicators. While these levels have been validated
+shifts in error types might be useful indicators.
+
+While these levels have been validated
 \citet{jcat_interpretation_guide}, they
 are primarily based on recognition tasks (reading and listening) and do not directly assess productive skills like
 writing or speaking. Therefore, the proficiency labels assigned to the learner texts, derived from J-Cat, are approximations of a broader construct of proficiency. There can be considerable variance in the productive language capabilities of individuals who score similarly on the JLPT, which might introduce inherent 'noise' or ambiguity into the dataset, further complicating the task of classification for the model.
 
-While EBM demonstrated capability to classify JLPT levels better than chance, performance highlights the inherent
+While the EBM demonstrated a capability to classify JLPT levels better than chance, it's performance highlights the
+inherent
 complexity of distinguishing between closely related proficiency levels in a continuous developmental spectrum. The
 identified features were significant, but future improvements would benefit from addressing the methodological
 challenges in feature extraction, particularly for nuanced Japanese linguistic structures, and exploring the
