@@ -15,8 +15,8 @@ methodological considerations.
 The EBM was trained using the full set of extracted features on a five-class classification task corresponding to
 the five JLPT proficiency levels (N5-N1). Interactions were set to zero to allow for clear interpretation of the
 feature importances. The model was
-evaluated using 5 fold cross validation,
-with over sampling to balance the minority classes (N1 and N5). The results, aggregated across all cross validation
+evaluated using 5-fold cross-validation,
+with oversampling to balance the minority classes (N1 and N5). The results, aggregated across all cross-validation
 folds, are summarized
 in Table~
 \ref{tab:trainingResults}.
@@ -43,10 +43,10 @@ The model achieved an overall accuracy of 38\%, demonstrating some capacity to d
 levels.
 While the overall performance did not exceed 50\%, it represents a significant improvement over a random guess
 baseline of 20\% for a five-class classification problem. The F1-scores, which provide a harmonic mean of precision
-and recall ranged from .17 for N1 and .48 for N5 (Table~\ref{tab:trainingResults}).
+and recall, ranged from 0.17 for N1 and 0.48 for N5 (Table~\ref{tab:trainingResults}).
 
 Notably, classification performance declined as proficiency increased, with the N1 group showing the weakest
-performance across all metrics (precision = 0.15, recall=0.19, f1=0.17). This is likely attributable in part to the
+performance across all metrics (precision = 0.15, recall = 0.19, f1 = 0.17). This is likely attributable in part to the
 small sample size of N1 texts in the corpus, as well as the overlap between the proficiency levels.
 
 Performance was highest for the N5 and N4 levels, which may reflect the chosen features may be more robust against
@@ -61,23 +61,23 @@ confusion matrix in Figure~\ref{fig:conMA}.
            \label{fig:conMA}
 \end{figure}
 
-A common mis-classification was a substantial number of true N3 instances were misclassified as N4(380) or N2 (299).
-Similarly, N2 texts were frequently predicted as N3(245) or N1 (107), and N1 texts were often misclassified as N2(
-98) or N3(62). This suggests that the model frequently confused text belonging to adjacent proficiency levels,
-indicating a high overlap between the proficiency levels. This was confirmed when
-
-This overlap was further supported when aggregating the proficiency levels into broader 3 groups - Beginner (N5+N4),
+A common misclassification was that a substantial number of true N3 instances were misclassified as N4(380) or N2 (
+299).
+Similarly, N2 texts were frequently predicted as N3 (245) or N1 (107), and N1 texts were often misclassified as N2 (
+98) or N3 (62). This suggests that the model frequently confused text belonging to adjacent proficiency levels,
+indicating a high overlap between the proficiency levels. This overlap was further supported when aggregating the
+proficiency levels into three groups—Beginner (N5+N4),
 Intermediate (N3+N2), and
 Advanced (N1).
-Classification performance for these three groups improved significantly, achieving an overall F1-score of .54. This
-substantial increase from .38 F1-score for the five-class problem further corroborates the hypothesis that the
-continuous nature of adjacent JLPT levels present a significant challenge for fine-grained classification.
+Classification performance for these three groups improved significantly, achieving an overall F1-score of 0.54. This
+substantial increase from 0.38 F1-score for the five-class problem further corroborates the hypothesis that the
+continuous nature of adjacent JLPT levels presents a significant challenge for fine-grained classification.
 
 \section{Feature Importance Analysis}
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=.4]{img/feature_importance}
-    \caption[Feature Importance Chart]{ Feature Importance Chart: Top-ranked features contributing to the classifcation of JLPT proficency levels, based on thier additive contribution scores from the EBM model.}
+    \caption[Feature Importance Chart]{ Feature Importance Chart: Top-ranked features contributing to the classification of JLPT proficiency levels, based on their additive contribution scores from the EBM model.}
     \label{fig:featureimportance}
 \end{figure}
 
@@ -87,7 +87,7 @@ more detailed chart showing the top 30 features with weights can be found in App
 Overall, a
 diverse range of linguistic features contributed to classification accuracy, though complexity measures were most
 prominent among the top-ranked features. A wide variety of complexity
-measures consisting of syntactic, lexical and morphological contributed to classification, indicating that a
+measures, consisting of syntactic, lexical, and morphological contributed to classification, indicating that a
 multidimensional approach is essential for classifying learner texts.
 
 The top two features were coordinate clauses per sentence and coordinate clauses per clause, both measures of
@@ -96,7 +96,7 @@ differentiator across proficiency levels, potentially a reflection of developmen
 aligns with findings in the previous section, where this feature was also found to discriminate between adjacent
 levels in
 the low to mid-proficiency ranges while also increasing at higher levels. The class
-separation can be seen in Figure~\ref{EBMccPerSent}, where N5 is associated with lower values (below 0.25),
+separation can be seen in Figure~\ref{fig:EBMccPerSent}, where N5 is associated with lower values (below 0.25),
 while above 1 are associated with N1 and N2.
 
 
@@ -121,12 +121,16 @@ levels.
     \label{fig:EBMjlptN2}
 \end{figure}
 
-Mean Hierarchical Distance (MHD), the fourth ranked feature, quantifies the average depth of syntactic embedding.
-It's presence in this list suggests that deeper syntactic constructions are a reliable signal to distinguish the
+Mean Hierarchical Distance (MHD), the fourth-ranked feature, quantifies the average depth of syntactic embedding.
+Its presence in this list suggests that deeper syntactic constructions are a reliable signal for distinguishing the
 higher proficiency levels.
 
 Subordinate conjunction frequency (SCfreq), a proxy measure for subordination, was ranked fifth. This was somewhat
-surprising, as lexical complexity measures such as LFP OOV were expected to be more predictive. However due to the
+surprising, as lexical complexity measures such as Out of Vocabulary list (OOV) from the LFP were expected to be
+more
+predictive.
+However,
+due to the
 tokenizer's tendency to misclassify coordinating conjunctions as subordinating ones, SCfreq may effectively capture
 both types of clause-linking (coordination and subordination). Since coordination frequency was shown to increase
 with proficiency, this blended feature still carries strong predictive value. Figure~\ref{fig:EBMSCfreq} shows its
@@ -141,9 +145,9 @@ role in distinguishing N5 from other levels, supported by a broad density range.
 
 Several morphological complexity indicators also appeared in the top features. Both MCI-5 surface and MCI-10
 surface were ranked in the top ten, indicating that surface-level morphological diversity increases with
-proficiency. Additionally, MCI-10 Inflection, which measures inflectional morphological diversity, as also
-influential. This is notewrothy given that the larger text window used in its calculation excluded for shorter
-texts. Although previously found to distinguish N1 from a native speaker texts, Figure~\ref{fig:EBMMCI10inflection}
+proficiency. Additionally, MCI-10 Inflection, which measures inflectional morphological diversity, was also
+influential. This is notewrothy given that the larger text window used in its calculation excluded many shorter
+texts. Although previously found to distinguish N1 from native speaker texts, Figure~\ref{fig:EBMMCI10inflection}
 also shows that this feature contributes to differentiating within learner proficiency levels.
 
 \begin{figure}[h!]
@@ -153,7 +157,7 @@ also shows that this feature contributes to differentiating within learner profi
     \label{fig:EBMMCI10inflection}
 \end{figure}
 
-JMRA Function MATTR and JMRA All MATTR also ranked within the top 15 as morphological diversity measures. This
+JMRA Function MATTR and JMRA All MATTR also ranked among the top 15 as morphological diversity measures. This
 suggests that variation in function, and all (function + content) morphemes, which also reflects grammatical
 elaboration, is a
 relevant factor in distinguishing between proficiency levels. As shown in Figure~\ref{fig:JMRAallMATTR}, higher
@@ -168,9 +172,11 @@ scores are associated with the advanced levels (N1 and N2), separating them from
 \end{figure}
 
 The proportion of tokens not included in the 10,000 word frequency list of the BCCJW corpus (LFP OOV Percent) was
-also highly ranked of importance. This measure of lexical sophistication may signal either the use of advanced
+also highly ranked in importance. This measure of lexical sophistication may signal either the use of advanced
 vocabulary or the presence of unrecognized or erroneous forms. As shown in Figure~\ref{fig:EBMlfpOOV}, it
-contributed most to distinguishing the lower proficiency levels (N5 and N4), possibly indicating the latter, though
+contributed most to distinguishing the lower proficiency levels (N5 and N4), possibly indicating the latter, as
+there is a general decrease across proficency levels,
+though
 further investigation is needed.
 
 
@@ -182,9 +188,9 @@ further investigation is needed.
 \end{figure}
 
 
-Only one criterial feature, Ukemi(受身形, passive voice), appeared among the top 15.  Typically introduced to
+Only one criterial feature, Ukemi (受身形, passive voice), appeared among the top 15. Typically introduced to
 learners at the N4 level, this form is often difficult to master, due to verb form transformation and unconventional
-contexts which may differ from a learner's native language. The highest use of this form was at the N1 level. Figure~\ref{fig:EBMukemi} shows its ability to distinguish between levels, though low overall frequency limits its density and predictive power. Since the extract only captures correct instances incorporating incorrect uses could improve performance.
+contexts which may differ from a learner's native language. The highest use of this form was at the N1 level. Figure~\ref{fig:EBMukemi} shows its ability to distinguish between levels, though low overall frequency limits its density and predictive power. Since the extractor only captures correct instances, incorporating incorrect uses could improve performance.
 
 \begin{figure}[h!]
     \centering
@@ -198,7 +204,7 @@ Unsurprisingly, Sentence length was also among the top features. This was the on
 distinguished between all JLPT levels and the native speaker group.
 
 The EBM feature importance analysis confirms that no single metric defines learner proficiency. Rather, a
-combination of syntactic elaboration, morphological diversity, and lexical distribution provide the strongest
+combination of syntactic elaboration, morphological diversity, and lexical distribution provides the strongest
 predictive power.
 
 \section{Discussion}
