@@ -174,10 +174,9 @@ scores are associated with the advanced levels (N1 and N2), separating them from
 The proportion of tokens not included in the 10,000 word frequency list of the BCCJW corpus (LFP OOV Percent) was
 also highly ranked in importance. This measure of lexical sophistication may signal either the use of advanced
 vocabulary or the presence of unrecognized or erroneous forms. As shown in Figure~\ref{fig:EBMlfpOOV}, it
-contributed most to distinguishing the lower proficiency levels (N5 and N4), possibly indicating the latter, as
-there is a general decrease across proficency levels,
-though
-further investigation is needed.
+contributed most to distinguishing the lower proficiency levels (N5 and N4). This is likely because the measure
+shows a general decrease across proficiency levels (Figure~\ref{fig:LFPOOV}), possibly indicating the latter,
+though further investigation is needed.
 
 
 \begin{figure}[h!]
@@ -211,25 +210,25 @@ predictive power.
 
 % Make conrete citations
 The results above provide partial support for developmental patterns identified in the previous chapters. In
-particular, some features showed a clear trajectory of increased usage of complexity across levels, supporting
-earlier corpus based findings and previous literature. However the predictive power of many features was moderate,
-as found in the f1 scores, and some expected distinctions between adjacent levels (e.g. N3 vs N2) were not captured
+particular, some features showed a clear trajectory of increased complexity across levels, supporting
+earlier corpus-based findings and previous literature. However the predictive power of many features was moderate,
+as found in the F1 scores, and some expected distinctions between adjacent levels (e.g. N3 vs N2) were not captured
 effectively.
 
 This suggests that while form-based measures of grammatical complexity and frequency-based criterial features can be
 useful, they may not be sufficient in isolation. Some grammatical forms exhibit nuanced usage that depends on
-semantic, pragmatic, or discourse-level factors which are not easily captured through surface-form
+semantic, pragmatic, or discourse-level factors that are not easily captured through surface-form
 analysis alone.
 
 The model's diminished performance, particularly for N2 and N1 as evidenced by lower f1-scores and the high number
 of misclassifications in the confusion matrix (Figure~\ref{fig:conMA}), points to inherent challenges in
 classifying these adjacent proficiency levels. The significant overlap observed in predictions (e.g. N3 misclassified
 as N2 and N4) suggests that the linguistic differences between intermediate and advanced levels are subtler and less
-discretely based on the current feature set. It is plausible after all, that learners at adjacent intermediate
-levels exhibit similar linguistic characteristics than, for example, a beginner (N5) and an advanced learner (N1).
+discretely based on the current feature set. It is plausible, after all, that learners at adjacent intermediate
+levels exhibit similar linguistic characteristics to, for example, a beginner (N5) and an advanced learner (N1).
 This continuous nature of language development makes sharp categorical distinctions difficult for any model.
 
-The small sample size of N1 group (44 participants, 224 texts) significantly impacted its classification accuracy (
+The small sample size of the N1 group (44 participants, 224 texts) significantly impacted its classification accuracy (
 F1-score
 of 0.17 in Table~\ref{tab:trainingResults}). With fewer examples, the model had limited data to learn the specific
 criteria that distinguish N1 texts from other levels, leading to a high rate of misclassification, particularly into
@@ -253,12 +252,12 @@ characteristics of advanced learners.
 
 The corpus, consisting of uncorrected learner language, posed challenges for feature extraction. Misspellings and
 grammatical errors common in learner output could lead to incorrect tokenization and POS tagging by the underlying
-NLP tools (e.g. SpaCy's GinZA package), thus impacting the accuracy of extracted features. For instance, irregular
-forms or "mispellings" might be incorrectly counted as out-of-vocabulary words (in the context of the LFP complexity
+NLP tools (e.g., SpaCy's GinZA package), thus impacting the accuracy of extracted features. For instance, irregular
+forms or "misspellings" might be incorrectly counted as out-of-vocabulary words (in the context of the LFP complexity
 measure), rather than as specific error types. More crucially, the morphological complexity of Japanese,
 particularly with compound verbs and auxiliary constructions (e.g. 「言い切る」 as one verb vs. 「食べ切る」 parsed into two
 parts), meant that rule-based feature extraction struggled with consistency. This could lead to undercounting or
-categorising certain complex forms, which could be a critical indicator of advanced proficiency.
+categorizing certain complex forms, which could be a critical indicator of advanced proficiency.
 
 The variability in text length, with some texts being very short, likely affected the reliability of certain
 density-based metrics. Such metrics are sensitive to text
@@ -274,7 +273,9 @@ context-aware parsing system would likely improve the accuracy of these measures
 
 The feature extractor largely focused on form-based grammatical constructs that are relatively easier to identify
 programmatically and are common in standardized written Japanese. This approach may have overlooked more nuanced,
-use-based grammatical patterns that could be highly discriminative of proficiency. Futhermore, the reliance on rules
+use-based grammatical patterns that could be highly discriminative of proficiency.
+Furthermore, the
+reliance on rules
 for standardized written language means that variations due to dialects or highly casual written forms, if present
 in the learner corpus, would not have been accurately captured, potentially missing valuable information for
 classification.
@@ -293,8 +294,7 @@ highly discriminative information, potentially leading to substantial improvemen
 especially for distinguishing between adjacent intermediate and advanced levels where subtle error reductions or
 shifts in error types might be useful indicators.
 
-While these levels have been validated
-\citet{jcat_interpretation_guide}, they
+While these levels have been validated\citet{jcat_interpretation_guide}, they
 are primarily based on recognition tasks (reading and listening) and do not directly assess productive skills like
 writing or speaking. Therefore, the proficiency labels assigned to the learner texts, derived from J-Cat, are approximations of a broader construct of proficiency. There can be considerable variance in the productive language capabilities of individuals who score similarly on the JLPT, which might introduce inherent 'noise' or ambiguity into the dataset, further complicating the task of classification for the model.
 
