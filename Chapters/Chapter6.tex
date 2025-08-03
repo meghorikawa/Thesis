@@ -1,8 +1,8 @@
 \chapter{Conclusion and Outlook}
 % Where the research questions answered? - % summarize findings briefly again.
-This study set out to investigate which linguistic complexity measures and critierial features best reflect
+This study set out to investigate which linguistic complexity measures and criterial features best reflect
 developmental changes across L2 Japanese proficiency levels, and whether such features could be used to build an
-interpretable, data-drive classification model.
+interpretable, data-driven classification model.
 
 %1. To identify which linguistic complexity measures, and criterial features show reliability as indices of language
 %development in L2 Japanese learners.
@@ -12,16 +12,16 @@ interpretable, data-drive classification model.
 %levels in L2 Japaneselearners.
 The EBM classifier achieved an overall accuracy of 38\% outperforming the 20\% for five-class classification. While
 this reflects only moderate predictive power, it underscores the inherent challenge of fine-grained proficiency
-classification, especially between adjacent JLPT leves. Notably, performance improved substantially when levels were
-grouped into broader categories, with an F1 score of .54. This result points to the continuum-like nature of the
-JLPT scale, suggesting that its proficiency bads are not as discrete in practice as their labels imply. The small
-number of N1 texts also limited classificaiton accuracy at the advanced level.
+classification, especially between adjacent JLPT levels. Notably, performance improved substantially when levels were
+grouped into broader categories, with an F1 score of 0.54. This result points to the continuum-like nature of the
+JLPT scale, suggesting that its proficiency bands are not as discrete in practice as their labels imply. The small
+number of N1 texts also limited classification accuracy at the advanced level.
 
 The most predictive features spanned multiple domains of linguistic complexity. Key indicators included syntactic
 elaboration (e.g. coordinate clauses per sentence), morphological diversity (e.g. MCI, JMRA-MATTR), and lexical
 sophistication (JLPT vocabulary list, and Out of Vocabulary List). These results are consistent with theoretical
 expectations that more advanced learners produce longer, more complex sentences with greater lexical variation and
-denser morphology. The prominence of coordinate clauses, in particular, what somewhat unexpected but aligns with a
+denser morphology. The prominence of coordinate clauses, in particular, was somewhat unexpected but aligns with a
 broader pattern of structural elaboration at higher levels.
 
 %2. To examine how linguistic complexity features and criterial features develop across different proficiencylevels
@@ -35,14 +35,16 @@ These inconsistencies may reflect instruction-based usage patters or limitations
 segmentation.
 
 Unexpected findings, such as early use of subordination and sustained growth in coordination, point to the influence
-of instructional sequencing or writing tasks. Additionally, the treatment of the て-form in parsing may have led to
-underestimation of its contribution to syntactic complexity.
+of instructional sequencing or writing tasks. Additionally, the limitations of the parser in accurately
+distinguishing between subordinate and coordinate clauses, particularly for ambiguous constructions like the て(te)
+-form,
+may have led to an underestimation of its contribution to syntactic complexity.
 
 \section{Theoretical and Pedagogical Implications}
-These results reinforce the view that L2 proficiency is a multi-dimential construct, not easily captured by a single
+These results reinforce the view that L2 proficiency is a multi-dimensional construct, not easily captured by a single
 metric. The moderate classification performance across five levels, coupled with significant improvement using
 three-group clustering, suggests that proficiency development in Japanese (similar to other languages) is gradual and
-continuous. Findings on coordination diverge from common L2 developmental sequences that prioritize subordination,
+continuous. The findings on coordination diverge from common L2 developmental sequences that prioritize subordination,
 suggesting language-specific or instructional influences in Japanese acquisition. Together, the results contribute
 to a more nuanced understanding of syntactic, morphological, and lexical development in Japanese learners.
 
@@ -54,15 +56,19 @@ also be incorporated into automated feedback tools, although care must be
 taken given the variability in learner
 output and the limitations of current parsing tools for Japanese.
 
+%mention with these imrpove ments something that can approximate the JLPT someone is at could help them choose a test
+%level they should take.
+
+
 \section{Limitations}
 
-Several limitations impacted the findings of this study. First, the learner corpus used (I-JAS) contained uncorrect
+Several limitations impacted the findings of this study. First, the learner corpus used (I-JAS) contained uncorrected
 texts, with spelling and grammatical errors that likely affected NLP-based feature extraction, especially in
-tokenization and POS tagging. Second, Japanese-specific morphological structures-such as compound verbs and
-contextualized conjunctions posed challenges for rule-based extraction, potentially underestimating raw frequency
+tokenization and POS tagging. Second, Japanese-specific morphological structures, such as compound verbs and
+contextualized conjunctions, posed challenges for rule-based extraction, potentially underestimating raw frequency
 measures. 
 
-This study soley focused on surface-form and structural measures. While these are foundational for complexity
+This study solely focused on surface-form and structural measures. While these are foundational for complexity
 analysis, they do not account for use-based, semantic, pragmatic, or discourse-level features, which may offer
 additional insight. The JLPT scores, inferred via the J-CAT placement test, were used as the proxy for proficiency,
 but may not perfectly reflect productive language ability. Finally, the small number of N1 texts limited the model's
@@ -84,18 +90,21 @@ capacity to accurately capture the most advanced level.
 
 One of the most promising directions for future research is the inclusion of error analysis. Categorizing and
 integrating error types and frequencies could significantly enhance discrimination between adjacent levels,
-particularly at intermediate and advanced stages.Additionally, incorporating more nuanced features, including
-discourse structure, pracmatic markers, and semantic cohesion, would offer a more comprehensive view of learner
-development. Better detection of the て-form, a critical grammatical structure in coordination, is especially needed.
+particularly at intermediate and advanced stages. Additionally, incorporating more nuanced features, including
+discourse structure, pragmatic markers, and semantic cohesion, would offer a more comprehensive view of learner
+development.
 
 Building a larger and more balanced learner corpus is essential. Particular attention should be paid to collecting
 more data from advanced learners (N1/N2) and across varied prompts and genres. Longitudinal studies, rather than
 cross-sectional snapshots, would also help capture true developmental change and provide a richer dataset for both
 linguistic and computational modeling.
 
-%TODO additional complexity measures for characteristics specific to Japanese such as kanji complexity?
-%mention with these imrpove ments something that can approximate the JLPT someone is at could help them choose a test
-%level they should take.
+Another important direction is the inclusion and exploration of additional complexity measures, especially those
+accounting for characteristics specific to Japanese. A possible new lexical measure could be designed to analyze the
+complexity of kanji characters used, potentially based on factors like stroke count, frequency of use or a kanji
+density rating. This measure could be used to explore predictive nature kanji knowledge as a major
+differentiator for proficiency levels. Exploring additional meaasures for Japanese-specific features would offer a
+more comprehensive and nuanced view of learner development and help to further refine computational proficiency models.
 
 \section{Concluding Remarks}
 
@@ -105,7 +114,6 @@ developmental trajectories, it advances our understanding of how learners progre
 and lexical dimensions. Despite methodological and resource limitations, the findings contribute to both SLA theory
 and the field of computational proficiency modeling. Continued research into this space holds potential for
 refining language assessment, supporting learners, and deepening our understanding of L2 Japanese development.
-%ToDo add more concrete examples
 
 %By combining traditional complexity measures with the identification of criterial features, this
 %study contributes both to theoretical understanding of L2 Japanese development and practical applications in
