@@ -212,7 +212,7 @@ predictive power.
 The results above provide partial support for developmental patterns identified in the previous chapters. In
 particular, some features showed a clear trajectory of increased complexity across levels, supporting
 earlier corpus-based findings and previous literature. However the predictive power of many features was moderate,
-as found in the F1 scores, and some expected distinctions between adjacent levels (e.g. N3 vs N2) were not captured
+as found in the F1 scores, and some expected distinctions between adjacent levels (e.g., N3 vs N2) were not captured
 effectively.
 
 This suggests that while form-based measures of grammatical complexity and frequency-based criterial features can be
@@ -253,7 +253,7 @@ characteristics of advanced learners.
 The corpus, consisting of uncorrected learner language, posed challenges for feature extraction. Misspellings and
 grammatical errors common in learner output could lead to incorrect tokenization and POS tagging by the underlying
 NLP tools (e.g., SpaCy's GinZA package), thus impacting the accuracy of extracted features. For instance, irregular
-forms or "misspellings" might be incorrectly counted as out-of-vocabulary words (in the context of the LFP complexity
+forms or misspellings might be incorrectly counted as out-of-vocabulary words (in the context of the LFP complexity
 measure), rather than as specific error types. More crucially, the morphological complexity of Japanese,
 particularly with compound verbs and auxiliary constructions (e.g. 「言い切る」 as one verb vs. 「食べ切る」 parsed into two
 parts), meant that rule-based feature extraction struggled with consistency. This could lead to undercounting or
@@ -289,16 +289,19 @@ Incorporating
 systematic error analysis as a
 feature
 set
-could provide
-highly discriminative information, potentially leading to substantial improvements in classification accuracy,
-especially for distinguishing between adjacent intermediate and advanced levels where subtle error reductions or
-shifts in error types might be useful indicators.
+could therefore lead to substantial improvements in classification accuracy, especially for distinguishing
+between adjacent intermediate and advanced levels where subtle error reductions or shifts in error types
+might be useful indicators. This would also enable a more nuanced understanding of not just what forms learners use,
+but how correctly they use them at different stages of development.
 
 While these levels have been validated\citet{jcat_interpretation_guide}, they
 are primarily based on recognition tasks (reading and listening) and do not directly assess productive skills like
-writing or speaking. Therefore, the proficiency labels assigned to the learner texts, derived from J-Cat, are approximations of a broader construct of proficiency. There can be considerable variance in the productive language capabilities of individuals who score similarly on the JLPT, which might introduce inherent 'noise' or ambiguity into the dataset, further complicating the task of classification for the model.
+writing or speaking. Therefore, the proficiency labels assigned to the learner texts, derived from J-Cat, are
+approximations of a broader construct of proficiency. There can be considerable variance in the productive language
+capabilities of individuals who score similarly on the JLPT \citep{JLPTcriticism}, which might introduce inherent 'noise' or
+ambiguity into the dataset, further complicating the task of classification for the model.
 
-While the EBM demonstrated a capability to classify JLPT levels better than chance, it's performance highlights the
+While the EBM demonstrated a capability to classify JLPT levels better than chance, its performance highlights the
 inherent
 complexity of distinguishing between closely related proficiency levels in a continuous developmental spectrum. The
 identified features were significant, but future improvements would benefit from addressing the methodological
