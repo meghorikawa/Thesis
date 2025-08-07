@@ -19,7 +19,7 @@ as an individual word, this is generally not the case in Japanese. For example, 
 is considered a single word. However, its potential form, 話せる \textit{hanaseru}(to be able to speak) is often
 analyzed as
 two distinct morphemes: 話\textit{hana} and せる\textit{seru}. Initial analyses using the chosen tokenizer and parser
-revealed inconsistencies in this regard. Similar inconsistencies were observed with compound verbs, such as
+revealed inconsistencies in this regard. For example, inconsistencies were observed with compound verbs, such as
 言い切る(\textit{iikiru}, "to completely say (i.e. to say without restraint)". While this was
 consistently
 split into 言い(\textit{ii}"to say") and 切る(\textit{kiru} a suffix indicating completion), other instances were
@@ -51,7 +51,8 @@ their
 native language,
 prior experience of visiting or living in Japan, and current geographical location (whether outside or within Japan).
 
-Writing samples were extracted from the larger I-JAS corpus. Samples  were provided from 687 individuals, including the
+Writing samples were extracted from the larger I-JAS corpus. Samples  were provided from 1,050 individuals,
+including the
 control group
 of 50 native speakers. A detailed breakdown of the participants in the writing sample subset, categorized by
 their corresponding Japanese Language Proficiency Test (JLPT) levels, is presented in Table
@@ -87,7 +88,7 @@ designed to evaluate an
 individual's proficiency in the Japanese language. While formerly freely accessible, the J-CAT is now overseen by
 the  日本語教育支援協会(Japanese Language Education Support Association (JaLESA)). Japanese
 universities frequently
-employ the J-CAT as an efficient tool and flexible tool for placing foreign students into appropriate Japanese
+employ the J-CAT as an efficient and flexible tool for placing foreign students into appropriate Japanese
 language courses, primarily due to its on-demand administration compared to the JLPT, which is only
 administered bi-annually.
 
@@ -139,7 +140,7 @@ elicit a variety of linguistic responses across different discourse types and le
     for a scholarship
     application.
     \item (\textbf{Task m2}), An email seeking an extension for a report submission deadline.
-    \item An apology email (\textbf{m3}) declining an invitation to give a close friend a sight-seeing tour.
+    \item An apology email (\textbf{m3}) declining an invitation to give a close friend a tour of your city.
     \item (\textbf{Task SW1}), A story-telling task, where the learner was expected to narrate a story based on a
     series of pictures depicting a picnic theme. Sample images for this task are shown in Figure~\ref{fig:ST}
     in the Appendix.
@@ -187,14 +188,14 @@ The corpus for this study comprises over 4,840 uncorrected samples of writing fr
 the reliance on measures that can be automatically calculated.
  The algorithms for calculating various complexity measures and criterial features, discussed in subsequent
 sections, were developed by the author based on the output of this preprocessing pipeline\footnote{The source code for
-these
-algorithms is publicly available at: \href{https://github.com/meghorikawa/JFE}{https://github.com/meghorikawa/JFE}}
+this project is publicly available at: \href{https://github.com/meghorikawa/JFE}{https://github.com/meghorikawa/JFE}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Complexity Measures}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-To capture the multifaceted nature of language development, this study uses a multidimensional approach to complexity
-measurement. Measures were chosen across multiple linguistic domains, including lexical, syntactic, and morphological
+This study employs a multidimensional approach to complexity
+measurement to capture the diverse nature of language development. Measures were chosen across multiple linguistic
+domains, including lexical, syntactic, and morphological
 complexity, at both global and local levels. The following sections describe the specific measures chosen for each
 domain. A comprehensive list of all complexity measures extracted in this study is located in the Appendix
 Table~\ref{tab:complexity-measures}
