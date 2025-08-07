@@ -323,16 +323,16 @@ resources:
     blogs,
     internet
     forums, and textbooks.
-    \item JLPT word lists, sourced from \citep{jisho.org}, classify vocabulary into five levels from N5(
-    basic) to N1 (advanced) based on the Japanese Language Proficiency Test (JLPT).
+    \item JLPT word lists, sourced from \citep{jisho.org}, classify vocabulary into five levels from N5 to N1 based on the Japanese Language Proficiency Test (JLPT).
     \end{itemize}
 
-In the LFP, each word in a learner text is categorized into a frequency band or JLPT level. The percentage of tokens
+In the LFP measures, each word in a learner text is categorized into a frequency band or JLPT level. The percentage of
+tokens
 from each band is then calculated to assess the extent to which learners rely on high-frequency (common) versus
 lower-frequency (uncommon) vocabulary from
 each of the bands.
 
-To ensure compatibility between the learner texts and the word lists, preprocessing was required. Word from the
+To ensure compatibility between the learner texts and the word lists, preprocessing was required. Words from the
 frequency lists were tokenized using the same pipeline (GiNZA) as the learner texts to allow consistent matching.
  For example, some expressions such as
 「もう一度」 (
@@ -361,7 +361,8 @@ JMRA hereafter.
 
 \subsection{Japanese Morphological Richness Analyzer (JMRA)}
 
-The Japanese Morphological Richness Analyzer (JMRA) is based on the KMRA developed for Korean, another
+The Japanese Morphological Richness Analyzer (JMRA) is based on the Korean Morphological Richness Analyzer (KMRA)
+developed for Korean \citep{Hwang2024}, another
 agglutinative language. The JMRA indentifies and counts morphological constructions that reflect
 functional and grammatical elaboration in Japanese, including verb inflections, honorific and polite forms, and noun
 formations.
@@ -412,7 +413,7 @@ across all visible forms including conjugated verbs and inflected nouns. Inflect
 calculates the diversity of
 the inflectional lemmas.
 
-Calculation of the MCI is done by dividing the text into consecutive segments of a fixed size, $k$, (usually 5
+Calculation of the MCI is done by dividing the text into consecutive segments of a fixed size, $k$ (usually 5
 or 10
 tokens). For each segment, a type token ratio (TTR) is calculated based on the number of unique surface forms in
 that window. The final MCI score is the average of these TTRs across all segments.
@@ -535,7 +536,7 @@ ichidan verbs or 'れる' for godan verbs), leveraging the POS tags 'VERB' and '
 
 Each of the 154 criterial features was translated into one or more such rule patterns, which were then
 systematically applied across the corpus. The raw counts of these criterial
-features were extracted from the text and subsequently normalized to account for variations in
+features were extracted from the text and subsequently normalized by token count to account for variations in
 essay length. These normalized frequencies were then used for further statistical analyses to
 examine the
 distribution and usage patterns of the criterial features across proficiency groups and to identify developmental
