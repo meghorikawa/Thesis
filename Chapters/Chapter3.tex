@@ -577,7 +577,7 @@ provides glass-box machine learning tools designed for interpretability. The EBM
 easy to observe how each variable contributes to the model's predictions across the JLPT proficiency scale.
 
 
-\subsubsection{Data Preparation}
+\subsection{Data Preparation}
 Prior to training the model several preprocessing steps were performed. First, identifying and non-essential
 features were removed from the data, such as location, age, and participant number. J-CAT scores were also removed as
 they
@@ -617,6 +617,27 @@ effects. This allowed for visualization of the
 the most influential features and how they varied across
 the JLPT proficiency levels.
 
+% ToD0 justification of modeling....do I need it?
+\section{Justifying the Use of Broad Linguistic Complexity Measures and Criterial Features}
 
+Recent critiques have questioned the validity of using large, theory-driven sets of linguistic complexity
+features, suggesting that such breadth risks p-hacking \citep{Bulte2024}. In contrast, this study adopts a data-driven
+approach
+rooted in
+exploratory data analysis, with the goal of generating hypotheses\citep{carmichael2017}. It focuses on identifying
+how different types of linguistic features, including both broad complexity indicators and criterial features,
+which relate to proficiency development in L2
+Japanese.
 
+This mixed approach draws on the insight that broad linguistic complexity and criterial features capture
+complementary aspects of L2 development\citep{Hawkins_Buttery_2010, Pallotti2015}. Linguistic complexity measures
+are used to model general trends in language variety, density and elaboration across language use
+\citep{Butle2012, Wolfe1998}. Criterial
+features, on the other hand, represent specific linguistic constructions whose emergence or mastery is associated with
+particular
+stages of proficiency, as defined by curricula or empirical learner data.
 
+Rather than presupposing which features will prove most relevant, this study aims to assemble a wide variety of
+linguistic evidence to trace which features best support proficiency modeling. Using interpretable machine learning
+models, such as EBMs, helps clarify how these features contribute to predictions and how their effects vary across
+proficiency levels.
